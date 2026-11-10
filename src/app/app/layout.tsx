@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Suspense, type ReactNode } from "react";
-import { signOut } from "@/auth";
 import { requireUser } from "@/lib/current-user";
+import { signOutAction } from "./actions";
 
 /**
  * Admin shell. The header frame is static and prerendered; everything that reads the
@@ -36,12 +36,7 @@ async function Account() {
   return (
     <>
       <span>{user.name ?? user.email}</span>
-      <form
-        action={async () => {
-          "use server";
-          await signOut({ redirectTo: "/" });
-        }}
-      >
+      <form action={signOutAction}>
         <button type="submit">Sign out</button>
       </form>
     </>
