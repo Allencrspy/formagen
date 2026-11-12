@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Formagen
 
-## Getting Started
+A server-driven form builder: build a form, publish a version, share a public link, and see every response.
 
-First, run the development server:
+**Live (dev stage):** https://d2hktiu7yyvw8w.cloudfront.net
+
+Built with Next.js 16, TypeScript, Zod, Drizzle + Postgres (Neon), Auth.js, and deployed to AWS (Lambda + CloudFront + S3) with SST.
+Full write-up coming at v1. Design: [`docs/specs`](docs/specs), plan: [`docs/plans`](docs/plans).
+
+## Run locally
 
 ```bash
+npm install
+cp .env.example .env.local   # then fill in the values
+npm run db:migrate
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Checks: `npm run typecheck`, `npm run lint`, `npm test`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy (AWS via SST)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Infrastructure is in [`sst.config.ts`](sst.config.ts). Region `ap-southeast-2`.
 
-## Learn More
+```bash
+npx sst secret set DatabaseUrl  "<neon pooled url>" --stage dev
+npx sst secret set AuthSecret   "<random 32+ bytes>" --stage dev
+npx sst secret set GithubId     "<oauth app client id>" --stage dev
+npx sst secret set GithubSecret "<oauth app client secret>" --stage dev
+npx sst deploy --stage dev
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Each stage needs its own GitHub OAuth app whose callback is `<stage url>/api/auth/callback/github`.
+The deployed app uses Neon's **pooled** URL (Lambda scales out); migrations use the direct URL.
