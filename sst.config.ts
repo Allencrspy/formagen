@@ -4,7 +4,7 @@
 /**
  * AWS infrastructure as code. `npx sst deploy --stage dev` builds the app with OpenNext
  * and deploys it to Lambda (server rendering, API routes) behind CloudFront (CDN),
- * with static assets in S3. Region ap-south-1 (Mumbai) sits next to the Neon database.
+ * with static assets in S3. Region ap-southeast-2 (Sydney): the one full-service region on this AWS Free-plan account.
  */
 export default $config({
   app(input) {
@@ -13,7 +13,7 @@ export default $config({
       removal: input?.stage === "production" ? "retain" : "remove",
       protect: ["production"].includes(input?.stage),
       home: "aws",
-      providers: { aws: { region: "ap-south-1", profile: "formagen" } },
+      providers: { aws: { region: "ap-southeast-2", profile: "formagen" } },
     };
   },
   async run() {
