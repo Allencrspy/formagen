@@ -20,8 +20,14 @@ body {
   background: var(--color-bg);
   caret-color: var(--color-primary);
   font-feature-settings: "cv11", "ss01";
-  font-variant-numeric: tabular-nums;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Tabular figures only where numbers line up (Inter's tnum also widens hyphens). */
+table,
+time,
+.tabular {
+  font-variant-numeric: tabular-nums;
 }
 
 ::selection {
