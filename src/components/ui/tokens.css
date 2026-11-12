@@ -1,32 +1,56 @@
 /*
- * Design tokens. Components only use these variables, so a theme is a set of values.
- * Text/background pairs are chosen for WCAG AA contrast (≥ 4.5:1) in both themes.
+ * Formagen design tokens: the card catalogue.
+ * Cool white card stock in a pale room, grey-green steel drawers, blue ruling,
+ * a red header rule and red date stamps. Components only use these variables.
+ * Text pairs are WCAG AA (most ≥ 6:1); control borders and focus ≥ 3:1 (1.4.11).
  */
 :root {
   color-scheme: light dark;
 
-  --color-bg: #f7f7f9;
+  /* Room, card, drawer */
+  --color-bg: #eef1f3;
   --color-surface: #ffffff;
-  --color-surface-raised: #eeeef3;
-  --color-text: #1a1a22;
-  --color-text-muted: #55586a;
-  --color-border: #d6d7e0;
-  --color-border-strong: #6b6e80;
-  --color-primary: #3a35c9;
-  --color-primary-hover: #2e2aa6;
+  --color-surface-raised: #f5f7f8;
+  --color-steel: #4f5d57;
+  --color-steel-deep: #3f4b46;
+  --color-on-steel: #f3f5f4;
+  --color-on-steel-muted: #d3dbd7;
+
+  /* Ink */
+  --color-text: #1b2329;
+  --color-text-muted: #56636b;
+  --color-border: #d9e1e6;
+  --color-border-strong: #6b7a82;
+
+  /* Card ruling (decorative, never carries text contrast) */
+  --color-rule: #d3e2ef;
+  --color-rule-red: #c8453b;
+
+  /* Action and verdicts */
+  --color-primary: #24507a;
+  --color-primary-hover: #1b3f61;
   --color-on-primary: #ffffff;
-  --color-danger: #b42318;
+  --color-danger: #b3261e;
+  --color-stamp: #b3261e;
   --color-success: #11713a;
-  --color-focus: #3a35c9; /* ≥ 3:1 against the light page (WCAG 1.4.11) */
+  --color-focus: #24507a;
 
   --focus-ring: 3px solid var(--color-focus);
 
+  /* Type: system stacks by default; the landing page swaps in its sourced faces */
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-sans);
+  --font-typed: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.8125rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
   --text-lg: 1.25rem;
   --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+  --text-display: clamp(2.25rem, 1.4rem + 3.2vw, 3.75rem);
 
+  /* One 8px rhythm; card ruling uses --rule-gap so content sits on the lines */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -34,26 +58,53 @@
   --space-5: 1.5rem;
   --space-6: 2rem;
   --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 6rem;
+  --rule-gap: 2rem;
 
   --radius-sm: 6px;
   --radius-md: 10px;
+  --radius-card: 4px;
+
+  --shadow-card: 0 1px 2px rgb(27 35 41 / 0.06), 0 8px 24px -8px rgb(27 35 41 / 0.14);
+  --shadow-lift: 0 2px 4px rgb(27 35 41 / 0.08), 0 16px 32px -12px rgb(27 35 41 / 0.22);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root:has([data-theme="light"]) {
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #111116;
-    --color-surface: #1b1b23;
-    --color-surface-raised: #262631;
-    --color-text: #ececf2;
-    --color-text-muted: #a7a9b8;
-    --color-border: #34343f;
-    --color-border-strong: #8a8ca0;
-    --color-primary: #9f9cff;
-    --color-primary-hover: #b6b4ff;
-    --color-on-primary: #14141c;
+  /* Pages that pin themselves light (the landing page's daytime-desk scene) opt out. */
+  :root:not(:has([data-theme="light"])) {
+    --color-bg: #12171a;
+    --color-surface: #1b2226;
+    --color-surface-raised: #222a2f;
+    --color-steel: #2b3532;
+    --color-steel-deep: #222a27;
+    --color-on-steel: #e8edef;
+    --color-on-steel-muted: #b4c0bb;
+
+    --color-text: #e8edef;
+    --color-text-muted: #a6b2b8;
+    --color-border: #2e383e;
+    --color-border-strong: #7d8b92;
+
+    --color-rule: #26394a;
+    --color-rule-red: #e0685d;
+
+    --color-primary: #8fb8e0;
+    --color-primary-hover: #a9c9e8;
+    --color-on-primary: #0f1a24;
     --color-danger: #ff8f84;
+    --color-stamp: #ff8f84;
     --color-success: #6fd59a;
     --color-focus: #ffbf47;
+
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -8px rgb(0 0 0 / 0.6);
+    --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.45), 0 16px 32px -12px rgb(0 0 0 / 0.7);
   }
 }
 

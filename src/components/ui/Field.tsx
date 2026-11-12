@@ -57,7 +57,7 @@ export function FieldShell({
   children,
 }: Omit<FieldBaseProps, "name"> & { children: ReactNode }) {
   return (
-    <div className={error ? `${styles.field} ${styles.hasError}` : styles.field}>
+    <div className={styles.field}>
       <label htmlFor={id} className={styles.label}>
         {label}
         <RequiredMarker required={required} />

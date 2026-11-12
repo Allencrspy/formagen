@@ -7,7 +7,7 @@ type Props = FieldBaseProps & Omit<InputHTMLAttributes<HTMLInputElement>, "id" |
 /** Checkbox with its label to the right; messages sit above, like other fields. */
 export function Checkbox({ id, name, label, helpText, error, required, ...rest }: Props) {
   return (
-    <div className={error ? `${styles.field} ${styles.hasError}` : styles.field}>
+    <div className={styles.field}>
       <FieldMessages id={id} helpText={helpText} error={error} />
       <div className={styles.checkboxRow}>
         <input

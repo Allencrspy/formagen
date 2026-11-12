@@ -4,11 +4,6 @@
   margin-block-end: var(--space-5);
 }
 
-.hasError {
-  border-inline-start: 4px solid var(--color-danger);
-  padding-inline-start: var(--space-3);
-}
-
 .label {
   font-weight: 600;
   color: var(--color-text);

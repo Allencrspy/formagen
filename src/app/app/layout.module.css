@@ -3,22 +3,37 @@
   align-items: center;
   gap: var(--space-4);
   padding: var(--space-3) var(--space-4);
-  background: var(--color-surface);
-  border-block-end: 1px solid var(--color-border);
+  background: linear-gradient(var(--color-steel), var(--color-steel-deep));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08), 0 1px 0 rgb(0 0 0 / 0.12);
+  color: var(--color-on-steel);
 }
 
+/* Label holder, as on every drawer front */
 .brand {
-  font-weight: 700;
-  color: var(--color-text);
-  text-decoration: none;
   margin-inline-end: auto;
+  padding: 0.3rem 0.8rem;
+  border-radius: 3px;
+  background: var(--color-surface);
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12), 0 0 0 3px var(--color-on-steel-muted);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.header a:focus-visible,
+.header button:focus-visible {
+  outline-color: #ffbf47;
 }
 
 .account {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  color: var(--color-text-muted);
+  color: var(--color-on-steel);
+  font-size: var(--text-sm);
 }
 
 .account form {

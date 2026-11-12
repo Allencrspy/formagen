@@ -1,0 +1,550 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T00:00:00Z",
+  "title": "Design System: Formagen",
+  "extensions": {
+    "colorMeta": {
+      "room": {
+        "role": "neutral",
+        "displayName": "Reading Room",
+        "canonical": "oklch(95.6% 0.004 236.5)",
+        "darkValue": "#12171a",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#232527",
+          "#404244",
+          "#5f6263",
+          "#808384",
+          "#a3a5a7",
+          "#c7c9cb",
+          "#eceff1"
+        ]
+      },
+      "card-stock": {
+        "role": "neutral",
+        "displayName": "Card Stock",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "darkValue": "#1b2226",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "card-stock-raised": {
+        "role": "neutral",
+        "displayName": "Raised Stock",
+        "canonical": "oklch(97.5% 0.003 228.8)",
+        "darkValue": "#222a2f",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#242526",
+          "#414243",
+          "#606162",
+          "#818383",
+          "#a3a5a6",
+          "#c7c9ca",
+          "#edeff0"
+        ]
+      },
+      "drawer-steel": {
+        "role": "secondary",
+        "displayName": "Drawer Steel",
+        "canonical": "oklch(46.4% 0.020 167.7)",
+        "darkValue": "#2b3532",
+        "tonalRamp": [
+          "#040e09",
+          "#1c2823",
+          "#384640",
+          "#57655f",
+          "#788680",
+          "#9aa9a2",
+          "#becec7",
+          "#e3f3ec"
+        ]
+      },
+      "drawer-steel-deep": {
+        "role": "secondary",
+        "displayName": "Drawer Steel Deep",
+        "canonical": "oklch(40.0% 0.018 168.4)",
+        "darkValue": "#222a27",
+        "tonalRamp": [
+          "#050e0a",
+          "#1d2823",
+          "#394540",
+          "#58655f",
+          "#798680",
+          "#9ba9a3",
+          "#bfcdc7",
+          "#e4f2ec"
+        ]
+      },
+      "on-steel": {
+        "role": "secondary",
+        "displayName": "On-Steel",
+        "canonical": "oklch(96.8% 0.002 165.1)",
+        "darkValue": "#e8edef",
+        "tonalRamp": [
+          "#0a0b0b",
+          "#242525",
+          "#414242",
+          "#606261",
+          "#818382",
+          "#a4a5a4",
+          "#c8cac9",
+          "#edefee"
+        ]
+      },
+      "on-steel-muted": {
+        "role": "secondary",
+        "displayName": "On-Steel Muted",
+        "canonical": "oklch(88.4% 0.010 164.8)",
+        "darkValue": "#b4c0bb",
+        "tonalRamp": [
+          "#070d0a",
+          "#212724",
+          "#3d4441",
+          "#5c6360",
+          "#7d8481",
+          "#9fa7a3",
+          "#c3cbc7",
+          "#e9f1ed"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Catalogue Ink",
+        "canonical": "oklch(25.1% 0.016 240.7)",
+        "darkValue": "#e8edef",
+        "tonalRamp": [
+          "#060c11",
+          "#1e262c",
+          "#3b434a",
+          "#59636a",
+          "#7a848b",
+          "#9ca7ae",
+          "#c0cbd3",
+          "#e5f0f9"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Faded Ink",
+        "canonical": "oklch(49.2% 0.021 234.9)",
+        "darkValue": "#a6b2b8",
+        "tonalRamp": [
+          "#040d13",
+          "#1b272e",
+          "#38444b",
+          "#56636b",
+          "#77858d",
+          "#99a7b0",
+          "#bdccd5",
+          "#e2f1fb"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(90.5% 0.011 234.8)",
+        "darkValue": "#2e383e",
+        "tonalRamp": [
+          "#070c0f",
+          "#20262a",
+          "#3d4347",
+          "#5b6267",
+          "#7c8488",
+          "#9fa6ab",
+          "#c3cacf",
+          "#e8f0f5"
+        ]
+      },
+      "control-edge": {
+        "role": "neutral",
+        "displayName": "Control Edge",
+        "canonical": "oklch(57.0% 0.022 231.0)",
+        "darkValue": "#7d8b92",
+        "tonalRamp": [
+          "#030d13",
+          "#1a272e",
+          "#37444c",
+          "#55646b",
+          "#76858d",
+          "#98a8b0",
+          "#bcccd5",
+          "#e1f2fb"
+        ]
+      },
+      "ruling-blue": {
+        "role": "neutral",
+        "displayName": "Ruling Blue",
+        "canonical": "oklch(90.5% 0.024 244.2)",
+        "darkValue": "#26394a",
+        "tonalRamp": [
+          "#040c15",
+          "#1b2630",
+          "#37444e",
+          "#56636e",
+          "#778490",
+          "#99a7b3",
+          "#bdcbd8",
+          "#e2f1fe"
+        ]
+      },
+      "header-rule-red": {
+        "role": "tertiary",
+        "displayName": "Header Rule Red",
+        "canonical": "oklch(57.2% 0.168 27.9)",
+        "darkValue": "#e0685d",
+        "tonalRamp": [
+          "#2d0000",
+          "#5f0000",
+          "#850000",
+          "#ac2a23",
+          "#d45045",
+          "#fd7567",
+          "#ff9a8a",
+          "#ffcfc2"
+        ]
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Ink Blue",
+        "canonical": "oklch(42.1% 0.086 249.6)",
+        "darkValue": "#8fb8e0",
+        "tonalRamp": [
+          "#00082d",
+          "#00264c",
+          "#17446d",
+          "#386490",
+          "#5986b4",
+          "#7baad9",
+          "#9eceff",
+          "#c3f4ff"
+        ],
+        "note": "Also --color-focus in light mode."
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Deep Ink Blue",
+        "canonical": "oklch(35.9% 0.072 249.4)",
+        "darkValue": "#a9c9e8",
+        "tonalRamp": [
+          "#000a28",
+          "#012646",
+          "#204467",
+          "#406489",
+          "#6086ac",
+          "#82a9d1",
+          "#a5cef7",
+          "#caf3ff"
+        ]
+      },
+      "on-primary": {
+        "role": "primary",
+        "displayName": "On Ink Blue",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "darkValue": "#0f1a24",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "stamp-red": {
+        "role": "tertiary",
+        "displayName": "Stamp Red",
+        "canonical": "oklch(50.1% 0.178 28.7)",
+        "darkValue": "#ff8f84",
+        "tonalRamp": [
+          "#2d0000",
+          "#610000",
+          "#880000",
+          "#b0221b",
+          "#d84c3f",
+          "#ff7161",
+          "#ff9784",
+          "#ffd0c0"
+        ],
+        "note": "Also --color-danger: errors, ErrorSummary, danger button."
+      },
+      "success": {
+        "role": "neutral",
+        "displayName": "Success Green",
+        "canonical": "oklch(48.3% 0.121 151.9)",
+        "darkValue": "#6fd59a",
+        "tonalRamp": [
+          "#001600",
+          "#003300",
+          "#00531d",
+          "#16743d",
+          "#41975d",
+          "#66bb7f",
+          "#8ae0a2",
+          "#b0ffc7"
+        ]
+      },
+      "focus-amber": {
+        "role": "neutral",
+        "displayName": "Signal Amber",
+        "canonical": "oklch(84.3% 0.150 79.5)",
+        "darkValue": "#ffbf47",
+        "tonalRamp": [
+          "#220000",
+          "#480f00",
+          "#6a3100",
+          "#8d5300",
+          "#b17500",
+          "#d69800",
+          "#fdbd44",
+          "#ffe68e"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Landing hero headline only (Libre Franklin via next/font)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Landing section titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card titles and index terms."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "System sans for respondent forms and all app UI; tabular numerals."
+      },
+      "typed": {
+        "displayName": "Typed",
+        "purpose": "Courier Prime typed records only: schema entries, version keys, call numbers, slips, colophon. On a 2rem ruled line."
+      },
+      "stamp": {
+        "displayName": "Stamp",
+        "purpose": "Red filing and verdict stamps only; rotated -2deg in a 1.5px border."
+      },
+      "label-holder": {
+        "displayName": "Label Holder",
+        "purpose": "Paper label slotted into a steel strip; the only other uppercase tracked text."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-rest",
+        "value": "0 1px 2px rgb(27 35 41 / 0.06), 0 8px 24px -8px rgb(27 35 41 / 0.14)",
+        "purpose": "Cards and record lists at rest, with a 1px hairline ring."
+      },
+      {
+        "name": "card-lift",
+        "value": "0 2px 4px rgb(27 35 41 / 0.08), 0 16px 32px -12px rgb(27 35 41 / 0.22)",
+        "purpose": "Only while a slip is being filed."
+      },
+      {
+        "name": "slip-edge",
+        "value": "0 -1px 0 var(--color-border), 0 -6px 12px -10px rgb(27 35 41 / 0.35)",
+        "purpose": "Slips standing in a drawer."
+      },
+      {
+        "name": "steel-sheen",
+        "value": "inset 0 1px 0 rgb(255 255 255 / 0.08)",
+        "purpose": "Drawer strips and drawer fronts."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 3px solid var(--color-focus); outline-offset: 2px",
+        "purpose": "All focusable elements; amber #ffbf47 on steel and in dark mode."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The only easing; all state transitions and filing."
+      },
+      {
+        "name": "file-in",
+        "value": "560ms: translateY(-1.25rem) + card-lift + opacity 0.35 to rest",
+        "purpose": "Signature filing: new slip drops into its version row."
+      },
+      {
+        "name": "stamp-in",
+        "value": "420ms, 280ms delay: rotate(-9deg) scale(1.8) opacity 0 to rest",
+        "purpose": "The stamp lands on the filed slip."
+      },
+      {
+        "name": "type-in",
+        "value": "520ms clip-path inset(0 100% 0 0) to none",
+        "purpose": "A newly added schema entry types in."
+      },
+      {
+        "name": "tab-lift",
+        "value": "180-220ms background, color, transform",
+        "purpose": "Guide-tab hover and selection."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none; transition: none; scroll behavior auto",
+        "purpose": "All of the above under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "52rem"
+      },
+      {
+        "name": "phone",
+        "value": "30rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single ink-blue action; 44px minimum height.",
+      "html": "<button class=\"ds-btn-primary\">File response</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;min-height:2.75rem;padding:.5rem 1rem;font:inherit;font-family:system-ui,sans-serif;font-weight:600;color:var(--color-on-primary,#fff);background:var(--color-primary,#24507a);border:2px solid transparent;border-radius:6px;cursor:pointer}.ds-btn-primary:hover{background:var(--color-primary-hover,#1b3f61)}.ds-btn-primary:active{transform:translateY(1px)}.ds-btn-primary:focus-visible{outline:3px solid var(--color-focus,#24507a);outline-offset:2px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Card-stock button with a 2px control edge.",
+      "html": "<button class=\"ds-btn-secondary\">Copy link</button>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;min-height:2.75rem;padding:.5rem 1rem;font:inherit;font-family:system-ui,sans-serif;font-weight:600;color:var(--color-text,#1b2329);background:var(--color-surface,#fff);border:2px solid var(--color-border-strong,#6b7a82);border-radius:6px;cursor:pointer}.ds-btn-secondary:hover{background:var(--color-surface-raised,#f5f7f8)}.ds-btn-secondary:focus-visible{outline:3px solid var(--color-focus,#24507a);outline-offset:2px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Labelled system-sans field; error linked by aria-describedby.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-email\">Email <span class=\"ds-req\">(required)</span></label><input class=\"ds-input\" id=\"ds-email\" aria-invalid=\"true\" aria-describedby=\"ds-email-err\"><p class=\"ds-err\" id=\"ds-email-err\">Enter an email address</p></div>",
+      "css": ".ds-field{display:grid;gap:.25rem;font-family:system-ui,sans-serif;max-width:32rem}.ds-label{font-weight:600;color:var(--color-text,#1b2329)}.ds-req{font-weight:400;color:var(--color-text-muted,#56636b)}.ds-input{padding:.5rem .75rem;font:inherit;color:var(--color-text,#1b2329);background:var(--color-surface,#fff);border:2px solid var(--color-border-strong,#6b7a82);border-radius:6px}.ds-input[aria-invalid=true]{border-color:var(--color-danger,#b3261e)}.ds-input:focus-visible{outline:3px solid var(--color-focus,#24507a);outline-offset:2px}.ds-err{margin:0;font-size:.875rem;font-weight:600;color:var(--color-danger,#b3261e)}"
+    },
+    {
+      "name": "Drawer Strip Nav",
+      "kind": "nav",
+      "refersTo": "drawer-strip",
+      "description": "Steel strip with paper label holder, links and a pull handle.",
+      "html": "<header class=\"ds-strip\"><a class=\"ds-holder\" href=\"#\">Formagen</a><nav class=\"ds-links\"><a href=\"#\">How it works</a><a href=\"#\">GitHub</a></nav><a class=\"ds-pull\" href=\"#\">Sign in</a></header>",
+      "css": ".ds-strip{display:flex;align-items:center;gap:1.5rem;padding:.75rem 2rem;background:linear-gradient(var(--color-steel,#4f5d57),var(--color-steel-deep,#3f4b46));box-shadow:inset 0 1px 0 rgb(255 255 255/.08);color:var(--color-on-steel,#f3f5f4);font-family:system-ui,sans-serif}.ds-holder{font-family:'Libre Franklin',system-ui,sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.875rem;color:#1b2329;text-decoration:none;background:#fff;padding:.35rem .9rem;border-radius:3px;box-shadow:inset 0 0 0 1px rgb(0 0 0/.12),0 0 0 3px var(--color-on-steel-muted,#d3dbd7)}.ds-links{display:flex;gap:1.5rem;margin-left:auto}.ds-links a{color:var(--color-on-steel,#f3f5f4);text-decoration:none;font-size:.875rem}.ds-links a:hover{text-decoration:underline}.ds-pull{font-size:.875rem;font-weight:600;color:var(--color-on-steel,#f3f5f4);text-decoration:none;padding:.4rem 1rem;border-radius:999px;border:1px solid var(--color-on-steel-muted,#d3dbd7);box-shadow:inset 0 -2px 0 rgb(0 0 0/.18)}.ds-pull:hover{background:rgb(255 255 255/.08)}.ds-strip a:focus-visible{outline:3px solid #ffbf47;outline-offset:2px;border-radius:2px}"
+    },
+    {
+      "name": "Index Card",
+      "kind": "card",
+      "refersTo": "index-card",
+      "description": "Card stock with red header rule, red call number and ruled typed entries.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-head\"><span class=\"ds-card-title\">Volunteer sign-up</span><span class=\"ds-callno\">v2</span></div><ol class=\"ds-entries\"><li><b>Name</b> <span>short text · required</span></li><li><b>Email</b> <span>email · required</span></li><li><b>Team size</b> <span>choice · 3 choices</span></li></ol></div>",
+      "css": ".ds-card{background:var(--color-surface,#fff);border-radius:4px;box-shadow:0 0 0 1px var(--color-border,#d9e1e6),0 1px 2px rgb(27 35 41/.06),0 8px 24px -8px rgb(27 35 41/.14);color:var(--color-text,#1b2329)}.ds-card-head{display:flex;justify-content:space-between;align-items:baseline;padding:1rem 2rem .75rem;border-bottom:2px solid var(--color-rule-red,#c8453b)}.ds-card-title{font-family:'Libre Franklin',system-ui,sans-serif;font-weight:700;font-size:1.25rem}.ds-callno{font-family:'Courier Prime',ui-monospace,monospace;font-weight:700;font-size:1.25rem;color:var(--color-stamp,#b3261e)}.ds-entries{list-style:none;margin:0;padding:1rem 2rem 3rem;font-family:'Courier Prime',ui-monospace,monospace;line-height:2rem;background-image:linear-gradient(to bottom,transparent calc(2rem - 1px),var(--color-rule,#d3e2ef) 0);background-size:100% 2rem;background-origin:content-box;background-clip:content-box}.ds-entries span{font-size:.8125rem;color:var(--color-text-muted,#56636b);float:right}"
+    },
+    {
+      "name": "Guide-Card Tabs",
+      "kind": "custom",
+      "refersTo": "guide-tab",
+      "description": "Cut-shoulder, staggered version tabs; selected raised with red inset top.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\"><b>v1</b><small>published 4 Oct 2026</small></button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\" style=\"margin-left:2rem\"><b>v2</b><small>published 5 Nov 2026</small></button></div>",
+      "css": ".ds-tabs{display:flex;align-items:flex-end;padding-left:2rem;padding-top:.5rem}.ds-tab{display:grid;justify-items:start;gap:.1rem;min-width:9.5rem;padding:.5rem 2rem .75rem;border:none;background:var(--color-surface-raised,#f5f7f8);clip-path:polygon(0 100%,.9rem 0,calc(100% - .9rem) 0,100% 100%);color:var(--color-text-muted,#56636b);font-family:system-ui,sans-serif;cursor:pointer;transition:background 180ms cubic-bezier(.16,1,.3,1),color 180ms cubic-bezier(.16,1,.3,1),transform 220ms cubic-bezier(.16,1,.3,1)}.ds-tab b{font-family:'Courier Prime',ui-monospace,monospace;font-size:1rem}.ds-tab small{font-size:.8125rem}.ds-tab:hover{color:var(--color-text,#1b2329);transform:translateY(-3px)}.ds-tab[aria-selected=true]{background:var(--color-surface,#fff);color:var(--color-text,#1b2329);transform:translateY(-4px);box-shadow:inset 0 3px 0 var(--color-rule-red,#c8453b)}.ds-tab:focus-visible{outline:none;background:var(--color-rule,#d3e2ef)}"
+    },
+    {
+      "name": "Filing Slip with Stamp",
+      "kind": "custom",
+      "refersTo": "filing-slip",
+      "description": "Slim upright response slip, typed, with a red date stamp.",
+      "html": "<ol class=\"ds-slips\"><li class=\"ds-slip\"><span class=\"ds-slip-name\">Mira Okafor</span><span class=\"ds-slip-sum\">mira@example.com · 6-20 people</span><span class=\"ds-stamp\">filed 4 Oct 2026</span></li><li class=\"ds-slip\"><span class=\"ds-slip-name\">Asha Nair</span><span class=\"ds-slip-sum\">asha@example.com · 6-20 people</span><span class=\"ds-stamp\">filed 12 Nov 2026</span></li></ol>",
+      "css": ".ds-slips{list-style:none;margin:0;padding:1rem;display:grid;background:var(--color-surface-raised,#f5f7f8)}.ds-slip{display:grid;grid-template-columns:minmax(8rem,auto) minmax(0,1fr) auto;align-items:center;gap:1rem;padding:.55rem 1rem;background:var(--color-surface,#fff);border-top:2px solid var(--color-rule-red,#c8453b);border-radius:2px 2px 0 0;box-shadow:0 -1px 0 var(--color-border,#d9e1e6),0 -6px 12px -10px rgb(27 35 41/.35);font-family:'Courier Prime',ui-monospace,monospace;color:var(--color-text,#1b2329)}.ds-slip+.ds-slip{margin-top:-.15rem}.ds-slip-name{font-weight:700;font-size:.875rem}.ds-slip-sum{font-size:.8125rem;color:var(--color-text-muted,#56636b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ds-stamp{justify-self:end;font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--color-stamp,#b3261e);border:1.5px solid currentColor;border-radius:3px;padding:0 .4rem;transform:rotate(-2deg);white-space:nowrap}.ds-slip:hover .ds-stamp{animation:ds-stamp 420ms cubic-bezier(.16,1,.3,1)}@keyframes ds-stamp{from{transform:rotate(-9deg) scale(1.8);opacity:0}}@media (prefers-reduced-motion:reduce){.ds-slip:hover .ds-stamp{animation:none}}"
+    },
+    {
+      "name": "Error Summary",
+      "kind": "custom",
+      "refersTo": "stamp",
+      "description": "Server-verdict summary above the form; takes focus, links each error to its field.",
+      "html": "<div class=\"ds-summary\" role=\"alert\" tabindex=\"-1\"><h2>There is a problem</h2><ul><li><a href=\"#ds-email\">Enter an email address</a></li></ul></div>",
+      "css": ".ds-summary{padding:1rem;border:4px solid var(--color-danger,#b3261e);border-radius:6px;background:var(--color-surface,#fff);font-family:system-ui,sans-serif;color:var(--color-text,#1b2329)}.ds-summary:focus-visible{outline:3px solid var(--color-focus,#24507a);outline-offset:2px}.ds-summary h2{margin:0 0 .5rem;font-size:1.25rem}.ds-summary ul{margin:0;padding-left:1.5rem}.ds-summary a{color:var(--color-danger,#b3261e);font-weight:600}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Card Catalogue",
+    "overview": "Formagen is a modern card catalogue. A form is a typed index card; publishing files a new card behind a version guide (v1, v2); responses are filed behind the version they answered and never mix. The material world is cool white card stock lying in a pale grey room, pale blue ruling on the card face, a single red rule across each card's header, grey-green steel drawer strips with paper label holders, and small red date stamps where something is filed or the server rules on it. It is calm, crisp and institutional: a well-run reading room in daylight, never yellowed, sepia or nostalgic.\n\nThe system is quiet by default and only becomes expressive at the moment of filing. Density is moderate: content sits on a 2rem ruling, rows are evenly spaced like index lines, and colour is held back so that the red rule, the red stamp and the ink-blue action each mean one thing. Depth comes from paper on a surface (soft ambient shadow, hairline edge), never from glossy or floating chrome.\n\nThree typographic voices carry provenance: the institution speaks in Libre Franklin signage, the builder's card is typed in Courier Prime, and the respondent's form is plain system sans. A reader should be able to tell who \"wrote\" any piece of text by its face alone.",
+    "keyCharacteristics": [
+      "Cool white card stock (card-stock) on a pale room (room); steel drawer strips frame navigation and drawers.",
+      "One red header rule per card; red stamps for filing and server verdicts; ink blue for the action.",
+      "Three voices: Libre Franklin signage, Courier Prime typed entries, system sans for forms and app UI.",
+      "Card faces ruled on a 2rem gap; typed entries sit on the lines.",
+      "Versions are guide-card tabs with cut shoulders; responses are slim upright slips filed behind them.",
+      "One signature motion: filing (slip drops in, stamp lands), off under reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The Red Is Record Rule",
+        "body": "Red appears only as the card header rule and as marks of record: filing stamps, call numbers and server verdicts. It is never a button fill for ordinary actions, a highlight, or decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Action Colour Rule",
+        "body": "Ink Blue is the only colour that means \"do this\". If two things on a screen are ink blue and filled, one of them is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ruling Carries No Text Rule",
+        "body": "Ruling Blue, Header Rule Red and Hairline are decorative; no text or control boundary may depend on them for contrast.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Voices Rule",
+        "body": "Libre Franklin is the institution (headings, label holders), Courier Prime is the builder's typed record (entries, call numbers, version keys, filed records, stamps), system sans is the respondent and the app. Never cross them: no Courier for decoration or body copy, no Franklin inside a respondent's form.",
+        "section": "typography"
+      },
+      {
+        "name": "The System Font Floor Rule",
+        "body": "The public form page (/f/[slug]) and app screens ship system fonts only; sourced faces load on the landing page via next/font and nowhere else unless performance budgets are re-measured.",
+        "section": "typography"
+      },
+      {
+        "name": "The On The Line Rule",
+        "body": "Anything typed on a card face sits on the 2rem ruling; any listing of records uses the 0.75 × rule-gap line with half-gap padding. Do not invent a third row rhythm.",
+        "section": "layout"
+      },
+      {
+        "name": "The Paper Not Plastic Rule",
+        "body": "Shadows are ambient and soft and only describe paper resting or moving. No hard offset shadows, no coloured glows as a system device, no stacked elevation tiers.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep every text pair at ≥ 4.5:1 (aim for ≥ 6:1) and every control border and focus indicator at ≥ 3:1 against its surface.",
+      "**Do** use Ink Blue (#24507a) for the single primary action and links; keep red for the header rule, stamps, call numbers and server verdicts.",
+      "**Do** frame navigation and grouped records in steel drawer strips with a paper label holder.",
+      "**Do** set typed entries on the 2rem ruling and record listings on the 0.75 × rule-gap line with rule-gap/2 padding.",
+      "**Do** show versions as staggered guide-card tabs and file responses as slips behind their version's guide.",
+      "**Do** link every error to its field with `aria-describedby` and move focus to the ErrorSummary on a failed submit.",
+      "**Do** carry the world into Operate surfaces with metaphors and tokens, not sourced fonts: the public form (/f/[slug]) is a single card-stock card on the room in system sans with the red header rule; the builder is the typed card beside the live form; the responses dashboard is a drawer with steel front, version guides and stamped rows.",
+      "**Do** keep the fewest clicks: show the next step on the surface (inline editing, direct manipulation) instead of menus, dialogs or settings pages.",
+      "**Do** honour `prefers-reduced-motion` for every motion, including filing."
+    ],
+    "donts": [
+      "**Don't** load Libre Franklin or Courier Prime on the public form or app screens; they stay system font.",
+      "**Don't** use Courier Prime as decoration or for body copy; it marks typed records only.",
+      "**Don't** nest cards inside cards; entries live on a card face, slips live in a drawer.",
+      "**Don't** use coloured side borders or side stripes; accent edges are top rules only.",
+      "**Don't** use hard offset shadows, coloured glows or glossy gradients; steel's subtle top-to-bottom gradient is the only gradient.",
+      "**Don't** let the room or card stock warm toward cream, sepia or aged paper.",
+      "**Don't** add uppercase tracked labels outside label holders and stamps (no kickers or eyebrows above headings).",
+      "**Don't** invent social proof, metrics or testimonials to fill a card."
+    ]
+  }
+}
