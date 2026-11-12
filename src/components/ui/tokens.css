@@ -1,56 +1,41 @@
 /*
- * Formagen design tokens: the card catalogue.
- * Cool white card stock in a pale room, grey-green steel drawers, blue ruling,
- * a red header rule and red date stamps. Components only use these variables.
- * Text pairs are WCAG AA (most ≥ 6:1); control borders and focus ≥ 3:1 (1.4.11).
+ * Formagen design tokens. Calm product UI, Linear as the craft bar:
+ * one typeface, quiet cool neutrals, one indigo accent, hairline borders, soft depth.
+ * Text pairs ≥ 5:1; control borders and focus ≥ 3:1 (WCAG 1.4.11). Light and dark.
  */
 :root {
   color-scheme: light dark;
 
-  /* Room, card, drawer */
-  --color-bg: #eef1f3;
+  --color-bg: #f7f8f9;
   --color-surface: #ffffff;
-  --color-surface-raised: #f5f7f8;
-  --color-steel: #4f5d57;
-  --color-steel-deep: #3f4b46;
-  --color-on-steel: #f3f5f4;
-  --color-on-steel-muted: #d3dbd7;
+  --color-surface-raised: #f1f2f4;
+  --color-text: #16171a;
+  --color-text-muted: #62666d;
+  --color-border: #e4e5e9;
+  --color-border-strong: #8b9098;
 
-  /* Ink */
-  --color-text: #1b2329;
-  --color-text-muted: #56636b;
-  --color-border: #d9e1e6;
-  --color-border-strong: #6b7a82;
-
-  /* Card ruling (decorative, never carries text contrast) */
-  --color-rule: #d3e2ef;
-  --color-rule-red: #c8453b;
-
-  /* Action and verdicts */
-  --color-primary: #24507a;
-  --color-primary-hover: #1b3f61;
+  --color-primary: #5e5ce6;
+  --color-primary-hover: #4f4dd6;
+  --color-primary-text: #5250d4;
+  --color-primary-soft: #eeeefd;
   --color-on-primary: #ffffff;
-  --color-danger: #b3261e;
-  --color-stamp: #b3261e;
-  --color-success: #11713a;
-  --color-focus: #24507a;
+  --color-danger: #c42b1c;
+  --color-on-danger: #ffffff;
+  --color-success: #1f7a4a;
+  --color-focus: #5e5ce6;
 
-  --focus-ring: 3px solid var(--color-focus);
+  --focus-ring: 2px solid var(--color-focus);
 
-  /* Type: system stacks by default; the landing page swaps in its sourced faces */
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-display: var(--font-sans);
-  --font-typed: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-sans: var(--font-inter, ui-sans-serif), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  --text-xs: 0.8125rem;
+  --text-xs: 0.75rem;
   --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.75rem;
-  --text-2xl: 2.5rem;
-  --text-display: clamp(2.25rem, 1.4rem + 3.2vw, 3.75rem);
+  --text-base: 0.9375rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2.25rem;
+  --text-display: clamp(2.5rem, 1.6rem + 3vw, 4rem);
 
-  /* One 8px rhythm; card ruling uses --rule-gap so content sits on the lines */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -60,51 +45,42 @@
   --space-8: 3rem;
   --space-10: 4rem;
   --space-12: 6rem;
-  --rule-gap: 2rem;
+  --space-16: 8rem;
 
   --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-card: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
 
-  --shadow-card: 0 1px 2px rgb(27 35 41 / 0.06), 0 8px 24px -8px rgb(27 35 41 / 0.14);
-  --shadow-lift: 0 2px 4px rgb(27 35 41 / 0.08), 0 16px 32px -12px rgb(27 35 41 / 0.22);
+  --shadow-sm: 0 1px 2px rgb(16 17 26 / 0.06);
+  --shadow-md: 0 1px 2px rgb(16 17 26 / 0.05), 0 4px 12px -2px rgb(16 17 26 / 0.08);
+  --shadow-frame: 0 0 0 1px rgb(16 17 26 / 0.04), 0 2px 4px rgb(16 17 26 / 0.04), 0 24px 48px -16px rgb(16 17 26 / 0.18);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-:root:has([data-theme="light"]) {
-  color-scheme: light;
-}
-
 @media (prefers-color-scheme: dark) {
-  /* Pages that pin themselves light (the landing page's daytime-desk scene) opt out. */
-  :root:not(:has([data-theme="light"])) {
-    --color-bg: #12171a;
-    --color-surface: #1b2226;
-    --color-surface-raised: #222a2f;
-    --color-steel: #2b3532;
-    --color-steel-deep: #222a27;
-    --color-on-steel: #e8edef;
-    --color-on-steel-muted: #b4c0bb;
+  :root {
+    --color-bg: #0e0f11;
+    --color-surface: #17181b;
+    --color-surface-raised: #1e1f23;
+    --color-text: #ededef;
+    --color-text-muted: #9a9da5;
+    --color-border: #2a2b30;
+    --color-border-strong: #6c7079;
 
-    --color-text: #e8edef;
-    --color-text-muted: #a6b2b8;
-    --color-border: #2e383e;
-    --color-border-strong: #7d8b92;
+    --color-primary: #8c8bf7;
+    --color-primary-hover: #a09ff9;
+    --color-primary-text: #a3a2ff;
+    --color-primary-soft: #23233f;
+    --color-on-primary: #0e0f11;
+    --color-danger: #ff7b72;
+    --color-on-danger: #0e0f11;
+    --color-success: #5fd393;
+    --color-focus: #8c8bf7;
 
-    --color-rule: #26394a;
-    --color-rule-red: #e0685d;
-
-    --color-primary: #8fb8e0;
-    --color-primary-hover: #a9c9e8;
-    --color-on-primary: #0f1a24;
-    --color-danger: #ff8f84;
-    --color-stamp: #ff8f84;
-    --color-success: #6fd59a;
-    --color-focus: #ffbf47;
-
-    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -8px rgb(0 0 0 / 0.6);
-    --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.45), 0 16px 32px -12px rgb(0 0 0 / 0.7);
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 12px -2px rgb(0 0 0 / 0.5);
+    --shadow-frame: 0 0 0 1px rgb(255 255 255 / 0.06), 0 24px 48px -16px rgb(0 0 0 / 0.7);
   }
 }
 

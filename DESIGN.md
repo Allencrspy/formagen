@@ -1,316 +1,325 @@
 ---
 name: Formagen
-description: Versioned forms, filed like a modern card catalogue.
+description: Build a form once. Every response stays tied to the version it answered.
 colors:
-  room: "#eef1f3"
-  card-stock: "#ffffff"
-  card-stock-raised: "#f5f7f8"
-  drawer-steel: "#4f5d57"
-  drawer-steel-deep: "#3f4b46"
-  on-steel: "#f3f5f4"
-  on-steel-muted: "#d3dbd7"
-  ink: "#1b2329"
-  ink-muted: "#56636b"
-  hairline: "#d9e1e6"
-  control-edge: "#6b7a82"
-  ruling-blue: "#d3e2ef"
-  header-rule-red: "#c8453b"
-  primary: "#24507a"
-  primary-hover: "#1b3f61"
+  primary: "#5e5ce6"
+  primary-hover: "#4f4dd6"
+  primary-text: "#5250d4"
+  primary-soft: "#eeeefd"
   on-primary: "#ffffff"
-  stamp-red: "#b3261e"
-  success: "#11713a"
-  focus-amber: "#ffbf47"
+  bg: "#f7f8f9"
+  surface: "#ffffff"
+  surface-raised: "#f1f2f4"
+  text: "#16171a"
+  text-muted: "#62666d"
+  border: "#e4e5e9"
+  border-strong: "#8b9098"
+  danger: "#c42b1c"
+  success: "#1f7a4a"
+  primary-dark: "#8c8bf7"
+  primary-hover-dark: "#a09ff9"
+  primary-text-dark: "#a3a2ff"
+  primary-soft-dark: "#23233f"
+  on-primary-dark: "#0e0f11"
+  bg-dark: "#0e0f11"
+  surface-dark: "#17181b"
+  surface-raised-dark: "#1e1f23"
+  text-dark: "#ededef"
+  text-muted-dark: "#9a9da5"
+  border-dark: "#2a2b30"
+  border-strong-dark: "#6c7079"
+  danger-dark: "#ff7b72"
+  success-dark: "#5fd393"
 typography:
   display:
-    fontFamily: "Libre Franklin, system-ui, sans-serif"
-    fontSize: "clamp(2.25rem, 1.3rem + 2.6vw, 3.4rem)"
-    fontWeight: 800
+    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(2.5rem, 1.6rem + 3vw, 4rem)"
+    fontWeight: 600
     lineHeight: 1.05
-    letterSpacing: "-0.03em"
+    letterSpacing: "-0.035em"
+    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
   headline:
-    fontFamily: "Libre Franklin, system-ui, sans-serif"
-    fontSize: "2.5rem"
-    fontWeight: 800
-    lineHeight: 1.1
-    letterSpacing: "-0.025em"
+    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "2.25rem"
+    fontWeight: 600
+    lineHeight: 1.15
+    letterSpacing: "-0.03em"
+    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
   title:
-    fontFamily: "Libre Franklin, system-ui, sans-serif"
-    fontSize: "1.25rem"
-    fontWeight: 700
-    lineHeight: 1.25
-    letterSpacing: "-0.015em"
+    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "1.5rem"
+    fontWeight: 600
+    lineHeight: 1.2
+    letterSpacing: "-0.02em"
+    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
+  title-sm:
+    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "1.125rem"
+    fontWeight: 600
+    lineHeight: 1.3
+    letterSpacing: "-0.02em"
+    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
   body:
-    fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif"
-    fontSize: "1rem"
+    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "0.9375rem"
     fontWeight: 400
-    lineHeight: 1.5
-    fontFeature: "tnum"
-  typed:
-    fontFamily: "Courier Prime, ui-monospace, SF Mono, Menlo, monospace"
-    fontSize: "1rem"
-    fontWeight: 400
-    lineHeight: "2rem"
-  stamp:
-    fontFamily: "Courier Prime, ui-monospace, SF Mono, Menlo, monospace"
-    fontSize: "0.8125rem"
-    fontWeight: 700
-    letterSpacing: "0.04em"
-  label-holder:
-    fontFamily: "Libre Franklin, system-ui, sans-serif"
+    lineHeight: 1.55
+    letterSpacing: "normal"
+    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
+  label:
+    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
     fontSize: "0.875rem"
-    fontWeight: 700
-    letterSpacing: "0.08em"
+    fontWeight: 500
+    lineHeight: 1.55
+    letterSpacing: "normal"
+    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
+  caption:
+    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 500
+    lineHeight: 1.55
+    letterSpacing: "normal"
+    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
 rounded:
-  slip: "2px"
-  label: "3px"
-  card: "4px"
-  control: "6px"
-  pull: "999px"
+  sm: "6px"
+  md: "8px"
+  lg: "12px"
+  pill: "999px"
 spacing:
-  "1": "0.25rem"
-  "2": "0.5rem"
-  "3": "0.75rem"
-  "4": "1rem"
-  "5": "1.5rem"
-  "6": "2rem"
-  "8": "3rem"
-  "10": "4rem"
-  "12": "6rem"
-  rule-gap: "2rem"
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "24px"
+  "6": "32px"
+  "8": "48px"
+  "10": "64px"
+  "12": "96px"
+  "16": "128px"
 components:
   button-primary:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.on-primary}"
-    rounded: "{rounded.control}"
-    padding: "0.5rem 1rem"
-    height: "2.75rem"
+    typography: "{typography.label}"
+    rounded: "{rounded.md}"
+    padding: "0 16px"
+    height: "38px"
   button-primary-hover:
     backgroundColor: "{colors.primary-hover}"
-  button-secondary:
-    backgroundColor: "{colors.card-stock}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
-    padding: "0.5rem 1rem"
-    height: "2.75rem"
-  button-secondary-hover:
-    backgroundColor: "{colors.card-stock-raised}"
-  button-danger:
-    backgroundColor: "{colors.stamp-red}"
     textColor: "{colors.on-primary}"
-    rounded: "{rounded.control}"
-    padding: "0.5rem 1rem"
-    height: "2.75rem"
+  button-primary-large:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.body}"
+    rounded: "{rounded.md}"
+    padding: "0 24px"
+    height: "44px"
+  button-secondary:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text}"
+    typography: "{typography.label}"
+    rounded: "{rounded.md}"
+    padding: "0 16px"
+    height: "38px"
+  button-secondary-hover:
+    backgroundColor: "{colors.surface-raised}"
+    textColor: "{colors.text}"
   input:
-    backgroundColor: "{colors.card-stock}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
-    padding: "0.5rem 0.75rem"
-  index-card:
-    backgroundColor: "{colors.card-stock}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.card}"
-  drawer-strip:
-    backgroundColor: "{colors.drawer-steel}"
-    textColor: "{colors.on-steel}"
-    padding: "0.75rem 2.5rem"
-  label-holder:
-    backgroundColor: "{colors.card-stock}"
-    textColor: "{colors.ink}"
-    typography: "{typography.label-holder}"
-    rounded: "{rounded.label}"
-    padding: "0.35rem 0.9rem"
-  guide-tab:
-    backgroundColor: "{colors.card-stock-raised}"
-    textColor: "{colors.ink-muted}"
-    padding: "0.5rem 2rem 0.75rem"
-    width: "9.5rem"
-  guide-tab-selected:
-    backgroundColor: "{colors.card-stock}"
-    textColor: "{colors.ink}"
-  filing-slip:
-    backgroundColor: "{colors.card-stock}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.slip}"
-    padding: "0.55rem 1rem"
-  stamp:
-    textColor: "{colors.stamp-red}"
-    typography: "{typography.stamp}"
-    rounded: "{rounded.label}"
-    padding: "0 0.4rem"
-  pull-handle:
-    textColor: "{colors.on-steel}"
-    rounded: "{rounded.pull}"
-    padding: "0.4rem 1rem"
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text}"
+    typography: "{typography.body}"
+    rounded: "{rounded.md}"
+    padding: "8px 12px"
+    height: "38px"
+  segmented-control:
+    backgroundColor: "{colors.surface-raised}"
+    rounded: "{rounded.md}"
+    padding: "2px"
+  segment-selected:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.primary-text}"
+    typography: "{typography.label}"
+    rounded: "{rounded.sm}"
+    padding: "4.8px 11.2px"
+  badge-new:
+    backgroundColor: "{colors.primary-soft}"
+    textColor: "{colors.primary-text}"
+    typography: "{typography.caption}"
+    rounded: "{rounded.pill}"
+    padding: "1.6px 8px"
+  badge-version:
+    backgroundColor: "{colors.surface-raised}"
+    textColor: "{colors.text}"
+    typography: "{typography.caption}"
+    rounded: "{rounded.pill}"
+    padding: "1.6px 8px"
+  badge-status:
+    textColor: "{colors.text-muted}"
+    typography: "{typography.caption}"
+    rounded: "{rounded.pill}"
+    padding: "1.6px 8px"
+  field-row:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text}"
+    rounded: "{rounded.md}"
+    padding: "12px 16px"
+  product-frame:
+    backgroundColor: "{colors.surface}"
+    rounded: "{rounded.lg}"
 ---
 
 # Design System: Formagen
 
 ## Overview
 
-**Creative North Star: "The Card Catalogue"**
+**Creative North Star: "The Quiet Instrument"**
 
-Formagen is a modern card catalogue. A form is a typed index card; publishing files a new card behind a version guide (v1, v2); responses are filed behind the version they answered and never mix. The material world is cool white card stock lying in a pale grey room, pale blue ruling on the card face, a single red rule across each card's header, grey-green steel drawer strips with paper label holders, and small red date stamps where something is filed or the server rules on it. It is calm, crisp and institutional: a well-run reading room in daylight, never yellowed, sepia or nostalgic.
+Formagen is the category standard executed impeccably, with Linear as the craft bar. It is a product UI that looks like a product UI: one typeface used with discipline, cool near-white ground, white surfaces drawn with hairline borders, soft layered depth, and a single indigo accent that means "act here" or "this one is selected". Nothing is themed. The interface earns its premium feel through precise spacing, tight display tracking, tabular numerals and restraint, not through ornament.
 
-The system is quiet by default and only becomes expressive at the moment of filing. Density is moderate: content sits on a 2rem ruling, rows are evenly spaced like index lines, and colour is held back so that the red rule, the red stamp and the ink-blue action each mean one thing. Depth comes from paper on a surface (soft ambient shadow, hairline edge), never from glossy or floating chrome.
+Density is calm-productive: compact controls (38px), small labels at weight 500, generous section rhythm on marketing surfaces (64–96px) and tighter rhythm inside the app (12–24px). Light and dark themes are both first-class and follow `prefers-color-scheme`; every token has a dark counterpart.
 
-Three typographic voices carry provenance: the institution speaks in Libre Franklin signage, the builder's card is typed in Courier Prime, and the respondent's form is plain system sans. A reader should be able to tell who "wrote" any piece of text by its face alone.
+The interaction principle comes from the product: fewest clicks, obvious use. Controls are shown where the work happens (direct manipulation, inline switching, real buttons for real actions), and the next step is always visible. Confirmed rejection: the themed "Card Catalogue" world (multiple faces, typewriter mono, stamps, steel, ruled cards, cut tabs) was rejected as cheap and incohesive. No themed costume replaces it.
 
 **Key Characteristics:**
-- Cool white card stock (card-stock) on a pale room (room); steel drawer strips frame navigation and drawers.
-- One red header rule per card; red stamps for filing and server verdicts; ink blue for the action.
-- Three voices: Libre Franklin signage, Courier Prime typed entries, system sans for forms and app UI.
-- Card faces ruled on a 2rem gap; typed entries sit on the lines.
-- Versions are guide-card tabs with cut shoulders; responses are slim upright slips filed behind them.
-- One signature motion: filing (slip drops in, stamp lands), off under reduced motion.
+- Inter only, weights 400/500/600, tabular numerals, `cv11` and `ss01` on everywhere.
+- Cool neutral ground (bg) with white surfaces; depth from hairlines plus soft shadows.
+- One indigo accent family, reserved for primary action, focus, selection and "new" markers.
+- One filled primary button per view; everything else is a quiet bordered surface button.
+- Lucide icons only, 16px, stroke 1.75.
+- Text ≥ 5:1 in both themes; control borders and focus ≥ 3:1.
 
 ## Colors
 
-A restrained institutional palette: cool neutrals and steel, one ink blue for action, and red kept for marks of record.
+Quiet cool neutrals carry the whole interface; a single indigo family is the only chroma, plus semantic danger and success.
 
 ### Primary
-- **Ink Blue** (primary): the only action colour. Primary buttons, the landing "Start building" call, links, checkbox accent, caret and (in light mode) the focus ring. Hover deepens to Deep Ink Blue (primary-hover). On white it reads at 8.4:1.
-
-### Secondary
-- **Drawer Steel** (drawer-steel → drawer-steel-deep): grey-green steel, applied as a top-to-bottom gradient from drawer-steel to drawer-steel-deep. Frames navigation (the drawer-strip nav), the front of every drawer, and the footer (drawer-steel-deep flat). Text on steel uses On-Steel (on-steel, 6.3:1 on the light end) or On-Steel Muted (on-steel-muted) for secondary marks and the label-holder ring.
-
-### Tertiary
-- **Header Rule Red** (header-rule-red): decorative only, never text. The 2px rule under a card head, the 2px top edge of index and colophon cards and of each filing slip, and the 3px inset top of the selected guide tab.
-- **Stamp Red** (stamp-red): the red of record. Filing stamps, the call number on a card head, and server verdicts (errors, ErrorSummary border, danger button share this value as `--color-danger`). 6.5:1 on white.
+- **Signal Indigo** (`primary`; dark `primary-dark`): the fill of the one primary action in a view, the focus ring, the caret, checkbox accent. White text on it reads 5.06:1 light; near-black text on the dark-theme indigo reads 6.53:1.
+- **Indigo Pressed** (`primary-hover`; dark `primary-hover-dark`): hover fill for primary buttons only.
+- **Indigo Ink** (`primary-text`; dark `primary-text-dark`): accent used as text: links, the selected segment label, the active version key, "New in v2" badge text. 6.07:1 on surface light, 7.75:1 dark.
+- **Indigo Wash** (`primary-soft`; dark `primary-soft-dark`): "new" badge background, text selection, the input focus halo, and the start frame of the new-row highlight that settles to neutral.
 
 ### Neutral
-- **Reading Room** (room): page background.
-- **Card Stock** (card-stock): card faces, slips, label holders, inputs.
-- **Raised Stock** (card-stock-raised): unselected guide tabs, drawer bodies, secondary-button hover.
-- **Catalogue Ink** (ink): all primary text (15.9:1 on white).
-- **Faded Ink** (ink-muted): help text, meta, notes (≥ 5.4:1 on every light surface).
-- **Hairline** (hairline): card edges, row dividers, pane dividers. Decorative; never the only boundary of a control.
-- **Control Edge** (control-edge): 2px borders on inputs and secondary buttons (4.4:1 on white, above the 3:1 non-text floor).
-- **Ruling Blue** (ruling-blue): the card-face ruling, index/colophon row rules, text selection. Decorative only.
-- **Success Green** (success): confirmations (6.1:1 on white).
-- **Signal Amber** (focus-amber): focus ring on steel, and the focus colour for the whole dark theme.
+- **Cool Paper** (`bg`): page ground, the editor's fields pane, the translucent sticky header base.
+- **White Surface** (`surface`): cards, product frame, inputs, secondary buttons, selected segment.
+- **Raised Grey** (`surface-raised`): segmented-control track, version badge, icon tiles, secondary-button hover.
+- **Ink** (`text`): primary text.
+- **Slate Muted** (`text-muted`): secondary text, help text, table headers, nav links. ≥ 5.15:1 on every light surface, ≥ 6.07:1 dark.
+- **Hairline** (`border`): dividers, card outlines, table rules, frame bar. Decorative only; never the sole boundary of an interactive control.
+- **Control Edge** (`border-strong`): the border of inputs and selects, and the scrollbar thumb. 3.21:1 on white light, 3.58:1 on surface dark.
 
-Dark mode (prefers-color-scheme) re-maps every token in `tokens.css`; the landing page pins itself light with `data-theme="light"` because its scene is a daytime desk. Values for dark live in the sidecar.
+### Semantic
+- **Danger** (`danger`; dark `danger-dark`): field error text, invalid-input border, error-summary border and links. 5.66:1 light, 7.04:1 dark.
+- **Success** (`success`; dark `success-dark`): defined for confirmation states; not yet used on any surface.
 
 ### Named Rules
-**The Red Is Record Rule.** Red appears only as the card header rule and as marks of record: filing stamps, call numbers and server verdicts. It is never a button fill for ordinary actions, a highlight, or decoration.
+**The One Accent Rule.** Indigo appears only on primary actions, focus, selected state and "new" markers. Status, counts and version tags stay neutral.
 
-**The One Action Colour Rule.** Ink Blue is the only colour that means "do this". If two things on a screen are ink blue and filled, one of them is wrong.
-
-**The Ruling Carries No Text Rule.** Ruling Blue, Header Rule Red and Hairline are decorative; no text or control boundary may depend on them for contrast.
+**The Contrast Floor Rule.** Text pairs hold ≥ 5:1 in both themes; control borders (3.21:1 / 3.58:1) and focus (4.76:1 on bg light / 6.53:1 on bg dark) hold ≥ 3:1. A new color earns its place by meeting these, never by adjustment to pass a check.
 
 ## Typography
 
-**Display Font:** Libre Franklin (with system-ui, sans-serif), loaded by next/font on the landing page only
-**Body Font:** system sans (system-ui, -apple-system, Segoe UI, Roboto)
-**Label/Mono Font:** Courier Prime (with ui-monospace, SF Mono, Menlo), loaded by next/font on the landing page only; other surfaces fall back to the system monospace through `--font-typed`
+**Display Font:** Inter (self-hosted via next/font, fallback ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif)
+**Body Font:** Inter
+**Label/Mono Font:** none. Inter with tabular numerals covers dates, counts and versions.
 
-**Character:** Franklin Gothic signage for the institution, a typewriter for the card, and the reader's own system face for the form. The pairing is about provenance, not decoration.
+**Character:** One family, three weights. Hierarchy comes from size, weight and tracking, never from a second face.
 
 ### Hierarchy
-- **Display** (800, clamp(2.25rem, 1.3rem + 2.6vw, 3.4rem), 1.05, -0.03em): the landing hero headline only. The closing line uses the shared `--text-display` step (clamp(2.25rem, 1.4rem + 3.2vw, 3.75rem)) at the same weight and tracking.
-- **Headline** (800, 2.5rem, -0.025em): section titles on the landing page.
-- **Title** (700–800, 1.25rem): card titles, index terms. App-wide h1 is 1.75rem/1.15 and h2 1.25rem/1.25 in the display face variable (system sans outside the landing page), tracking -0.015em, balanced wrapping.
-- **Body** (400, 1rem, 1.5, tabular numerals): forms, app UI and running text. Landing ledes run 1.125rem in Faded Ink at ≤ 40rem; prose at ≤ 38rem.
-- **Typed** (400/700, 1rem on a 2rem line): schema entries, version keys, call numbers, slip names and summaries, colophon records.
-- **Stamp** (700, 0.8125rem, uppercase, 0.04em): filing stamps only, rotated -2deg inside a 1.5px currentColor border.
-- **Label Holder** (700, 0.875rem, uppercase, 0.08em; 0.8125rem for drawer labels): the paper label slotted into a steel strip. Uppercase tracking lives only here and on stamps.
+- **Display** (600, clamp(2.5rem → 4rem), 1.05, -0.035em): the hero promise and the closing call; max ~18–22ch, two to three lines.
+- **Headline** (600, 2.25rem, 1.15, -0.03em): marketing section titles.
+- **Title** (600, 1.5rem, 1.2, -0.02em): page `h1` inside the app.
+- **Title-sm** (600, 1.125rem, 1.3, -0.02em): `h2` and error-summary titles. The hero lede uses this size at weight 400, muted, 1.5 line height.
+- **Body** (400, 0.9375rem, 1.55): running text and input values; prose max ~36–38rem.
+- **Label** (500, 0.875rem): form labels, buttons, pane titles (600), nav links (400, muted), table cells (400).
+- **Caption** (500 or 400, 0.75rem): badges, table headers, dates, counts.
 
 ### Named Rules
-**The Three Voices Rule.** Libre Franklin is the institution (headings, label holders), Courier Prime is the builder's typed record (entries, call numbers, version keys, filed records, stamps), system sans is the respondent and the app. Never cross them: no Courier for decoration or body copy, no Franklin inside a respondent's form.
+**The One Typeface Rule.** Inter only, at 400/500/600. No decorative monospace, no second family, no 700+.
 
-**The System Font Floor Rule.** The public form page (/f/[slug]) and app screens ship system fonts only; sourced faces load on the landing page via next/font and nowhere else unless performance budgets are re-measured.
+**The Tight Display Rule.** Tracking tightens as size grows: -0.035em display, -0.03em headline, -0.02em titles and wordmark, normal at body and below. Headings use `text-wrap: balance`, paragraphs `pretty`.
 
 ## Layout
 
-Content sits in a 72rem column with a fluid gutter (clamp(1rem, 4vw, 2.5rem)); app pages default to a 48rem reading column. Spacing follows one 8px-based scale (0.25rem to 6rem).
+A single centered column, max 68rem with a fluid gutter (clamp(1rem, 4vw, 2rem)); app pages use a 48rem reading column. Spacing follows a 4px-based scale (4, 8, 12, 16, 24, 32, 48, 64, 96, 128). Marketing sections breathe at 64–96px block padding with hairline dividers drawn on the content column, not the full bleed. Inside product UI, panes pad at 24px and rows at 12px × 16px.
 
-The ruling is the rhythm. Card faces are ruled every `rule-gap` (2rem), and typed entries take `line-height: rule-gap` so text sits on the lines. Index and colophon rows use a compressed ruling: line height 0.75 × rule-gap (1.5rem) with rule-gap / 2 (1rem) block padding on index rows, ruled with Ruling Blue between rows.
+Headers are sticky, translucent bars: bg at ~82–85% opacity with `saturate(1.4) blur(10–12px)` and a hairline bottom border, 56px tall on marketing.
 
-The hero is left-aligned: headline and lede share a 1.6fr / 1fr grid aligned to the baseline, actions below, then the full-width demo card. The demo card splits 5fr (typed card) / 6fr (live form) with a hairline between panes. Drawer rows are a 7rem guide column beside the slips. Section dividers are 1px hairlines inset to the content column, not the padded box edge.
-
-Breakpoints: at 52rem every two-column grid (hero, card body, drawer rows, split sections, index rows) collapses to one column and the pane divider turns horizontal; at 30rem guide tabs narrow to 7.5rem, card padding drops to 1rem and secondary nav links hide.
-
-### Named Rules
-**The On The Line Rule.** Anything typed on a card face sits on the 2rem ruling; any listing of records uses the 0.75 × rule-gap line with half-gap padding. Do not invent a third row rhythm.
+Responsive behavior: at ≤ 56rem the two-pane editor stacks to one column with the preview (what people try) first, multi-column grids drop to two or one, and horizontally scrolling tables get a right-edge fade mask as a scroll cue. At ≤ 36rem secondary nav links hide except the last, frame bars wrap, and panes pad at 16px. Tables keep cells on one line (`nowrap`); only the free-text column wraps (14–18rem).
 
 ## Elevation & Depth
 
-Paper on a desk: flat surfaces with a hairline edge and a soft ambient shadow, never glossy layers or hard offsets. Cards lift a little off the room; slips cast a faint upward shadow onto the slip in front of them; steel strips get a 1px inner highlight to read as pressed metal.
+A hybrid: hairline borders define edges, and a three-step soft shadow vocabulary gives lift. Shadows are diffuse and low-alpha; in dark mode they deepen and the frame gains a faint white hairline instead of relying on shadow.
 
 ### Shadow Vocabulary
-- **Card rest** (`box-shadow: 0 1px 2px rgb(27 35 41 / 0.06), 0 8px 24px -8px rgb(27 35 41 / 0.14)`): index cards, index and colophon lists, paired with a 1px hairline ring.
-- **Card lift** (`box-shadow: 0 2px 4px rgb(27 35 41 / 0.08), 0 16px 32px -12px rgb(27 35 41 / 0.22)`): only during motion, as a slip is being filed.
-- **Slip edge** (`box-shadow: 0 -1px 0 var(--color-border), 0 -6px 12px -10px rgb(27 35 41 / 0.35)`): slips standing in a drawer.
-- **Steel sheen** (`box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08)`): drawer strips and drawer fronts.
+- **Rest** (`0 1px 2px rgb(16 17 26 / 0.06)`; dark `0 1px 2px rgb(0 0 0 / 0.4)`): buttons, inputs, field rows, selected segment. Usually paired with a 1px border-color ring.
+- **Lift** (`0 1px 2px rgb(16 17 26 / 0.05), 0 4px 12px -2px rgb(16 17 26 / 0.08)`): defined in tokens, not yet used on any surface. Reserve it for floating layers (menus, popovers) when they arrive.
+- **Frame** (`0 0 0 1px rgb(16 17 26 / 0.04), 0 2px 4px rgb(16 17 26 / 0.04), 0 24px 48px -16px rgb(16 17 26 / 0.18)`; dark `0 0 0 1px rgb(255 255 255 / 0.06), 0 24px 48px -16px rgb(0 0 0 / 0.7)`): the one large app frame per page.
 
 ### Named Rules
-**The Paper Not Plastic Rule.** Shadows are ambient and soft and only describe paper resting or moving. No hard offset shadows, no coloured glows as a system device, no stacked elevation tiers.
+**The Hairline-First Rule.** An edge is a 1px border or inset ring first; shadow only adds lift. Primary buttons add a 1px inner top highlight (`inset 0 1px 0 rgb(255 255 255 / 0.12–0.14)`), nothing more.
 
 ## Shapes
 
-Nearly square. Cards and drawers take a 4px corner (card), slips 2px on top only, label holders and stamps 3px, controls 6px. The only round form is the pull handle (999px) on the steel strip, read as a drawer pull.
-
-Guide-card tabs have cut shoulders: a trapezoid clip (0.9rem inset at each top corner), staggered 2rem further right per version like guides in a drawer, the selected tab raised 4px with a red inset top. Card heads close with a 2px red rule; index, colophon and slip edges carry a 2px red top edge. Edges are top rules, never side stripes.
+Gently rounded throughout: 6px for small inner elements (segments, icon tiles), 8px for every control, row and button, 12px for cards, frames and summaries, full pill for badges. No cut corners, no sharp-edged containers, no decorative silhouettes.
 
 ## Components
 
 ### Buttons
-Plain, firm, filed-paper weight.
-- **Shape:** gently squared (6px), 2px border slot, minimum 2.75rem tall (44px touch target).
-- **Primary:** Ink Blue fill, white text, weight 600, 0.5rem × 1rem padding. One per view where possible; on the landing page the primary call is the larger "Start building" (3rem tall, 2rem inline padding, weight 700).
-- **Hover / Focus:** hover deepens to primary-hover; focus is a 3px solid ring in the focus colour at 2px offset; active nudges 1px down; disabled drops to 0.6 opacity.
-- **Secondary:** card stock with a 2px Control Edge border, hover to raised stock.
-- **Danger:** Stamp Red fill; reserved for destructive, server-consequential actions.
+Refined and restrained; one loud, the rest quiet.
+- **Shape:** gently curved (8px).
+- **Primary:** indigo fill, on-primary text, label type, 38px tall with 16px inline padding (44px / 24px on marketing calls). Rest shadow plus inner top highlight.
+- **Hover / Focus / Active:** hover deepens to Indigo Pressed over 120ms on the ease-out curve (`cubic-bezier(0.16, 1, 0.3, 1)`); focus is a 2px indigo outline at 2px offset; active nudges down 1px. Disabled drops to 55% opacity.
+- **Secondary:** white surface, ink text, hairline ring, rest shadow; hover to Raised Grey. Used for every non-primary action, including the nav's "Start building" when a hero primary is in view.
+- **Danger:** filled danger red with `on-danger` text (white in light, 5.66:1; near-black in dark, 7.60:1), for destructive confirmation only. Not yet used on any surface.
+- Buttons default to `type="button"` so nothing submits by accident.
+
+### Chips / Badges
+- **Style:** pill, caption type, 1.6px × 8px. Status badges are muted text with a hairline inset ring; version badges sit on Raised Grey with ink text; the "New in vN" badge is the only accented one (Indigo Wash with Indigo Ink).
 
 ### Cards / Containers
-- **Corner Style:** 4px.
-- **Background:** card stock on the room.
-- **Shadow Strategy:** Card rest plus a 1px hairline ring (see Elevation & Depth).
-- **Border:** hairline; the head or top edge carries the 2px red header rule.
-- **Internal Padding:** 1rem block / 2rem inline on card heads and panes, 3rem bottom on card faces.
-- **Call number:** version key in typed 700 Stamp Red at the right of the card head.
+- **Corner Style:** 12px for frames and summaries, 8px for rows.
+- **Background:** White Surface on Cool Paper; side panes may sit on Cool Paper inside a white frame.
+- **Shadow Strategy:** Rest for rows, Frame for the single app frame (see Elevation & Depth).
+- **Border:** hairline ring; a newly added row swaps its ring to indigo and arrives with a 4px slide over 480ms.
+- **Internal Padding:** 12–16px rows, 24px panes.
 
 ### Inputs / Fields
-- **Style:** card stock, 2px Control Edge border, 6px corner, 0.5rem × 0.75rem padding, max 32rem wide; labels 600 above, "(required)" in Faded Ink, help text 0.875rem Faded Ink.
-- **Focus:** 3px focus ring at 2px offset.
-- **Error / Disabled:** border turns Stamp Red with `aria-invalid`; the error message (600, 0.875rem, Stamp Red) and help are linked through `aria-describedby`. ErrorSummary sits above the form with a 4px Stamp Red border, takes focus when errors appear, and links each error to its field.
+- **Style:** white surface, 1px Control Edge border, 8px radius, 38px min height, 8px × 12px padding, rest shadow; max width 32rem. Labels above in label type; "(required)" in muted 400; help text muted 0.875rem.
+- **Focus:** border turns indigo with a 3px Indigo Wash halo plus 1px indigo ring. Hover darkens the border to Slate Muted.
+- **Error:** border and message in danger; message weight 500. A failed submit shows an error summary (12px radius, danger border) listing each problem as a link to its field; fields carry `aria-describedby` and `aria-invalid` via shared helpers.
+- **Select:** native `<select>` with appearance removed and a drawn Lucide up/down chevron (16px, stroke 1.75) at the right, muted color per theme.
+- **Checkbox:** native, 20px, indigo accent-color.
 
 ### Navigation
-- **Drawer strip:** steel gradient bar; left a label holder (card stock label, 3px corner, uppercase Franklin, ringed in on-steel-muted) naming the product; links in on-steel at 0.875rem, underlined on hover; right a pill pull handle with an on-steel-muted border. Focus on steel uses Signal Amber. On narrow screens secondary links hide; the label holder and pull handle stay.
-- **Footer:** flat drawer-steel-deep strip, on-steel-muted text, on-steel links.
+- **Style:** sticky translucent blur bar. Wordmark at 600 with -0.02em tracking on the left; links in label size, muted, turning ink on hover; one compact (32px) bordered surface CTA on the right. App header uses the same bar with the account area muted at label size.
 
-### Guide-Card Tabs
-Version switcher. Cut-shoulder tabs (min 9.5rem) on the top edge of the card, each holding the version key (typed 700) and its publish date (0.8125rem). Unselected: raised stock, Faded Ink, lift 3px on hover. Selected: card stock, ink, raised 4px, red inset top. Keyboard: roving tabindex with arrow keys; focus fills the tab with Ruling Blue.
+### Segmented Control (signature)
+A Raised Grey track with a hairline inset and 2px padding; segments are transparent, muted, label type. The selected segment lifts to White Surface with rest shadow and hairline, its label in Indigo Ink. Used as a `tablist` for version switching; secondary detail (dates) may hide on narrow screens.
 
-### Drawer and Filing Slips
-A drawer is a steel front (label holder plus count) over a raised-stock body. Each row pairs a guide (version key, field count) with its slips. Slips are slim upright cards: 2px red top edge, typed name, typed one-line summary truncated with an ellipsis, and a stamp at the end. Slips overlap slightly so only their top edges and stamps read.
+### Data Table
+Caption-size muted headers, label-size cells, 12px × 24px cell padding, hairline row rules, no zebra. Cells never wrap except free-text columns. Absent values render as a muted dash. A newly inserted row flashes Indigo Wash and settles to neutral over 1.6s; reduced motion removes it.
 
-### Stamp
-Red typed mark of record: uppercase 0.8125rem, 1.5px border in currentColor, 3px corner, rotated -2deg. Reads "filed 12 Nov 2026" (with "sample ·" on sample data). Used for filing and server verdicts only.
+### List Rows with Icons
+Field rows: a 28px Raised Grey icon tile (6px radius) holding a 16px Lucide icon at stroke 1.75 in muted color, a label in label type, a caption-size type line, and an optional trailing badge. Version-history rows are full-width real buttons with a hairline top rule; the active one shows its key in Indigo Ink.
 
-### Filing (signature motion)
-The one authored motion. A new slip drops 1.25rem into its row with Card lift easing to rest (560ms); its stamp lands 280ms later from rotate(-9deg) scale(1.8) (420ms). A newly added schema entry types in left to right (520ms clip). All use ease-out cubic-bezier(0.16, 1, 0.3, 1); the filed slip scrolls into view. Under `prefers-reduced-motion: reduce` all animation and transitions are removed and scrolling is instant; a polite live region announces "Response filed under v1."
+### Surfaces still to come
+The public form, builder and responses dashboard inherit this system without new primitives: the public form uses the field components, error summary and a single primary submit on Cool Paper; the builder uses field rows, the segmented control for versions and the two-pane editor/preview split; the dashboard uses the data table with version badges, secondary buttons for filter and export, and the same sticky app header.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep every text pair at ≥ 4.5:1 (aim for ≥ 6:1) and every control border and focus indicator at ≥ 3:1 against its surface.
-- **Do** use Ink Blue (#24507a) for the single primary action and links; keep red for the header rule, stamps, call numbers and server verdicts.
-- **Do** frame navigation and grouped records in steel drawer strips with a paper label holder.
-- **Do** set typed entries on the 2rem ruling and record listings on the 0.75 × rule-gap line with rule-gap/2 padding.
-- **Do** show versions as staggered guide-card tabs and file responses as slips behind their version's guide.
-- **Do** link every error to its field with `aria-describedby` and move focus to the ErrorSummary on a failed submit.
-- **Do** carry the world into Operate surfaces with metaphors and tokens, not sourced fonts: the public form (/f/[slug]) is a single card-stock card on the room in system sans with the red header rule; the builder is the typed card beside the live form; the responses dashboard is a drawer with steel front, version guides and stamped rows.
-- **Do** keep the fewest clicks: show the next step on the surface (inline editing, direct manipulation) instead of menus, dialogs or settings pages.
-- **Do** honour `prefers-reduced-motion` for every motion, including filing.
+- **Do** use Inter alone at 400, 500 and 600 with tabular numerals and `cv11`/`ss01`.
+- **Do** give each view exactly one filled indigo primary; make every other action a bordered White Surface secondary.
+- **Do** keep indigo to primary actions, focus, selected state and "new" markers.
+- **Do** use Lucide icons only, 16px in UI rows, stroke 1.75, in muted color.
+- **Do** hold text ≥ 5:1 and control borders and focus ≥ 3:1 in both themes, and ship every new token with its dark counterpart.
+- **Do** show controls where the work is: inline switching, direct manipulation, real buttons; fewest clicks, obvious use.
+- **Do** honor `prefers-reduced-motion` for every arrival and highlight animation.
 
 ### Don't:
-- **Don't** load Libre Franklin or Courier Prime on the public form or app screens; they stay system font.
-- **Don't** use Courier Prime as decoration or for body copy; it marks typed records only.
-- **Don't** nest cards inside cards; entries live on a card face, slips live in a drawer.
-- **Don't** use coloured side borders or side stripes; accent edges are top rules only.
-- **Don't** use hard offset shadows, coloured glows or glossy gradients; steel's subtle top-to-bottom gradient is the only gradient.
-- **Don't** let the room or card stock warm toward cream, sepia or aged paper.
-- **Don't** add uppercase tracked labels outside label holders and stamps (no kickers or eyebrows above headings).
-- **Don't** invent social proof, metrics or testimonials to fill a card.
+- **Don't** introduce a second typeface, decorative monospace, or weights above 600.
+- **Don't** put on a themed costume: no typewriter faces, stamps, ruled index cards, steel, or cut tabs.
+- **Don't** use the accent for status, counts or decoration; status badges stay neutral.
+- **Don't** place two filled primaries in one view.
+- **Don't** let a hairline (`border`) be the only edge of an interactive control; inputs use Control Edge.
+- **Don't** wrap table cells other than the free-text column.

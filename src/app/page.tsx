@@ -1,96 +1,99 @@
 import Link from "next/link";
-import { CatalogueDemo } from "./landing/CatalogueDemo";
-import { display, typed } from "./landing/fonts";
 import styles from "./landing/landing.module.css";
+import { ProductDemo } from "./landing/ProductDemo";
 
 const GITHUB = "https://github.com/Allencrspy/formagen";
 
 const STEPS = [
   {
     term: "Build",
-    text: "Add fields, mark what's required, show a field only when an earlier answer calls for it. The preview is the real form.",
-    meta: "one schema",
+    text: "Add fields, mark what's required, and show a field only when an earlier answer calls for it. The preview is the real form.",
   },
   {
     term: "Publish",
-    text: "Files the card as the next version. Nothing already filed changes, ever.",
-    meta: "v1, v2, …",
+    text: "Publishing saves the form as the next version. Nothing already submitted changes.",
   },
   {
     term: "Share",
-    text: "One link that works on any phone, with a screen reader, even with JavaScript turned off.",
-    meta: "/f/your-form",
+    text: "One link that works on any phone, with a screen reader, and with JavaScript turned off.",
   },
   {
     term: "Read",
-    text: "Responses grouped by the version they answered, 25 to a page, one click to CSV.",
-    meta: "filter · export",
+    text: "Every response shows the version it answered. Filter by version, page through, export to CSV.",
   },
 ];
 
-const COLOPHON = [
-  ["Framework", "Next.js 16, App Router with Cache Components"],
+const STACK = [
+  ["Framework", "Next.js 16, App Router, Cache Components"],
   ["Language", "TypeScript, strict"],
   ["Schema", "Zod, one definition shared by browser and server"],
-  ["Data", "Postgres on Neon through Drizzle ORM"],
+  ["Data", "Postgres on Neon, Drizzle ORM"],
   ["Sign-in", "Auth.js with GitHub"],
   ["Hosting", "AWS Lambda and CloudFront, deployed with SST"],
 ] as const;
 
 export default function Home() {
   return (
-    <div data-theme="light" className={`${display.variable} ${typed.variable} ${styles.root}`}>
-      <header className={styles.drawerNav}>
-        <Link href="/" className={styles.labelHolder}>
-          Formagen
-        </Link>
-        <nav aria-label="Main" className={styles.navLinks}>
-          <a href="#how">How it works</a>
-          <a href={GITHUB}>GitHub</a>
-        </nav>
-        <Link href="/app" className={styles.pull}>
-          Sign in
-        </Link>
+    <div className={styles.root}>
+      <header className={styles.nav}>
+        <div className={styles.navInner}>
+          <Link href="/" className={styles.wordmark}>
+            Formagen
+          </Link>
+          <nav aria-label="Main" className={styles.navLinks}>
+            <a href="#how">How it works</a>
+            <a href={GITHUB}>GitHub</a>
+            <Link href="/app">Sign in</Link>
+          </nav>
+          <Link href="/app" className={styles.navCta}>
+            Start building
+          </Link>
+        </div>
       </header>
 
       <main>
         <section aria-labelledby="hero-title" className={styles.hero}>
-          <div className={styles.heroCopy}>
-            <h1 id="hero-title" className={styles.headline}>
-              Build a form once. Every response stays filed against the version it answered.
-            </h1>
-            <p className={styles.lede}>
-              One definition becomes the builder preview, the public page and the server&apos;s checks. Publish a version,
-              share the link, keep improving the form: old responses keep their own fields.
-            </p>
-            <div className={styles.actions}>
-              <Link href="/app" className={styles.primaryCta}>
-                Start building
-              </Link>
-              <span className={styles.actionNote}>Sign in with GitHub. No setup.</span>
-            </div>
+          <h1 id="hero-title" className={styles.headline}>
+            Change your form any time. Every response keeps its version.
+          </h1>
+          <p className={styles.lede}>
+            Formagen turns one form definition into the editor preview, the public page and the server&apos;s checks, and
+            saves each publish as a version.
+          </p>
+          <div className={styles.actions}>
+            <Link href="/app" className={styles.primaryCta}>
+              Start building
+            </Link>
+            <a href={GITHUB} className={styles.secondaryCta}>
+              View source
+            </a>
+            <span className={styles.actionNote}>Sign in with GitHub. No setup.</span>
           </div>
-          <p className={styles.tryIt}>Try it: switch versions, fill in the form, file it.</p>
-          <CatalogueDemo />
+        </section>
+
+        <section aria-label="Live demo" className={styles.demoSection}>
+          <ProductDemo />
+          <p className={styles.demoCaption}>
+            Live demo with sample data. Switch versions, submit the form, watch the table. Nothing leaves your browser.
+          </p>
         </section>
 
         <section id="how" aria-labelledby="how-title" className={styles.section}>
           <h2 id="how-title" className={styles.sectionTitle}>
             How it works
           </h2>
-          <dl className={styles.index}>
+          <dl className={styles.steps}>
             {STEPS.map((s) => (
-              <div key={s.term} className={styles.indexRow}>
-                <dt className={styles.indexTerm}>{s.term}</dt>
-                <dd className={styles.indexText}>{s.text}</dd>
-                <dd className={styles.indexMeta}>{s.meta}</dd>
+              <div key={s.term} className={styles.step}>
+                <dt className={styles.stepTerm}>{s.term}</dt>
+                <dd className={styles.stepText}>{s.text}</dd>
               </div>
             ))}
           </dl>
         </section>
 
-        <section aria-labelledby="respondents-title" className={`${styles.section} ${styles.split}`}>
-          <h2 id="respondents-title" className={styles.sectionTitle}>
+        <section aria-labelledby="people-title" className={`${styles.section} ${styles.twoCol}`}>
+          <h2 id="people-title" className={styles.sectionTitle}>
             Built for the people filling it in
           </h2>
           <div className={styles.prose}>
@@ -106,20 +109,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section aria-labelledby="colophon-title" className={`${styles.section} ${styles.split}`}>
-          <h2 id="colophon-title" className={styles.sectionTitle}>
+        <section aria-labelledby="stack-title" className={`${styles.section} ${styles.twoCol}`}>
+          <h2 id="stack-title" className={styles.sectionTitle}>
             How it&apos;s built
           </h2>
-          <div className={styles.colophon}>
-            <dl className={styles.colophonList}>
-              {COLOPHON.map(([k, v]) => (
-                <div key={k} className={styles.colophonRow}>
+          <div>
+            <dl className={styles.stack}>
+              {STACK.map(([k, v]) => (
+                <div key={k} className={styles.stackRow}>
                   <dt>{k}</dt>
                   <dd>{v}</dd>
                 </div>
               ))}
             </dl>
-            <p className={styles.colophonFoot}>
+            <p className={styles.stackFoot}>
               Open source. <a href={GITHUB}>Read the code and design notes on GitHub</a>.
             </p>
           </div>
@@ -127,7 +130,7 @@ export default function Home() {
 
         <section aria-labelledby="close-title" className={styles.close}>
           <h2 id="close-title" className={styles.closeTitle}>
-            File your first form.
+            Publish your first form in minutes.
           </h2>
           <Link href="/app" className={styles.primaryCta}>
             Start building
@@ -136,10 +139,12 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <span>Formagen</span>
-        <span>
-          Built by Allen Binu Thomas · <a href={GITHUB}>GitHub</a>
-        </span>
+        <div className={styles.footerInner}>
+          <span>Formagen</span>
+          <span>
+            Built by Allen Binu Thomas · <a href={GITHUB}>GitHub</a>
+          </span>
+        </div>
       </footer>
     </div>
   );

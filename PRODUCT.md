@@ -33,6 +33,7 @@ Every form is a versioned, server-driven schema. Publishing freezes a version; r
 ## Brand Commitments
 - Name: **Formagen**. No logo, palette or voice exists yet; open (Allen, 2026-11-12).
 - Direction chosen by Allen for the visual pass: calm and premium.
+- **Standing preference (Allen, 2026-11-12): the category standard, executed impeccably, with Linear as the craft bar.** One typeface used with discipline across every surface, quiet neutrals, a single accent colour, precise spacing, product UI shown as product UI. Allen rejected the themed "Card Catalogue" world as cheap and incohesive (too many faces, typewriter costume, stamps): no themed costumes, no decorative mono, no mixed type families.
 
 ## Evidence on Hand
 - A live dev deployment and a public GitHub repo (github.com/Allencrspy/formagen).

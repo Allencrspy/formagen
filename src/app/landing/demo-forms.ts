@@ -30,30 +30,30 @@ const v2: FormSchema = {
   ],
 };
 
-export type DemoVersion = { key: "v1" | "v2"; schema: FormSchema; filedOn: string };
+export type DemoVersion = { key: "v1" | "v2"; schema: FormSchema; publishedOn: string };
 
 export const DEMO_VERSIONS: DemoVersion[] = [
-  { key: "v1", schema: v1, filedOn: "2026-10-02" },
-  { key: "v2", schema: v2, filedOn: "2026-11-03" },
+  { key: "v1", schema: v1, publishedOn: "2026-10-02" },
+  { key: "v2", schema: v2, publishedOn: "2026-11-03" },
 ];
 
-export type FiledResponse = {
+export type DemoResponse = {
   id: string;
   version: DemoVersion["key"];
   answers: Record<string, string | number | boolean>;
-  stamped: string;
+  submitted: string;
   sample?: boolean;
 };
 
 /** Pre-filed sample responses so the drawer isn't empty on first view. Marked as samples in the UI. */
-export const SAMPLE_RESPONSES: FiledResponse[] = [
-  { id: "s1", version: "v1", answers: { name: "Mira Okafor", email: "mira@example.com", team: "6-20" }, stamped: "2026-10-04", sample: true },
-  { id: "s2", version: "v1", answers: { name: "Dev Raman", email: "dev@example.com", team: "1-5" }, stamped: "2026-10-11", sample: true },
+export const SAMPLE_RESPONSES: DemoResponse[] = [
+  { id: "s1", version: "v1", answers: { name: "Mira Okafor", email: "mira@example.com", team: "6-20" }, submitted: "2026-10-04", sample: true },
+  { id: "s2", version: "v1", answers: { name: "Dev Raman", email: "dev@example.com", team: "1-5" }, submitted: "2026-10-11", sample: true },
   {
     id: "s3",
     version: "v2",
     answers: { name: "Lena Brandt", email: "lena@example.com", team: "21+", first: "Volunteer sign-ups for our spring fair." },
-    stamped: "2026-11-05",
+    submitted: "2026-11-05",
     sample: true,
   },
 ];
