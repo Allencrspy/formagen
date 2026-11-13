@@ -3,6 +3,7 @@ import { Suspense, type ReactNode } from "react";
 import { Button } from "@/components/ui/Button";
 import { requireUser } from "@/lib/current-user";
 import { signOutAction } from "./actions";
+import { Providers } from "./providers";
 import styles from "./layout.module.css";
 
 /**
@@ -21,9 +22,11 @@ export default function AdminLayout({ children }: LayoutProps<"/app">) {
           <Account />
         </Suspense>
       </header>
-      <main className="page">
-        <Suspense fallback={<p>Loading…</p>}>
-          <RequireUser>{children}</RequireUser>
+      <main>
+        <Suspense fallback={<p className="page">Loading…</p>}>
+          <RequireUser>
+            <Providers>{children}</Providers>
+          </RequireUser>
         </Suspense>
       </main>
     </>

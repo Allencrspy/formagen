@@ -88,6 +88,18 @@ describe("forms service", () => {
     expect((await svc.listVersions("u1", form.id)).map((v) => v.version)).toEqual([2, 1]);
   });
 
+  it("first publish takes the link from the current title; later publishes keep it", async () => {
+    const form = await svc.createForm("u1", "Untitled form");
+    await svc.updateDraft("u1", form.id, { ...contact, title: "Team offsite RSVP" });
+    await svc.publishForm("u1", form.id);
+    const slug = (await svc.getForm("u1", form.id)).slug;
+    expect(slug).toMatch(/^team-offsite-rsvp-[a-z0-9]{6}$/);
+
+    await svc.updateDraft("u1", form.id, { ...contact, title: "Renamed later" });
+    await svc.publishForm("u1", form.id);
+    expect((await svc.getForm("u1", form.id)).slug).toBe(slug);
+  });
+
   it("publish rejects a form with no fields", async () => {
     const form = await svc.createForm("u1", "Empty");
     await expect(svc.publishForm("u1", form.id)).rejects.toBeInstanceOf(ValidationError);

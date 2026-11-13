@@ -1,0 +1,332 @@
+/* ── Builder workspace: fields | preview | settings ─────────────────────── */
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(18rem, 22rem) minmax(0, 1fr) minmax(16rem, 20rem);
+  min-block-size: calc(100dvh - 7.5rem);
+  border-block-start: 1px solid var(--color-border);
+}
+
+.fieldsPane,
+.panel {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  overflow-y: auto;
+}
+
+.fieldsPane {
+  border-inline-end: 1px solid var(--color-border);
+}
+
+.panel {
+  border-inline-start: 1px solid var(--color-border);
+}
+
+.paneTitle,
+.panelTitle {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.paneSubtitle {
+  margin: var(--space-6) 0 var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0;
+}
+
+.empty {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Field list */
+.fieldList {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fieldRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm), 0 0 0 1px var(--color-border);
+}
+
+.fieldRowSelected {
+  box-shadow: var(--shadow-sm), 0 0 0 1px var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary-soft) 45%, var(--color-surface));
+}
+
+.fieldRowIssue {
+  box-shadow: var(--shadow-sm), 0 0 0 1px var(--color-danger);
+}
+
+.fieldRowDragging {
+  z-index: 2;
+  box-shadow: var(--shadow-md), 0 0 0 1px var(--color-primary);
+}
+
+.handle,
+.iconButton {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 1.75rem;
+  block-size: 1.75rem;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.handle {
+  cursor: grab;
+  touch-action: none;
+}
+
+.handle:hover,
+.iconButton:hover:not(:disabled) {
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+}
+
+.iconButton:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.fieldMain {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.fieldIcon {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 1.75rem;
+  block-size: 1.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-raised);
+  color: var(--color-text-muted);
+}
+
+.fieldText {
+  display: grid;
+  min-inline-size: 0;
+}
+
+.fieldLabel {
+  overflow: hidden;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fieldMeta {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.rowActions {
+  display: inline-flex;
+  opacity: 0.6;
+  transition: opacity 120ms var(--ease-out);
+}
+
+.fieldRow:hover .rowActions,
+.fieldRow:focus-within .rowActions,
+.fieldRowSelected .rowActions {
+  opacity: 1;
+}
+
+.rowIssues {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 0 var(--space-3) var(--space-2) 2.75rem;
+  list-style: none;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-danger);
+}
+
+/* Add-field palette */
+.addBar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: 0 0 0 1px var(--color-border);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: background 120ms var(--ease-out);
+}
+
+.addButton svg {
+  color: var(--color-text-muted);
+}
+
+.addButton:hover {
+  background: var(--color-surface-raised);
+}
+
+/* Preview */
+.previewPane {
+  padding: var(--space-6) var(--space-5);
+  background: var(--color-bg);
+  overflow-y: auto;
+}
+
+.previewCard {
+  max-inline-size: 36rem;
+  margin-inline: auto;
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-frame);
+}
+
+.previewTitle {
+  margin: 0 0 var(--space-5);
+  font-size: var(--text-xl);
+}
+
+/* Settings panel */
+.pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--space-3);
+}
+
+.fieldset {
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  border: none;
+}
+
+.legend {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.options {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+.optionRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-1);
+  align-items: center;
+}
+
+.optionInput {
+  min-block-size: 2.25rem;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-sm);
+}
+
+.optionInput:focus-visible {
+  outline: none;
+  border-color: var(--color-focus);
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
+}
+
+.textButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-primary-text);
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.textButton:hover {
+  background: var(--color-primary-soft);
+}
+
+.inlineError {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-danger);
+}
+
+/* Panels stack on narrow screens: preview first, then fields, then settings */
+@media (max-width: 64rem) {
+  .workspace {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .previewPane {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+
+  .fieldsPane {
+    border-inline-end: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 40rem) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldsPane,
+  .panel {
+    border-inline: none;
+    border-block-start: 1px solid var(--color-border);
+  }
+}

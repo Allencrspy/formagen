@@ -5,7 +5,7 @@ import { parseFormSchema } from "@/lib/schema/parse";
 import { validateSubmission, type Answers } from "@/lib/schema/submission";
 import type { FormSchema, SchemaIssue } from "@/lib/schema/types";
 import { ForbiddenError, NotFoundError, ValidationError } from "./errors";
-import { makeSlug as defaultMakeSlug } from "./slug";
+import { makeSlug as defaultMakeSlug, slugBase } from "./slug";
 
 export type FormRow = typeof forms.$inferSelect;
 export type VersionRow = typeof formVersions.$inferSelect;
@@ -114,8 +114,13 @@ export function createFormsService(db: Db, options: { makeSlug?: (title: string)
       return { ok: true };
     },
 
-    /** Freezes the current draft as the next version number, atomically. */
-    async publishForm(ownerId: string, formId: string): Promise<VersionRow> {
+    /**
+     * Freezes the current draft as the next version number, atomically.
+     * The first publish also refreshes the public link if the title changed since the form was
+     * created (forms start as "Untitled form"); after that the link never changes, so shared
+     * links keep working.
+     */
+    async publishForm(ownerId: string, formId: string): Promise<VersionRow & { slug: string }> {
       const form = await getOwned(ownerId, formId);
       const parsed = parseFormSchema(form.draftSchema);
       if (!parsed.ok) throw new ValidationError("Fix the problems in this form before publishing", parsed.issues);
@@ -126,12 +131,28 @@ export function createFormsService(db: Db, options: { makeSlug?: (title: string)
           .select({ max: sql<number | null>`max(${formVersions.version})` })
           .from(formVersions)
           .where(eq(formVersions.formId, formId));
+        const isFirst = (latest?.max ?? null) === null;
+
+        // Only when the title no longer matches the link (e.g. "untitled-form-…" -> "team-offsite-rsvp-…").
+        let slug = form.slug;
+        const titleChanged = form.slug.replace(/-[a-z0-9]{6}$/, "") !== slugBase(parsed.schema.title);
+        if (isFirst && titleChanged) {
+          for (let attempt = 0; attempt < SLUG_ATTEMPTS; attempt++) {
+            const candidate = makeSlug(parsed.schema.title);
+            const [taken] = await tx.select({ id: forms.id }).from(forms).where(eq(forms.slug, candidate));
+            if (!taken) {
+              slug = candidate;
+              break;
+            }
+          }
+        }
+
         const [version] = await tx
           .insert(formVersions)
           .values({ formId, version: (latest?.max ?? 0) + 1, schema: parsed.schema })
           .returning();
-        await tx.update(forms).set({ updatedAt: new Date() }).where(eq(forms.id, formId));
-        return version!;
+        await tx.update(forms).set({ slug, updatedAt: new Date() }).where(eq(forms.id, formId));
+        return { ...version!, slug };
       });
     },
 

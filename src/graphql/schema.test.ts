@@ -88,7 +88,8 @@ describe("GraphQL admin API", () => {
       { id: form.id },
     );
     expect(data.form).toEqual({ latestVersion: 1, versions: [{ version: 1 }] });
-    expect(onPublished).toHaveBeenCalledWith(form.slug);
+    const { form: after } = await ok<{ form: { slug: string } }>(`query($id: ID!) { form(id: $id) { slug } }`, "u1", { id: form.id });
+    expect(onPublished).toHaveBeenCalledWith(after.slug);
   });
 
   it("maps publishing an empty form to BAD_USER_INPUT", async () => {
