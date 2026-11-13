@@ -22,6 +22,7 @@ export type ResponseRow = {
 };
 
 export const PAGE_SIZE = 25;
+export const EXPORT_LIMIT = 10_000;
 const SLUG_ATTEMPTS = 3;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -219,6 +220,26 @@ export function createFormsService(db: Db, options: { makeSlug?: (title: string)
         .offset((page - 1) * PAGE_SIZE);
 
       return { items: items.map((r) => ({ ...r, answers: r.answers as Answers })), total };
+    },
+
+    /** Every response (for CSV export), newest first, optionally one version. Capped at EXPORT_LIMIT. */
+    async listAllResponses(ownerId: string, formId: string, versionId?: string): Promise<ResponseRow[]> {
+      await getOwned(ownerId, formId);
+      if (versionId !== undefined && !UUID.test(versionId)) return [];
+      const rows = await db
+        .select({
+          id: responses.id,
+          versionId: responses.versionId,
+          version: formVersions.version,
+          answers: responses.answers,
+          submittedAt: responses.submittedAt,
+        })
+        .from(responses)
+        .innerJoin(formVersions, eq(formVersions.id, responses.versionId))
+        .where(and(eq(responses.formId, formId), versionId ? eq(responses.versionId, versionId) : undefined))
+        .orderBy(desc(responses.submittedAt), desc(responses.id))
+        .limit(EXPORT_LIMIT);
+      return rows.map((r) => ({ ...r, answers: r.answers as Answers }));
     },
 
     async deleteForm(ownerId: string, formId: string): Promise<void> {

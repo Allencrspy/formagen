@@ -72,7 +72,15 @@ export function FormsList() {
                   </Link>
                 </td>
                 <td className={styles.muted}>{f.latestVersion ? `v${f.latestVersion} live` : "Draft"}</td>
-                <td>{f.responseCount}</td>
+                <td>
+                  {f.latestVersion ? (
+                    <Link href={`/app/forms/${f.id}/responses`} className={styles.formLink}>
+                      {f.responseCount}
+                    </Link>
+                  ) : (
+                    <span className={styles.muted}>—</span>
+                  )}
+                </td>
                 <td className={`${styles.muted} ${styles.hideNarrow}`}>
                   <time dateTime={f.updatedAt}>{dateFmt.format(new Date(f.updatedAt))}</time>
                 </td>

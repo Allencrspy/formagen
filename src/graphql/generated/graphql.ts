@@ -38,6 +38,15 @@ export type PublishFormMutationVariables = Exact<{
 
 export type PublishFormMutation = { publishForm: { version: number, publishedAt: string } };
 
+export type FormResponsesQueryVariables = Exact<{
+  id: string | number;
+  versionId?: string | number | null | undefined;
+  page: number;
+}>;
+
+
+export type FormResponsesQuery = { form: { id: string, title: string, slug: string, versions: Array<{ id: string, version: number, schema: unknown, publishedAt: string }>, responses: { total: number, items: Array<{ id: string, version: number, answers: unknown, submittedAt: string }> } } };
+
 export class TypedDocumentString<TResult, TVariables>
   extends String
   implements DocumentTypeDecoration<TResult, TVariables>
@@ -107,3 +116,27 @@ export const PublishFormDocument = new TypedDocumentString(`
   }
 }
     `) as unknown as TypedDocumentString<PublishFormMutation, PublishFormMutationVariables>;
+export const FormResponsesDocument = new TypedDocumentString(`
+    query FormResponses($id: ID!, $versionId: ID, $page: Int!) {
+  form(id: $id) {
+    id
+    title
+    slug
+    versions {
+      id
+      version
+      schema
+      publishedAt
+    }
+    responses(versionId: $versionId, page: $page) {
+      total
+      items {
+        id
+        version
+        answers
+        submittedAt
+      }
+    }
+  }
+}
+    `) as unknown as TypedDocumentString<FormResponsesQuery, FormResponsesQueryVariables>;

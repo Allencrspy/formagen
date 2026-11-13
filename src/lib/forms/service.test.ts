@@ -171,6 +171,24 @@ describe("forms service", () => {
     expect(page2.items.at(-1)!.answers).toEqual({ name: "R0" });
   });
 
+  it("listAllResponses returns every response (for export), newest first, optionally by version", async () => {
+    const { form, version } = await publishedForm();
+    await db.insert(responses).values(
+      Array.from({ length: 30 }, (_, i) => ({
+        formId: form.id,
+        versionId: version.id,
+        answers: { name: `R${i}` },
+        submittedAt: new Date(Date.UTC(2026, 0, 1) + i * 1000),
+      })),
+    );
+    const all = await svc.listAllResponses("u1", form.id);
+    expect(all).toHaveLength(30);
+    expect(all[0]!.answers).toEqual({ name: "R29" });
+    expect(all[0]!.version).toBe(1);
+    expect(await svc.listAllResponses("u1", form.id, "00000000-0000-0000-0000-000000000000")).toEqual([]);
+    await expect(svc.listAllResponses("u2", form.id)).rejects.toBeInstanceOf(ForbiddenError);
+  });
+
   it("lists a user's forms with latest version and response count", async () => {
     const { form } = await publishedForm();
     await svc.submitResponse(form.slug, { name: "Al" });

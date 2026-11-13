@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { ArrowLeft, Check, Copy, ExternalLink } from "lucide-react";
+import { ArrowLeft, Check, Copy, ExternalLink, Inbox } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useStore } from "zustand";
@@ -35,10 +35,31 @@ export function BuilderPage({ id }: { id: string }) {
   const form = query.data.form;
   const parsed = parseFormSchema(form.draftSchema);
   const draft: FormSchema = parsed.ok ? parsed.schema : { schemaVersion: 1, title: form.title, fields: [] };
-  return <Builder key={form.id} id={form.id} slug={form.slug} draft={draft} latestVersion={form.latestVersion ?? null} />;
+  return (
+    <Builder
+      key={form.id}
+      id={form.id}
+      slug={form.slug}
+      draft={draft}
+      latestVersion={form.latestVersion ?? null}
+      responseCount={form.responseCount}
+    />
+  );
 }
 
-function Builder({ id, slug, draft, latestVersion }: { id: string; slug: string; draft: FormSchema; latestVersion: number | null }) {
+function Builder({
+  id,
+  slug,
+  draft,
+  latestVersion,
+  responseCount,
+}: {
+  id: string;
+  slug: string;
+  draft: FormSchema;
+  latestVersion: number | null;
+  responseCount: number;
+}) {
   const queryClient = useQueryClient();
   const [store] = useState(() => createBuilderStore(draft));
   const [published, setPublished] = useState<number | null>(latestVersion);
@@ -73,6 +94,8 @@ function Builder({ id, slug, draft, latestVersion }: { id: string; slug: string;
   return (
     <>
       <TopBar
+        id={id}
+        responseCount={responseCount}
         store={store}
         status={status}
         slug={slug}
@@ -95,6 +118,8 @@ const STATUS_TEXT: Record<SaveStatus, string> = {
 };
 
 function TopBar({
+  id,
+  responseCount,
   store,
   status,
   slug,
@@ -103,6 +128,8 @@ function TopBar({
   publishError,
   onPublish,
 }: {
+  id: string;
+  responseCount: number;
   store: BuilderStore;
   status: SaveStatus;
   slug: string;
@@ -132,6 +159,12 @@ function TopBar({
         {STATUS_TEXT[status]}
       </p>
       <div className={styles.actions}>
+        {published !== null ? (
+          <Link href={`/app/forms/${id}/responses`} className={styles.responsesLink}>
+            <Inbox size={16} strokeWidth={1.75} aria-hidden="true" />
+            {responseCount} {responseCount === 1 ? "response" : "responses"}
+          </Link>
+        ) : null}
         {published !== null ? <ShareLink slug={slug} version={published} /> : null}
         <Button onClick={onPublish} disabled={publishing}>
           {publishing ? "Publishing…" : published === null ? "Publish" : "Publish new version"}
