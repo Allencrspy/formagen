@@ -1,6 +1,6 @@
 import { and, count, desc, eq, sql } from "drizzle-orm";
 import type { Db } from "@/lib/db/client";
-import { formVersions, forms, responses } from "@/lib/db/schema";
+import { formVersions, forms, responses, users } from "@/lib/db/schema";
 import { parseFormSchema } from "@/lib/schema/parse";
 import { validateSubmission, type Answers } from "@/lib/schema/submission";
 import type { FormSchema, SchemaIssue } from "@/lib/schema/types";
@@ -55,6 +55,15 @@ export function createFormsService(db: Db, options: { makeSlug?: (title: string)
   }
 
   return {
+    /** The signed-in user's public profile (for the admin UI header). */
+    async getUser(userId: string): Promise<{ id: string; email: string | null; name: string | null } | null> {
+      const [row] = await db
+        .select({ id: users.id, email: users.email, name: users.name })
+        .from(users)
+        .where(eq(users.id, userId));
+      return row ?? null;
+    },
+
     async createForm(ownerId: string, title: string): Promise<FormRow> {
       const draftSchema: FormSchema = { schemaVersion: 1, title, fields: [] };
       for (let attempt = 1; ; attempt++) {

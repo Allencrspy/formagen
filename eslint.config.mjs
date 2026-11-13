@@ -16,6 +16,7 @@ const eslintConfig = defineConfig([
     ".sst/**",
     ".open-next/**",
     "sst-env.d.ts",
+    "src/graphql/generated/**",
   ]),
 ]);
 

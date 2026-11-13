@@ -1,0 +1,76 @@
+"""ISO-8601 timestamp."""
+scalar DateTime
+
+type Form {
+  draftSchema: JSON!
+  id: ID!
+  latestVersion: Int
+  responseCount: Int!
+  responses(page: Int = 1, versionId: ID): ResponsePage!
+  slug: String!
+  title: String!
+  updatedAt: DateTime!
+  versions: [FormVersion!]!
+}
+
+"""An immutable published snapshot of a form."""
+type FormVersion {
+  id: ID!
+  publishedAt: DateTime!
+  schema: JSON!
+  version: Int!
+}
+
+"""Arbitrary JSON (form schemas and answers)."""
+scalar JSON
+
+type Mutation {
+  createForm(title: String!): Form!
+  deleteForm(id: ID!): Boolean!
+
+  """
+  Freezes the current draft as the next version and refreshes the public page.
+  """
+  publishForm(id: ID!): FormVersion!
+
+  """
+  Saves the draft if it is a valid schema; otherwise returns the problems and saves nothing.
+  """
+  updateDraft(id: ID!, schema: JSON!): UpdateDraftResult!
+}
+
+type Query {
+  form(id: ID!): Form!
+  forms: [Form!]!
+  me: User!
+}
+
+type Response {
+  answers: JSON!
+  id: ID!
+  submittedAt: DateTime!
+  version: Int!
+  versionId: ID!
+}
+
+type ResponsePage {
+  items: [Response!]!
+  total: Int!
+}
+
+"""A problem in a form schema; fieldId is null for form-level problems."""
+type SchemaIssue {
+  fieldId: String
+  message: String!
+}
+
+type UpdateDraftResult {
+  issues: [SchemaIssue!]!
+  ok: Boolean!
+}
+
+type User {
+  email: String
+  id: ID!
+  name: String
+}
