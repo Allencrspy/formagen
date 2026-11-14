@@ -24,6 +24,9 @@ export default $config({
     const githubSecret = new sst.Secret("GithubSecret");
 
     const web = new sst.aws.Nextjs("Web", {
+      // SST 4.17 pins OpenNext 3.9.14, which serves Next 16's prerendered shell without
+      // the request-time content; 4.x adds Next 16 support.
+      openNextVersion: "4.1.16",
       environment: {
         DATABASE_URL: databaseUrl.value,
         AUTH_SECRET: authSecret.value,
