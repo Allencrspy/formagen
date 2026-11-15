@@ -63,6 +63,14 @@ const FormVersion = builder.objectRef<VersionRow>("FormVersion").implement({
   }),
 });
 
+const PublishResult = builder.objectRef<VersionRow & { slug: string }>("PublishResult").implement({
+  description: "The version just published, plus the form's public slug: the first publish can change it.",
+  fields: (t) => ({
+    version: t.field({ type: FormVersion, resolve: (v) => v }),
+    slug: t.exposeString("slug"),
+  }),
+});
+
 const Response = builder.objectRef<ResponseRow>("Response").implement({
   fields: (t) => ({
     id: t.exposeID("id"),
@@ -172,7 +180,7 @@ builder.mutationFields((t) => ({
       }),
   }),
   publishForm: t.field({
-    type: FormVersion,
+    type: PublishResult,
     description: "Freezes the current draft as the next version and refreshes the public page.",
     args: { id: t.arg.id({ required: true }) },
     resolve: (_root, args, ctx) =>

@@ -36,7 +36,7 @@ export type PublishFormMutationVariables = Exact<{
 }>;
 
 
-export type PublishFormMutation = { publishForm: { version: number, publishedAt: string } };
+export type PublishFormMutation = { publishForm: { slug: string, version: { version: number, publishedAt: string } } };
 
 export type FormResponsesQueryVariables = Exact<{
   id: string | number;
@@ -111,8 +111,11 @@ export const UpdateDraftDocument = new TypedDocumentString(`
 export const PublishFormDocument = new TypedDocumentString(`
     mutation PublishForm($id: ID!) {
   publishForm(id: $id) {
-    version
-    publishedAt
+    slug
+    version {
+      version
+      publishedAt
+    }
   }
 }
     `) as unknown as TypedDocumentString<PublishFormMutation, PublishFormMutationVariables>;

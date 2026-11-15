@@ -40,7 +40,7 @@ test("build, publish, respond and see the response", async ({ page, context }) =
   await expect(pub.getByRole("alert").filter({ hasText: "Company" })).toBeVisible();
   await company.fill("Analytical Engines");
   await Promise.all([pub.waitForURL(/\/thanks$/), pub.getByRole("button", { name: "Submit" }).click()]);
-  await expect(pub.getByText("Thanks, your response was recorded.")).toBeVisible();
+  await expect(pub.getByRole("heading", { name: "Thanks, your response was recorded." })).toBeVisible();
 
   // Owner sees it.
   await page.goto(`/app/forms/${id}/responses`);

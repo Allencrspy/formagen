@@ -31,12 +31,20 @@ type Mutation {
   """
   Freezes the current draft as the next version and refreshes the public page.
   """
-  publishForm(id: ID!): FormVersion!
+  publishForm(id: ID!): PublishResult!
 
   """
   Saves the draft if it is a valid schema; otherwise returns the problems and saves nothing.
   """
   updateDraft(id: ID!, schema: JSON!): UpdateDraftResult!
+}
+
+"""
+The version just published, plus the form's public slug: the first publish can change it.
+"""
+type PublishResult {
+  slug: String!
+  version: FormVersion!
 }
 
 type Query {

@@ -49,8 +49,11 @@ export const UpdateDraftMutation = graphql(`
 export const PublishFormMutation = graphql(`
   mutation PublishForm($id: ID!) {
     publishForm(id: $id) {
-      version
-      publishedAt
+      slug
+      version {
+        version
+        publishedAt
+      }
     }
   }
 `);

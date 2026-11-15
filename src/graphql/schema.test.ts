@@ -42,7 +42,7 @@ const codeOf = (result: Awaited<ReturnType<typeof run>>) => result.errors?.[0]?.
 
 const CREATE = `mutation($title: String!) { createForm(title: $title) { id title slug latestVersion } }`;
 const UPDATE = `mutation($id: ID!, $schema: JSON!) { updateDraft(id: $id, schema: $schema) { ok issues { fieldId message } } }`;
-const PUBLISH = `mutation($id: ID!) { publishForm(id: $id) { version } }`;
+const PUBLISH = `mutation($id: ID!) { publishForm(id: $id) { slug version { version } } }`;
 
 async function createPublished(userId = "u1") {
   const { createForm } = await ok<{ createForm: { id: string; slug: string } }>(CREATE, userId, { title: "Contact" });
@@ -52,6 +52,16 @@ async function createPublished(userId = "u1") {
 }
 
 describe("GraphQL admin API", () => {
+  it("publish returns the live slug, which the first publish derives from the title", async () => {
+    const { createForm } = await ok<{ createForm: { id: string; slug: string } }>(CREATE, "u1", { title: "Untitled form" });
+    await ok(UPDATE, "u1", { id: createForm.id, schema: { ...contact, title: "Beta sign-up" } });
+    const { publishForm } = await ok<{ publishForm: { slug: string; version: { version: number } } }>(PUBLISH, "u1", { id: createForm.id });
+    expect(createForm.slug).toMatch(/^untitled-form-/);
+    expect(publishForm.slug).toMatch(/^beta-sign-up-[a-z0-9]{6}$/);
+    expect(publishForm.version.version).toBe(1);
+    expect(onPublished).toHaveBeenCalledWith(publishForm.slug);
+  });
+
   it("rejects unauthenticated access with UNAUTHENTICATED", async () => {
     expect(codeOf(await run(`{ forms { id } }`, null))).toBe("UNAUTHENTICATED");
     expect(codeOf(await run(CREATE, null, { title: "x" }))).toBe("UNAUTHENTICATED");

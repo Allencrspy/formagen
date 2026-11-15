@@ -63,6 +63,9 @@ function Builder({
   const queryClient = useQueryClient();
   const [store] = useState(() => createBuilderStore(draft));
   const [published, setPublished] = useState<number | null>(latestVersion);
+  // The first publish can change the slug (from "untitled-form-…" to the title), so the share
+  // link follows the publish result rather than waiting for a refetch and showing a dead link.
+  const [liveSlug, setLiveSlug] = useState(slug);
   const [publishError, setPublishError] = useState<string | null>(null);
 
   const { status, flush } = useAutosave({
@@ -81,9 +84,10 @@ function Builder({
       return gql(PublishFormMutation, { id });
     },
     onSuccess: ({ publishForm }) => {
-      setPublished(publishForm.version);
+      setPublished(publishForm.version.version);
+      setLiveSlug(publishForm.slug);
       void queryClient.invalidateQueries({ queryKey: ["forms"] });
-      // The first publish sets the public link from the title; refetch to show it.
+      // Keep the cached form fresh for the next visit to this builder.
       void queryClient.invalidateQueries({ queryKey: ["form", id] });
     },
     onError: (error) => setPublishError(error instanceof GqlError ? error.message : "Publishing failed. Try again."),
@@ -98,7 +102,7 @@ function Builder({
         responseCount={responseCount}
         store={store}
         status={status}
-        slug={slug}
+        slug={liveSlug}
         published={published}
         publishing={publish.isPending}
         publishError={publishError}
