@@ -50,3 +50,7 @@ next-env.d.ts
 /.impeccable/review/
 /.impeccable/mocks/
 /.impeccable/questions/
+
+# playwright
+/test-results/
+/playwright-report/
