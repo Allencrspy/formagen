@@ -186,7 +186,7 @@ builder.mutationFields((t) => ({
     resolve: (_root, args, ctx) =>
       guard(async () => {
         const version = await ctx.forms.publishForm(signedIn(ctx), String(args.id));
-        ctx.onPublished(version.slug);
+        await ctx.onPublished(version.slug);
         return version;
       }),
   }),

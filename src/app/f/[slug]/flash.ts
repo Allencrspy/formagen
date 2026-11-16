@@ -1,6 +1,6 @@
 /**
  * Post/Redirect/Get for the public form. A failed submit stores its errors and the typed
- * values in a short-lived cookie scoped to the form's path, then redirects back to the form.
+ * values in a short-lived cookie scoped to the form's path, then redirects to the retry page.
  * Works identically with and without JavaScript (Next 16 serves cached HTML for no-JS
  * action posts, so returning state from the action can't reach a browser without JS).
  * Values never go in the URL.

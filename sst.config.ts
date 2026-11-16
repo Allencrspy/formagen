@@ -33,7 +33,10 @@ export default $config({
         AUTH_GITHUB_ID: githubId.value,
         AUTH_GITHUB_SECRET: githubSecret.value,
         AUTH_TRUST_HOST: "true", // behind CloudFront, Auth.js must trust the forwarded host
+        CDN_INVALIDATION: "cloudfront", // publishing drops the form's pages from the edge cache
       },
+      // Publishing looks up this app's distribution by host and invalidates /f/<slug>*.
+      permissions: [{ actions: ["cloudfront:ListDistributions", "cloudfront:CreateInvalidation"], resources: ["*"] }],
     });
 
     return { url: web.url };

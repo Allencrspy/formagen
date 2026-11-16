@@ -5,6 +5,6 @@ export type GraphQLContext = {
   /** Signed-in user id, or null when there is no session. */
   userId: string | null;
   forms: FormsService;
-  /** Called after a publish so the public page's cached copy is refreshed (revalidateTag). */
-  onPublished: (slug: string) => void;
+  /** Called after a publish so the public page's cached copies (server and CDN) are refreshed. Awaited: Lambda freezes after the response. */
+  onPublished: (slug: string) => Promise<void> | void;
 };

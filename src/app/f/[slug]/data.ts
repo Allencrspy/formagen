@@ -9,6 +9,9 @@ export type PublishedForm = { title: string; version: number; schema: FormSchema
 /** Tag to revalidate when a form is published (used by the publish mutation). */
 export const formTag = (slug: string) => `form:${slug}`;
 
+/** The sample slug the build prerenders to validate /f/[slug]; never a real form. */
+export const STATIC_PARAMS_PLACEHOLDER = "__placeholder__";
+
 /**
  * The latest published version of a form, cached per slug.
  * Publishing a new version calls revalidateTag(formTag(slug)), so visitors see it straight away.
@@ -17,6 +20,8 @@ export async function loadPublishedForm(slug: string): Promise<PublishedForm | n
   "use cache";
   cacheTag(formTag(slug));
   cacheLife("hours");
+  // The build-time sample (and builds without a database) never touch the database.
+  if (slug === STATIC_PARAMS_PLACEHOLDER) return null;
 
   const published = await getFormsService().getPublishedForm(slug);
   if (!published) return null;

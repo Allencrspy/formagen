@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { loadPublishedForm } from "../data";
+import { loadPublishedForm, STATIC_PARAMS_PLACEHOLDER } from "../data";
 import styles from "../public.module.css";
 
-export const instant = false;
+// Same for every visitor, so cached like the form page.
+export function generateStaticParams() {
+  return [{ slug: STATIC_PARAMS_PLACEHOLDER }];
+}
 
 export default async function ThanksPage({ params }: PageProps<"/f/[slug]/thanks">) {
   const { slug } = await params;

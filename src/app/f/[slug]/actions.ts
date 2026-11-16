@@ -13,7 +13,8 @@ const limiter = createRateLimiter({ limit: 10, windowMs: 60_000 });
 /**
  * Public form submission, Post/Redirect/Get: success redirects to the thanks page;
  * failure stores errors and typed values in a short-lived flash cookie and redirects
- * back to the form. Identical with and without JavaScript.
+ * to ./retry, which shows them, so the form page itself stays cacheable at the CDN.
+ * Identical with and without JavaScript.
  */
 export async function submitForm(slug: string, formData: FormData): Promise<void> {
   const h = await headers();
@@ -48,5 +49,5 @@ export async function submitForm(slug: string, formData: FormData): Promise<void
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
   });
-  redirect(`/f/${slug}`);
+  redirect(`/f/${slug}/retry`);
 }
