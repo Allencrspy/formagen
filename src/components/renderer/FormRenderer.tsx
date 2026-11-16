@@ -13,6 +13,8 @@ type Props = {
    * Hide fields whose condition isn't met, updating as the person types.
    * Applied only after hydration: the server HTML always contains every field,
    * so the form still works with JavaScript off (the server ignores hidden answers).
+   * Fields that start hidden are wrapped in [data-awaiting-condition], which CSS hides
+   * when scripting is on, so the page doesn't shift when hydration removes them.
    */
   interactive?: boolean;
 };
@@ -27,6 +29,10 @@ export function FormRenderer({ schema, errors = {}, values = {}, interactive = f
 
   const hideHidden = interactive && hydrated;
   const visible = useMemo(() => (hideHidden ? visibleFieldIds(schema.fields, live) : null), [hideHidden, schema, live]);
+  const startsVisible = useMemo(
+    () => (interactive && !hydrated ? visibleFieldIds(schema.fields, values) : null),
+    [interactive, hydrated, schema, values],
+  );
 
   function onChange(event: ChangeEvent<HTMLDivElement>) {
     if (!interactive) return;
@@ -41,7 +47,14 @@ export function FormRenderer({ schema, errors = {}, values = {}, interactive = f
         if (visible && !visible.has(field.id)) return null;
         const Component = fieldRegistry[field.type] as ComponentType<FieldProps> | undefined;
         if (!Component) return <FallbackField key={field.id} label={field.label} />;
-        return <Component key={field.id} field={field} error={errors[field.id]} value={values[field.id]} />;
+        const control = <Component key={field.id} field={field} error={errors[field.id]} value={values[field.id]} />;
+        return startsVisible && !startsVisible.has(field.id) ? (
+          <div key={field.id} data-awaiting-condition="">
+            {control}
+          </div>
+        ) : (
+          control
+        );
       })}
     </div>
   );

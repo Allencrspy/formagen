@@ -1,0 +1,20 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 3,
+      "startServerCommand": "npx next start -p 3100",
+      "startServerReadyPattern": "Ready",
+      "settings": { "chromeFlags": "--headless=new --no-sandbox" }
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["error", { "minScore": 0.95, "aggregationMethod": "median-run" }],
+        "categories:accessibility": ["error", { "minScore": 1, "aggregationMethod": "median-run" }],
+        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.01, "aggregationMethod": "median-run" }],
+        "resource-summary:script:size": ["error", { "maxNumericValue": 150000, "aggregationMethod": "median-run" }],
+        "total-byte-weight": ["error", { "maxNumericValue": 215000, "aggregationMethod": "median-run" }]
+      }
+    },
+    "upload": { "target": "filesystem", "outputDir": ".lighthouseci/reports" }
+  }
+}

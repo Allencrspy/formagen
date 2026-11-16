@@ -79,3 +79,11 @@ button:focus-visible,
   margin: 0 auto;
   padding: var(--space-6) var(--space-4);
 }
+
+/* Conditional fields that start hidden stay in the server HTML for visitors without
+   JavaScript; with scripting on they stay out of view until the form takes over. */
+@media (scripting: enabled) {
+  [data-awaiting-condition] {
+    display: none;
+  }
+}

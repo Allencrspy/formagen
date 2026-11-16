@@ -46,6 +46,21 @@ jobs:
       # Full flow, no-JS submit and axe WCAG 2.2 AA scans; the config starts `next start`
       # with E2E_TEST_LOGIN=1 (only ever set here, never in a deployed stage).
       - run: npm run e2e
+      # Performance budgets on the public form (mobile preset, median of 3 runs); see lighthouserc.json.
+      - name: Lighthouse CI
+        run: |
+          SLUG=$(npm run seed --silent | grep -o '/f/[a-z0-9-]*')
+          npx lhci autorun --collect.url="http://localhost:3100$SLUG"
+        env:
+          DATABASE_URL: ${{ env.E2E_DATABASE_URL }}
+          AUTH_SECRET: ci-only-secret
+          AUTH_TRUST_HOST: "true"
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/reports/
+          retention-days: 14
       - uses: actions/upload-artifact@v5
         if: failure()
         with:

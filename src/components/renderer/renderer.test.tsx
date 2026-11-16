@@ -118,3 +118,23 @@ describe("FormRenderer", () => {
     expect(screen.getByLabelText(/^Company/)).toBeInTheDocument();
   });
 });
+
+describe("server HTML for interactive forms", () => {
+  it("marks fields that start hidden, so CSS can hide them before hydration without moving the page", async () => {
+    const { renderToString } = await import("react-dom/server");
+    const html = renderToString(<FormRenderer schema={conditional} interactive />);
+    // Still in the HTML for visitors without JavaScript...
+    expect(html).toContain('name="company"');
+    // ...inside the marker that `@media (scripting: enabled)` hides.
+    expect(html).toMatch(/<div data-awaiting-condition="">(?:(?!<\/div>)[\s\S])*name="company"/);
+    expect(html).not.toMatch(/<div data-awaiting-condition="">(?:(?!<\/div>)[\s\S])*name="hasCompany"/);
+  });
+
+  it("doesn't mark a conditional field whose condition the echoed values already meet", async () => {
+    const { renderToString } = await import("react-dom/server");
+    const html = renderToString(<FormRenderer schema={conditional} values={{ hasCompany: true }} interactive />);
+    expect(html).not.toMatch(/<div data-awaiting-condition="">(?:(?!<\/div>)[\s\S])*name="company"/);
+    // The chained field still waits: its trigger (Company) has no value yet.
+    expect(html).toMatch(/<div data-awaiting-condition="">(?:(?!<\/div>)[\s\S])*name="size"/);
+  });
+});
