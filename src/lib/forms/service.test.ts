@@ -1,4 +1,5 @@
 // @vitest-environment node
+import { eq } from "drizzle-orm";
 import { beforeEach, describe, expect, it } from "vitest";
 import type { Db } from "@/lib/db/client";
 import { responses, users } from "@/lib/db/schema";
@@ -199,6 +200,31 @@ describe("forms service", () => {
     expect(list).toHaveLength(2);
     expect(list.find((f) => f.id === form.id)).toMatchObject({ latestVersion: 1, responseCount: 1 });
     expect(list.find((f) => f.title === "Second")).toMatchObject({ latestVersion: null, responseCount: 0 });
+  });
+
+  it("counts each form's responses per UTC day for the last 14 days, oldest first", async () => {
+    const { form } = await publishedForm();
+    const quiet = await svc.createForm("u1", "Quiet");
+    const now = new Date("2026-11-26T10:00:00Z");
+    const at = async (iso: string) => {
+      const result = await svc.submitResponse(form.slug, { name: "Al" });
+      if (!result.ok) throw new Error("submit failed");
+      await db.update(responses).set({ submittedAt: new Date(iso) }).where(eq(responses.id, result.responseId));
+    };
+    await at("2026-11-26T09:00:00Z"); // today
+    await at("2026-11-26T00:30:00Z"); // today, just after midnight UTC
+    await at("2026-11-25T23:59:00Z"); // yesterday
+    await at("2026-11-13T12:00:00Z"); // 13 days ago: the first bucket
+    await at("2026-11-12T12:00:00Z"); // 14 days ago: outside the window
+
+    const list = await svc.listForms("u1", { now });
+    const days = list.find((f) => f.id === form.id)!.responsesByDay;
+    expect(days).toHaveLength(14);
+    expect(days[0]).toBe(1);
+    expect(days[12]).toBe(1);
+    expect(days[13]).toBe(2);
+    expect(days.reduce((a, b) => a + b, 0)).toBe(4);
+    expect(list.find((f) => f.id === quiet.id)!.responsesByDay).toEqual(Array(14).fill(0));
   });
 
   it("gives another user ForbiddenError on every owner-scoped call", async () => {

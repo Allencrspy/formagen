@@ -2,324 +2,349 @@
 name: Formagen
 description: Build a form once. Every response stays tied to the version it answered.
 colors:
-  primary: "#5e5ce6"
-  primary-hover: "#4f4dd6"
-  primary-text: "#5250d4"
-  primary-soft: "#eeeefd"
+  brand: "#5a1f4b"
+  on-brand: "#ffffff"
+  on-brand-muted: "#e5cbdd"
+  brand-line: "rgb(255 255 255 / 0.22)"
+  primary: "#5a1f4b"
+  primary-hover: "#451638"
+  primary-text: "#7a2c67"
+  primary-soft: "#f6ecf3"
   on-primary: "#ffffff"
-  bg: "#f7f8f9"
+  focus: "#7a2c67"
+  bg: "#ffffff"
   surface: "#ffffff"
-  surface-raised: "#f1f2f4"
-  text: "#16171a"
-  text-muted: "#62666d"
-  border: "#e4e5e9"
-  border-strong: "#8b9098"
-  danger: "#c42b1c"
-  success: "#1f7a4a"
-  primary-dark: "#8c8bf7"
-  primary-hover-dark: "#a09ff9"
-  primary-text-dark: "#a3a2ff"
-  primary-soft-dark: "#23233f"
-  on-primary-dark: "#0e0f11"
-  bg-dark: "#0e0f11"
-  surface-dark: "#17181b"
-  surface-raised-dark: "#1e1f23"
-  text-dark: "#ededef"
-  text-muted-dark: "#9a9da5"
-  border-dark: "#2a2b30"
-  border-strong-dark: "#6c7079"
-  danger-dark: "#ff7b72"
-  success-dark: "#5fd393"
+  surface-raised: "#f6f3f5"
+  text: "#2b282c"
+  text-muted: "#67626a"
+  border: "#ebe7ea"
+  border-strong: "#8e8890"
+  danger: "#b8261a"
+  on-danger: "#ffffff"
+  success: "#17724a"
+  live-signal: "#7ee2b0"
+  brand-dark: "#4d1a40"
+  on-brand-muted-dark: "#e2c6da"
+  primary-dark: "#e3a8d3"
+  primary-hover-dark: "#eebee0"
+  primary-text-dark: "#e8b4da"
+  primary-soft-dark: "#2c1a27"
+  on-primary-dark: "#1d0f19"
+  bg-dark: "#141214"
+  surface-raised-dark: "#1f1b1f"
+  text-dark: "#eeeaed"
+  text-muted-dark: "#aaa3a9"
+  border-dark: "#2d282d"
+  border-strong-dark: "#746c74"
+  danger-dark: "#ff8a7f"
+  success-dark: "#63d39a"
 typography:
   display:
-    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "clamp(2.5rem, 1.6rem + 3vw, 4rem)"
-    fontWeight: 600
-    lineHeight: 1.05
-    letterSpacing: "-0.035em"
-    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
-  headline:
-    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "2.25rem"
-    fontWeight: 600
-    lineHeight: 1.15
+    fontFamily: "Mona Sans, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(2.6rem, 1.4rem + 4.2vw, 4.75rem)"
+    fontWeight: 640
+    lineHeight: 1.04
     letterSpacing: "-0.03em"
-    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
+  headline:
+    fontFamily: "Mona Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "2.25rem"
+    fontWeight: 640
+    lineHeight: 1.15
+    letterSpacing: "-0.025em"
   title:
-    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontFamily: "Mona Sans, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1.5rem"
-    fontWeight: 600
+    fontWeight: 640
     lineHeight: 1.2
-    letterSpacing: "-0.02em"
-    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
+    letterSpacing: "-0.015em"
   title-sm:
-    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontFamily: "Mona Sans, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1.125rem"
-    fontWeight: 600
+    fontWeight: 640
     lineHeight: 1.3
-    letterSpacing: "-0.02em"
-    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
+    letterSpacing: "-0.015em"
   body:
-    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontFamily: "Mona Sans, ui-sans-serif, system-ui, sans-serif"
     fontSize: "0.9375rem"
-    fontWeight: 400
+    fontWeight: 420
     lineHeight: 1.55
-    letterSpacing: "normal"
-    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
-  label:
-    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+  body-sm:
+    fontFamily: "Mona Sans, ui-sans-serif, system-ui, sans-serif"
     fontSize: "0.875rem"
-    fontWeight: 500
-    lineHeight: 1.55
-    letterSpacing: "normal"
-    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
+    fontWeight: 420
+    lineHeight: 1.5
+  label:
+    fontFamily: "Mona Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.875rem"
+    fontWeight: 530
+    lineHeight: 1.4
+  label-caps:
+    fontFamily: "Mona Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.6875rem"
+    fontWeight: 530
+    lineHeight: 1.4
+    letterSpacing: "0.07em"
   caption:
-    fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontFamily: "Mona Sans, ui-sans-serif, system-ui, sans-serif"
     fontSize: "0.75rem"
-    fontWeight: 500
-    lineHeight: 1.55
-    letterSpacing: "normal"
-    fontFeature: "\"cv11\", \"ss01\", \"tnum\""
+    fontWeight: 420
+    lineHeight: 1.4
 rounded:
   sm: "6px"
   md: "8px"
   lg: "12px"
   pill: "999px"
 spacing:
-  "1": "4px"
-  "2": "8px"
-  "3": "12px"
-  "4": "16px"
-  "5": "24px"
-  "6": "32px"
-  "8": "48px"
-  "10": "64px"
-  "12": "96px"
-  "16": "128px"
+  "1": "0.25rem"
+  "2": "0.5rem"
+  "3": "0.75rem"
+  "4": "1rem"
+  "5": "1.5rem"
+  "6": "2rem"
+  "8": "3rem"
+  "10": "4rem"
+  "12": "6rem"
+  "16": "8rem"
 components:
   button-primary:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.on-primary}"
     typography: "{typography.label}"
     rounded: "{rounded.md}"
-    padding: "0 16px"
-    height: "38px"
+    padding: "0 1rem"
+    height: "40px"
   button-primary-hover:
     backgroundColor: "{colors.primary-hover}"
-    textColor: "{colors.on-primary}"
-  button-primary-large:
-    backgroundColor: "{colors.primary}"
-    textColor: "{colors.on-primary}"
-    typography: "{typography.body}"
-    rounded: "{rounded.md}"
-    padding: "0 24px"
-    height: "44px"
   button-secondary:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.text}"
     typography: "{typography.label}"
     rounded: "{rounded.md}"
-    padding: "0 16px"
-    height: "38px"
+    padding: "0 1rem"
+    height: "40px"
   button-secondary-hover:
     backgroundColor: "{colors.surface-raised}"
-    textColor: "{colors.text}"
+  button-danger:
+    backgroundColor: "{colors.danger}"
+    textColor: "{colors.on-danger}"
+    rounded: "{rounded.md}"
+    height: "40px"
+  cta-pill-on-brand:
+    backgroundColor: "{colors.on-brand}"
+    textColor: "{colors.brand}"
+    rounded: "{rounded.pill}"
+    padding: "0 2rem"
+    height: "48px"
+  cta-pill-on-white:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+    rounded: "{rounded.pill}"
+    padding: "0 2rem"
+    height: "48px"
   input:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.text}"
     typography: "{typography.body}"
     rounded: "{rounded.md}"
-    padding: "8px 12px"
-    height: "38px"
-  segmented-control:
-    backgroundColor: "{colors.surface-raised}"
-    rounded: "{rounded.md}"
-    padding: "2px"
-  segment-selected:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.primary-text}"
+    padding: "0.5rem 0.75rem"
+    height: "44px"
+  chip-filter:
+    backgroundColor: "transparent"
+    textColor: "{colors.text}"
     typography: "{typography.label}"
-    rounded: "{rounded.sm}"
-    padding: "4.8px 11.2px"
+    rounded: "{rounded.pill}"
+    padding: "0.3rem 0.875rem"
+  chip-filter-selected:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+  live-bar:
+    backgroundColor: "{colors.brand}"
+    textColor: "{colors.on-brand}"
+    typography: "{typography.body-sm}"
+    padding: "0.5rem 1.5rem"
+  brand-band:
+    backgroundColor: "{colors.brand}"
+    textColor: "{colors.on-brand}"
   badge-new:
     backgroundColor: "{colors.primary-soft}"
     textColor: "{colors.primary-text}"
     typography: "{typography.caption}"
     rounded: "{rounded.pill}"
-    padding: "1.6px 8px"
-  badge-version:
-    backgroundColor: "{colors.surface-raised}"
-    textColor: "{colors.text}"
-    typography: "{typography.caption}"
-    rounded: "{rounded.pill}"
-    padding: "1.6px 8px"
-  badge-status:
-    textColor: "{colors.text-muted}"
-    typography: "{typography.caption}"
-    rounded: "{rounded.pill}"
-    padding: "1.6px 8px"
-  field-row:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.text}"
-    rounded: "{rounded.md}"
-    padding: "12px 16px"
-  product-frame:
-    backgroundColor: "{colors.surface}"
-    rounded: "{rounded.lg}"
+    padding: "0.1rem 0.5rem"
+  sparkline:
+    width: "112px"
+    height: "28px"
 ---
 
 # Design System: Formagen
 
 ## Overview
 
-**Creative North Star: "The Quiet Instrument"**
+**Creative North Star: "The Plum Ledger"**
 
-Formagen is the category standard executed impeccably, with Linear as the craft bar. It is a product UI that looks like a product UI: one typeface used with discipline, cool near-white ground, white surfaces drawn with hairline borders, soft layered depth, and a single indigo accent that means "act here" or "this one is selected". Nothing is themed. The interface earns its premium feel through precise spacing, tight display tracking, tabular numerals and restraint, not through ornament.
+Formagen is a flat white ledger with one owned colour. Plum does not sprinkle; it fills whole regions: the landing nav and hero band, the public form's header band, the builder's live bar, the builder preview's header band and the demo's live bar. Everywhere else the page is plain white, held together by 1px solid rules and 1px dashed row dividers, with warm graphite text. Nothing floats: there are no shadows anywhere, and the old shadow tokens resolve to `none`.
 
-Density is calm-productive: compact controls (38px), small labels at weight 500, generous section rhythm on marketing surfaces (64–96px) and tighter rhythm inside the app (12–24px). Light and dark themes are both first-class and follow `prefers-color-scheme`; every token has a dark counterpart.
+The decoration is the data. A forms list carries a 14-day sparkline of real daily response counts per form; the live bar carries a green live dot and a dated strip of every published version. One typeface, Mona Sans, at in-between variable weights (420, 530, 640) keeps the UI soft rather than stark. The owner's craft bar is Groww's web app: flat, confident, one brand colour owning regions. It is a bar to meet, not a look to copy: no Groww green, no Groww type.
 
-The interaction principle comes from the product: fewest clicks, obvious use. Controls are shown where the work happens (direct manipulation, inline switching, real buttons for real actions), and the next step is always visible. Confirmed rejection: the themed "Card Catalogue" world (multiple faces, typewriter mono, stamps, steel, ruled cards, cut tabs) was rejected as cheap and incohesive. No themed costume replaces it.
+The confirmed rejection is the generic AI SaaS template this world replaced: Inter, an indigo accent, a cool grey-50 ground, soft-shadow cards.
 
 **Key Characteristics:**
-- Inter only, weights 400/500/600, tabular numerals, `cv11` and `ss01` on everywhere.
-- Cool neutral ground (bg) with white surfaces; depth from hairlines plus soft shadows.
-- One indigo accent family, reserved for primary action, focus, selection and "new" markers.
-- One filled primary button per view; everything else is a quiet bordered surface button.
-- Lucide icons only, 16px, stroke 1.75.
-- Text ≥ 5:1 in both themes; control borders and focus ≥ 3:1.
+- One brand colour, plum, filling regions edge to edge rather than tinting small accents.
+- Flat white everywhere else; depth by 1px lines, never by shadow.
+- Mona Sans only, at 420 / 530 / 640.
+- Small uppercase labels for pane titles and table headers.
+- 8px-cornered controls; pills reserved for landing CTAs and filter chips.
+- Real data (sparklines, dated versions, live state) as the ornament.
 
 ## Colors
 
-Quiet cool neutrals carry the whole interface; a single indigo family is the only chroma, plus semantic danger and success.
+A white and warm-graphite ground with a single deep plum that owns regions and doubles as the one action colour.
 
 ### Primary
-- **Signal Indigo** (`primary`; dark `primary-dark`): the fill of the one primary action in a view, the focus ring, the caret, checkbox accent. White text on it reads 5.06:1 light; near-black text on the dark-theme indigo reads 6.53:1.
-- **Indigo Pressed** (`primary-hover`; dark `primary-hover-dark`): hover fill for primary buttons only.
-- **Indigo Ink** (`primary-text`; dark `primary-text-dark`): accent used as text: links, the selected segment label, the active version key, "New in v2" badge text. 6.07:1 on surface light, 7.75:1 dark.
-- **Indigo Wash** (`primary-soft`; dark `primary-soft-dark`): "new" badge background, text selection, the input focus halo, and the start frame of the new-row highlight that settles to neutral.
+- **Deep Plum** (brand / primary): the region colour for every band and bar, and the fill of primary buttons, selected chips and the closing CTA. Plum on white measures 12.1:1. In dark mode the bands deepen (brand-dark) and the action colour flips to a light orchid (primary-dark, 9.6:1 on the dark ground) with dark plum ink on it.
+- **Plum Ink** (primary-text): the readable plum for links, active version keys, hover text and the focus ring on white.
+- **Plum Wash** (primary-soft): the faint tint behind "new" badges, text selection, the sparkline's area fill and the outer focus halo on inputs.
+- **Plum Pressed** (primary-hover): primary button and closing CTA hover.
+
+### On-brand
+- **White on Plum** (on-brand): headlines, wordmark, live badge and selected version keys inside plum regions.
+- **Tinted Plum** (on-brand-muted): secondary text inside plum regions (lede, nav links, version dates, form notes); 8.0:1 on plum.
+- **Plum Hairline** (brand-line): the 22% white border of ghost CTAs on plum and the connector rules in the version strip.
 
 ### Neutral
-- **Cool Paper** (`bg`): page ground, the editor's fields pane, the translucent sticky header base.
-- **White Surface** (`surface`): cards, product frame, inputs, secondary buttons, selected segment.
-- **Raised Grey** (`surface-raised`): segmented-control track, version badge, icon tiles, secondary-button hover.
-- **Ink** (`text`): primary text.
-- **Slate Muted** (`text-muted`): secondary text, help text, table headers, nav links. ≥ 5.15:1 on every light surface, ≥ 6.07:1 dark.
-- **Hairline** (`border`): dividers, card outlines, table rules, frame bar. Decorative only; never the sole boundary of an interactive control.
-- **Control Edge** (`border-strong`): the border of inputs and selects, and the scrollbar thumb. 3.21:1 on white light, 3.58:1 on surface dark.
+- **White** (bg, surface): the ground and every surface. They are the same value; surfaces are separated by rules, not tone.
+- **Pale Mauve Grey** (surface-raised): hover fill for secondary buttons and rows only.
+- **Warm Graphite** (text): body text, 14.6:1 on white.
+- **Muted Graphite** (text-muted): help text, metadata, labels; 5.95:1 on white, 5.4:1 on surface-raised.
+- **Hairline** (border): every structural 1px rule and the dashed row dividers.
+- **Control Edge** (border-strong): input, secondary button and chip outlines, and dashed empty-state and "add field" borders; 3.46:1 so controls meet WCAG 1.4.11.
 
-### Semantic
-- **Danger** (`danger`; dark `danger-dark`): field error text, invalid-input border, error-summary border and links. 5.66:1 light, 7.04:1 dark.
-- **Success** (`success`; dark `success-dark`): defined for confirmation states; not yet used on any surface.
+### Status
+- **Signal Red** (danger): errors, invalid inputs, destructive buttons.
+- **Ledger Green** (success): the small live dot beside a published form on white.
+- **Live Mint** (live-signal): the live dot inside a plum bar only, where success green would sink.
 
 ### Named Rules
-**The One Accent Rule.** Indigo appears only on primary actions, focus, selected state and "new" markers. Status, counts and version tags stay neutral.
+**The Region Rule.** Plum fills a whole region edge to edge (a band, a bar, a header) or a single control (primary button, selected chip). It is never a border accent, a gradient, or a tinted card.
 
-**The Contrast Floor Rule.** Text pairs hold ≥ 5:1 in both themes; control borders (3.21:1 / 3.58:1) and focus (4.76:1 on bg light / 6.53:1 on bg dark) hold ≥ 3:1. A new color earns its place by meeting these, never by adjustment to pass a check.
+**The One Ground Rule.** Background and surface are both white. Never introduce a grey page ground to make cards read; use a 1px rule instead.
+
+**The Contrast Floor Rule.** Text pairs stay at or above 5:1 and control edges and focus at or above 3:1, in both schemes.
 
 ## Typography
 
-**Display Font:** Inter (self-hosted via next/font, fallback ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif)
-**Body Font:** Inter
-**Label/Mono Font:** none. Inter with tabular numerals covers dates, counts and versions.
+**Display Font:** Mona Sans (with ui-sans-serif, system-ui fallback)
+**Body Font:** Mona Sans
+**Label Font:** Mona Sans
 
-**Character:** One family, three weights. Hierarchy comes from size, weight and tracking, never from a second face.
+**Character:** One variable grotesque at in-between weights. Headlines get weight and tight negative tracking; everything else stays at 420 or 530 so the page reads calm.
+
+Mona Sans is self-hosted through next/font as the variable `--font-mona`.
 
 ### Hierarchy
-- **Display** (600, clamp(2.5rem → 4rem), 1.05, -0.035em): the hero promise and the closing call; max ~18–22ch, two to three lines.
-- **Headline** (600, 2.25rem, 1.15, -0.03em): marketing section titles.
-- **Title** (600, 1.5rem, 1.2, -0.02em): page `h1` inside the app.
-- **Title-sm** (600, 1.125rem, 1.3, -0.02em): `h2` and error-summary titles. The hero lede uses this size at weight 400, muted, 1.5 line height.
-- **Body** (400, 0.9375rem, 1.55): running text and input values; prose max ~36–38rem.
-- **Label** (500, 0.875rem): form labels, buttons, pane titles (600), nav links (400, muted), table cells (400).
-- **Caption** (500 or 400, 0.75rem): badges, table headers, dates, counts.
+- **Display** (640, fluid 2.6rem to 4.75rem, 1.04, -0.03em): the landing hero headline only, white on plum, max ~17ch.
+- **Headline** (640, 2.25rem, 1.1 to 1.15, -0.025em): landing section titles and the closing line.
+- **Title** (640, 1.5rem, 1.2): page h1 in the app; the preview band title. The public form title runs fluid 1.625rem to 2.125rem in the same weight.
+- **Title Small** (640, 1.125rem, 1.3): h2, error summary title, builder form-name input.
+- **Body** (420, 0.9375rem, 1.55): default text. Body Small (0.875rem) for tables, fields, nav.
+- **Label** (530, 0.875rem): field labels, button text, chip text, form names in lists.
+- **Label Caps** (530, 0.6875rem, 0.07em tracking, uppercase, muted): pane titles in the builder and demo, and table column headers. These are structural headings for a pane or column, not eyebrows over a headline.
+- **Caption** (420, 0.75rem): status text, metadata, version dates, badges.
 
 ### Named Rules
-**The One Typeface Rule.** Inter only, at 400/500/600. No decorative monospace, no second family, no 700+.
+**The Three Weights Rule.** Only 420, 530 and 640. Never 400/500/600/700; the in-between weights are the identity.
 
-**The Tight Display Rule.** Tracking tightens as size grows: -0.035em display, -0.03em headline, -0.02em titles and wordmark, normal at body and below. Headings use `text-wrap: balance`, paragraphs `pretty`.
+**The Proportional Figures Rule.** Numbers render `lining-nums proportional-nums`. Do not turn on tabular figures: Mona Sans's `tnum` draws a slashed zero.
+
+**The Caps Are Furniture Rule.** Uppercase Label Caps names a pane or a column. It never sits above a headline as a kicker.
 
 ## Layout
 
-A single centered column, max 68rem with a fluid gutter (clamp(1rem, 4vw, 2rem)); app pages use a 48rem reading column. Spacing follows a 4px-based scale (4, 8, 12, 16, 24, 32, 48, 64, 96, 128). Marketing sections breathe at 64–96px block padding with hairline dividers drawn on the content column, not the full bleed. Inside product UI, panes pad at 24px and rows at 12px × 16px.
+Content columns are centred with fluid gutters (`clamp(1rem, 4vw, 2rem)`): the landing wraps at 68rem, the responses view at 72rem, the public form at 38rem, the builder preview card at 36rem, generic pages at 48rem. Spacing follows the 0.25rem-based scale in the frontmatter; section rhythm on the landing is 4rem blocks, panes pad 1.5rem.
 
-Headers are sticky, translucent bars: bg at ~82–85% opacity with `saturate(1.4) blur(10–12px)` and a hairline bottom border, 56px tall on marketing.
+The landing demo frame rises out of the plum band: it overlaps the band's bottom edge by a negative top margin so it sits half on colour, half on white. The app header is sticky, 3.5rem tall, white with a bottom rule. Landing sections are separated by a 1px rule drawn to the content column, not the box edge.
 
-Responsive behavior: at ≤ 56rem the two-pane editor stacks to one column with the preview (what people try) first, multi-column grids drop to two or one, and horizontally scrolling tables get a right-edge fade mask as a scroll cue. At ≤ 36rem secondary nav links hide except the last, frame bars wrap, and panes pad at 16px. Tables keep cells on one line (`nowrap`); only the free-text column wraps (14–18rem).
+Responsive behaviour: at 56rem the demo editor collapses to one column and the preview moves first; at 36rem secondary nav links, the sparkline caption and the share path hide. Wide tables scroll horizontally with a right-edge fade mask as the scroll cue; only free-text columns wrap.
 
 ## Elevation & Depth
 
-A hybrid: hairline borders define edges, and a three-step soft shadow vocabulary gives lift. Shadows are diffuse and low-alpha; in dark mode they deepen and the frame gains a faint white hairline instead of relying on shadow.
-
-### Shadow Vocabulary
-- **Rest** (`0 1px 2px rgb(16 17 26 / 0.06)`; dark `0 1px 2px rgb(0 0 0 / 0.4)`): buttons, inputs, field rows, selected segment. Usually paired with a 1px border-color ring.
-- **Lift** (`0 1px 2px rgb(16 17 26 / 0.05), 0 4px 12px -2px rgb(16 17 26 / 0.08)`): defined in tokens, not yet used on any surface. Reserve it for floating layers (menus, popovers) when they arrive.
-- **Frame** (`0 0 0 1px rgb(16 17 26 / 0.04), 0 2px 4px rgb(16 17 26 / 0.04), 0 24px 48px -16px rgb(16 17 26 / 0.18)`; dark `0 0 0 1px rgb(255 255 255 / 0.06), 0 24px 48px -16px rgb(0 0 0 / 0.7)`): the one large app frame per page.
+The system is flat. No surface uses a shadow; `--shadow-sm`, `--shadow-md` and `--shadow-frame` all resolve to `none`. Depth and grouping come from 1px solid rules (structure: pane edges, table header rules, frame borders, app header) and 1px dashed rules (rhythm: row dividers in tables, field lists, definition lists, the public form footer). The only `box-shadow` values in the build are focus halos (3px plum wash) and the live dot's pulse ring, which are state signals, not elevation.
 
 ### Named Rules
-**The Hairline-First Rule.** An edge is a 1px border or inset ring first; shadow only adds lift. Primary buttons add a 1px inner top highlight (`inset 0 1px 0 rgb(255 255 255 / 0.12–0.14)`), nothing more.
+**The Line, Not Lift Rule.** Separate with a 1px rule; never with a shadow or a tonal card. Solid for structure, dashed for repeated rows.
 
 ## Shapes
 
-Gently rounded throughout: 6px for small inner elements (segments, icon tiles), 8px for every control, row and button, 12px for cards, frames and summaries, full pill for badges. No cut corners, no sharp-edged containers, no decorative silhouettes.
+Gentle, consistent corners: 6px for small inline controls (icon buttons, text buttons, title input), 8px for every standard control (buttons, inputs, selects, option inputs, add-field button), 12px for containers (demo frame, preview card, empty states, error summary). Pills (999px) are reserved for the landing CTAs, the version-filter chips and the small "new" badge. The brand mark is a plum tile with 8/32 rounded corners and a white geometric F; on plum it inverts to a white tile with a plum F. Dashed outlines mark places that invite an action or hold nothing yet (empty states, "add field").
 
 ## Components
 
 ### Buttons
-Refined and restrained; one loud, the rest quiet.
-- **Shape:** gently curved (8px).
-- **Primary:** indigo fill, on-primary text, label type, 38px tall with 16px inline padding (44px / 24px on marketing calls). Rest shadow plus inner top highlight.
-- **Hover / Focus / Active:** hover deepens to Indigo Pressed over 120ms on the ease-out curve (`cubic-bezier(0.16, 1, 0.3, 1)`); focus is a 2px indigo outline at 2px offset; active nudges down 1px. Disabled drops to 55% opacity.
-- **Secondary:** white surface, ink text, hairline ring, rest shadow; hover to Raised Grey. Used for every non-primary action, including the nav's "Start building" when a hero primary is in view.
-- **Danger:** filled danger red with `on-danger` text (white in light, 5.66:1; near-black in dark, 7.60:1), for destructive confirmation only. Not yet used on any surface.
-- Buttons default to `type="button"` so nothing submits by accident.
+Quiet and solid; one fill colour.
+- **Shape:** gently rounded (8px), 40px tall, 1rem side padding, label weight 530 at 0.875rem.
+- **Primary:** plum fill, white text; hover deepens to Plum Pressed.
+- **Secondary:** white with a Control Edge 1px outline; hover fills Pale Mauve Grey.
+- **Danger:** Signal Red fill.
+- **States:** focus is a 2px Plum Ink outline offset 2px; active nudges down 1px; disabled drops to 55% opacity.
+- **Text button:** no border, Plum Ink text, 6px corners.
 
-### Chips / Badges
-- **Style:** pill, caption type, 1.6px × 8px. Status badges are muted text with a hairline inset ring; version badges sit on Raised Grey with ink text; the "New in vN" badge is the only accented one (Indigo Wash with Indigo Ink).
+### Landing CTAs (pill)
+- **On plum:** white pill, plum ink, 48px, weight 640; hover takes the Plum Wash. The ghost partner is a transparent pill with a Plum Hairline border and white text, hover 12% white.
+- **On white:** the closing CTA is a plum pill with white text.
+- Pills appear only here and in filter chips; app buttons stay 8px.
+
+### Chips (version filter)
+- **Style:** transparent pill, Control Edge outline, Label type.
+- **State:** hover turns the border plum and the text Plum Ink; the selected chip (`aria-pressed`) fills plum with white text.
 
 ### Cards / Containers
-- **Corner Style:** 12px for frames and summaries, 8px for rows.
-- **Background:** White Surface on Cool Paper; side panes may sit on Cool Paper inside a white frame.
-- **Shadow Strategy:** Rest for rows, Frame for the single app frame (see Elevation & Depth).
-- **Border:** hairline ring; a newly added row swaps its ring to indigo and arrives with a 4px slide over 480ms.
-- **Internal Padding:** 12–16px rows, 24px panes.
+- **Corner Style:** 12px.
+- **Background:** white.
+- **Shadow Strategy:** none (see Elevation & Depth).
+- **Border:** 1px Hairline; empty states use a 1px dashed Control Edge.
+- **Internal Padding:** 1.5rem to 2rem.
 
 ### Inputs / Fields
-- **Style:** white surface, 1px Control Edge border, 8px radius, 38px min height, 8px × 12px padding, rest shadow; max width 32rem. Labels above in label type; "(required)" in muted 400; help text muted 0.875rem.
-- **Focus:** border turns indigo with a 3px Indigo Wash halo plus 1px indigo ring. Hover darkens the border to Slate Muted.
-- **Error:** border and message in danger; message weight 500. A failed submit shows an error summary (12px radius, danger border) listing each problem as a link to its field; fields carry `aria-describedby` and `aria-invalid` via shared helpers.
-- **Select:** native `<select>` with appearance removed and a drawn Lucide up/down chevron (16px, stroke 1.75) at the right, muted color per theme.
-- **Checkbox:** native, 20px, indigo accent-color.
+- **Style:** white, 1px Control Edge, 8px corners, 44px minimum height, 0.5rem / 0.75rem padding. Selects carry a drawn double chevron.
+- **Hover:** border darkens to Muted Graphite.
+- **Focus:** border turns Plum Ink with a 3px Plum Wash halo plus a 1px plum ring.
+- **Error:** border and message in Signal Red; an error summary box (12px, red 1px border) links to each field.
+- Labels are Label weight above the control; help text is muted Body Small.
 
 ### Navigation
-- **Style:** sticky translucent blur bar. Wordmark at 600 with -0.02em tracking on the left; links in label size, muted, turning ink on hover; one compact (32px) bordered surface CTA on the right. App header uses the same bar with the account area muted at label size.
+- **Landing nav:** part of the plum region, 3.5rem tall; wordmark white at 640; links in Tinted Plum turning white on hover; a ghost pill "open app" link. Focus outlines turn white on plum.
+- **App header:** sticky white bar, 3.5rem, bottom Hairline, mark plus wordmark at 640, account in muted Body Small.
 
-### Segmented Control (signature)
-A Raised Grey track with a hairline inset and 2px padding; segments are transparent, muted, label type. The selected segment lifts to White Surface with rest shadow and hairline, its label in Indigo Ink. Used as a `tablist` for version switching; secondary detail (dates) may hide on narrow screens.
+### Tables
+- Header cells in Label Caps over a solid Hairline; body rows separated by dashed rules; row hover tints Pale Mauve Grey; first and last columns sit flush with the column edge. Counts align end.
 
-### Data Table
-Caption-size muted headers, label-size cells, 12px × 24px cell padding, hairline row rules, no zebra. Cells never wrap except free-text columns. Absent values render as a muted dash. A newly inserted row flashes Indigo Wash and settles to neutral over 1.6s; reduced motion removes it.
+### Live Bar (signature)
+The plum strip that states what respondents get right now. A bold "Live" badge with a mint dot (pulsing in the builder, static in the demo, stilled under reduced motion), the share path in Tinted Plum, and the version strip: every publish on one dated line, keys in white at 530, the live version at 640, joined by short Plum Hairline connectors. In the demo the strip items act as tabs, the selected one underlined in white.
 
-### List Rows with Icons
-Field rows: a 28px Raised Grey icon tile (6px radius) holding a 16px Lucide icon at stroke 1.75 in muted color, a label in label type, a caption-size type line, and an optional trailing badge. Version-history rows are full-width real buttons with a hairline top rule; the active one shows its key in Indigo Ink.
+### Sparkline (signature)
+A 112 by 28 SVG of the last 14 days of real daily response counts, oldest first. Plum 1.5px line, Plum Wash area, a 2.25px plum dot on today, over a dashed Control Edge baseline. With no responses only the dashed baseline draws; it never invents a curve. It carries a text label for assistive tech.
 
-### Surfaces still to come
-The public form, builder and responses dashboard inherit this system without new primitives: the public form uses the field components, error summary and a single primary submit on Cool Paper; the builder uses field rows, the segmented control for versions and the two-pane editor/preview split; the dashboard uses the data table with version badges, secondary buttons for filter and export, and the same sticky app header.
+### Brand Bands
+The public form header and the builder preview header are the same plum band: title in white at 640, note in Tinted Plum, the flat white form directly below.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** use Inter alone at 400, 500 and 600 with tabular numerals and `cv11`/`ss01`.
-- **Do** give each view exactly one filled indigo primary; make every other action a bordered White Surface secondary.
-- **Do** keep indigo to primary actions, focus, selected state and "new" markers.
-- **Do** use Lucide icons only, 16px in UI rows, stroke 1.75, in muted color.
-- **Do** hold text ≥ 5:1 and control borders and focus ≥ 3:1 in both themes, and ship every new token with its dark counterpart.
-- **Do** show controls where the work is: inline switching, direct manipulation, real buttons; fewest clicks, obvious use.
-- **Do** honor `prefers-reduced-motion` for every arrival and highlight animation.
+- **Do** fill whole regions with plum (bands, bars, headers) and keep everything else white.
+- **Do** separate with 1px rules: solid for structure, dashed for repeated rows.
+- **Do** use Mona Sans at 420, 530 or 640 only.
+- **Do** use Label Caps (0.6875rem, 0.07em, uppercase, muted) for pane titles and table headers.
+- **Do** keep controls at 8px corners, inputs 44px and buttons 40px tall.
+- **Do** let real data decorate: sparklines from actual counts, dated versions, live state.
+- **Do** switch focus outlines to white inside plum regions.
 
 ### Don't:
-- **Don't** introduce a second typeface, decorative monospace, or weights above 600.
-- **Don't** put on a themed costume: no typewriter faces, stamps, ruled index cards, steel, or cut tabs.
-- **Don't** use the accent for status, counts or decoration; status badges stay neutral.
-- **Don't** place two filled primaries in one view.
-- **Don't** let a hairline (`border`) be the only edge of an interactive control; inputs use Control Edge.
-- **Don't** wrap table cells other than the free-text column.
+- **Don't** add shadows to any surface; the shadow tokens are `none` on purpose.
+- **Don't** use a grey page ground, tinted cards or gradients.
+- **Don't** introduce a second accent hue; green appears only as the small live dot.
+- **Don't** use tabular figures (`tnum`); Mona Sans draws a slashed zero.
+- **Don't** put an uppercase kicker or eyebrow above a headline.
+- **Don't** use pills for app buttons; pills belong to landing CTAs, filter chips and the "new" badge.
+- **Don't** draw a sparkline from placeholder data; empty is a dashed baseline.
+- **Don't** return to Inter, indigo, cool grey-50 grounds or soft-shadow cards.
+- **Don't** copy Groww's green or typeface; Groww is a craft bar, not a palette.

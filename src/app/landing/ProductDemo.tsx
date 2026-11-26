@@ -4,9 +4,10 @@ import { AlignLeft, Calendar, CheckSquare, ChevronsUpDown, Hash, Mail, Type, typ
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import { FormRenderer } from "@/components/renderer/FormRenderer";
 import { Button } from "@/components/ui/Button";
+import { Sparkline } from "@/components/ui/Sparkline";
 import { formDataToAnswers, validateSubmission } from "@/lib/schema/submission";
 import type { Field } from "@/lib/schema/types";
-import { DEMO_VERSIONS, SAMPLE_RESPONSES, type DemoResponse, type DemoVersion } from "./demo-forms";
+import { DEMO_VERSIONS, SAMPLE_ACTIVITY, SAMPLE_RESPONSES, type DemoResponse, type DemoVersion } from "./demo-forms";
 import styles from "./landing.module.css";
 
 const dateFmt = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" });
@@ -107,7 +108,14 @@ export function ProductDemo() {
           </span>
           {version.schema.title}
         </span>
-        <div role="tablist" aria-label="Form version" className={styles.segmented}>
+      </div>
+      <div className={styles.liveBar} role="group" aria-label="Live form (sample)">
+        <span className={styles.liveBadge}>
+          <span className={styles.liveDot} aria-hidden="true" />
+          {LATEST.key} live
+        </span>
+        <span className={styles.livePath}>/f/early-access-sample</span>
+        <div role="tablist" aria-label="Form version" className={styles.strip}>
           {DEMO_VERSIONS.map((v) => (
             <button
               key={v.key}
@@ -119,16 +127,14 @@ export function ProductDemo() {
               aria-selected={v.key === active}
               aria-controls="demo-editor"
               tabIndex={v.key === active ? 0 : -1}
-              className={styles.segment}
+              className={styles.stripItem}
               onClick={() => select(v.key)}
               onKeyDown={onSegKeyDown}
             >
-              {v.key}
-              <span className={styles.segmentDate}>{formatDate(v.publishedOn)}</span>
+              <span className={styles.stripKey}>{v.key}</span> {formatDate(v.publishedOn)}
             </button>
           ))}
         </div>
-        <span className={styles.badge}>{active === LATEST.key ? "Live" : "Earlier version"}</span>
       </div>
 
       <div id="demo-editor" role="tabpanel" aria-labelledby={`version-${active}`} className={styles.editor}>
@@ -188,6 +194,10 @@ export function ProductDemo() {
             Responses
           </h3>
           <span className={styles.responsesCount}>{responses.length}</span>
+          <span className={styles.responsesSpark}>
+            <Sparkline values={SAMPLE_ACTIVITY} label="Sample: responses per day over the last 14 days" />
+            <span className={styles.sparkCaption}>Last 14 days · sample</span>
+          </span>
         </div>
         <div className={styles.tableScroll}>
           <table className={styles.table}>

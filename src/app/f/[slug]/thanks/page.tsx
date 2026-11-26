@@ -15,13 +15,17 @@ export default async function ThanksPage({ params }: PageProps<"/f/[slug]/thanks
 
   return (
     <main className={styles.page}>
-      <article className={styles.card}>
-        <h1 className={styles.title}>Thanks, your response was recorded.</h1>
-        <p className={styles.note}>{form.title}</p>
+      <header className={styles.band}>
+        <div className={styles.column}>
+          <p className={styles.note}>{form.title}</p>
+          <h1 className={styles.title}>Thanks, your response was recorded.</h1>
+        </div>
+      </header>
+      <div className={`${styles.column} ${styles.body}`}>
         <Link href={`/f/${slug}`} className={styles.again}>
           Submit another response
         </Link>
-      </article>
+      </div>
     </main>
   );
 }

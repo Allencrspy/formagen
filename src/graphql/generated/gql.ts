@@ -15,17 +15,17 @@ import * as types from './graphql';
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
-    "\n  query FormsList {\n    forms {\n      id\n      title\n      slug\n      latestVersion\n      responseCount\n      updatedAt\n    }\n  }\n": typeof types.FormsListDocument,
+    "\n  query FormsList {\n    forms {\n      id\n      title\n      slug\n      latestVersion\n      responseCount\n      responsesByDay\n      updatedAt\n    }\n  }\n": typeof types.FormsListDocument,
     "\n  mutation CreateForm($title: String!) {\n    createForm(title: $title) {\n      id\n    }\n  }\n": typeof types.CreateFormDocument,
-    "\n  query BuilderForm($id: ID!) {\n    form(id: $id) {\n      id\n      title\n      slug\n      draftSchema\n      latestVersion\n      responseCount\n    }\n  }\n": typeof types.BuilderFormDocument,
+    "\n  query BuilderForm($id: ID!) {\n    form(id: $id) {\n      id\n      title\n      slug\n      draftSchema\n      latestVersion\n      responseCount\n      versions {\n        version\n        publishedAt\n      }\n    }\n  }\n": typeof types.BuilderFormDocument,
     "\n  mutation UpdateDraft($id: ID!, $schema: JSON!) {\n    updateDraft(id: $id, schema: $schema) {\n      ok\n      issues {\n        fieldId\n        message\n      }\n    }\n  }\n": typeof types.UpdateDraftDocument,
     "\n  mutation PublishForm($id: ID!) {\n    publishForm(id: $id) {\n      slug\n      version {\n        version\n        publishedAt\n      }\n    }\n  }\n": typeof types.PublishFormDocument,
     "\n  query FormResponses($id: ID!, $versionId: ID, $page: Int!) {\n    form(id: $id) {\n      id\n      title\n      slug\n      versions {\n        id\n        version\n        schema\n        publishedAt\n      }\n      responses(versionId: $versionId, page: $page) {\n        total\n        items {\n          id\n          version\n          answers\n          submittedAt\n        }\n      }\n    }\n  }\n": typeof types.FormResponsesDocument,
 };
 const documents: Documents = {
-    "\n  query FormsList {\n    forms {\n      id\n      title\n      slug\n      latestVersion\n      responseCount\n      updatedAt\n    }\n  }\n": types.FormsListDocument,
+    "\n  query FormsList {\n    forms {\n      id\n      title\n      slug\n      latestVersion\n      responseCount\n      responsesByDay\n      updatedAt\n    }\n  }\n": types.FormsListDocument,
     "\n  mutation CreateForm($title: String!) {\n    createForm(title: $title) {\n      id\n    }\n  }\n": types.CreateFormDocument,
-    "\n  query BuilderForm($id: ID!) {\n    form(id: $id) {\n      id\n      title\n      slug\n      draftSchema\n      latestVersion\n      responseCount\n    }\n  }\n": types.BuilderFormDocument,
+    "\n  query BuilderForm($id: ID!) {\n    form(id: $id) {\n      id\n      title\n      slug\n      draftSchema\n      latestVersion\n      responseCount\n      versions {\n        version\n        publishedAt\n      }\n    }\n  }\n": types.BuilderFormDocument,
     "\n  mutation UpdateDraft($id: ID!, $schema: JSON!) {\n    updateDraft(id: $id, schema: $schema) {\n      ok\n      issues {\n        fieldId\n        message\n      }\n    }\n  }\n": types.UpdateDraftDocument,
     "\n  mutation PublishForm($id: ID!) {\n    publishForm(id: $id) {\n      slug\n      version {\n        version\n        publishedAt\n      }\n    }\n  }\n": types.PublishFormDocument,
     "\n  query FormResponses($id: ID!, $versionId: ID, $page: Int!) {\n    form(id: $id) {\n      id\n      title\n      slug\n      versions {\n        id\n        version\n        schema\n        publishedAt\n      }\n      responses(versionId: $versionId, page: $page) {\n        total\n        items {\n          id\n          version\n          answers\n          submittedAt\n        }\n      }\n    }\n  }\n": types.FormResponsesDocument,
@@ -34,7 +34,7 @@ const documents: Documents = {
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query FormsList {\n    forms {\n      id\n      title\n      slug\n      latestVersion\n      responseCount\n      updatedAt\n    }\n  }\n"): typeof import('./graphql').FormsListDocument;
+export function graphql(source: "\n  query FormsList {\n    forms {\n      id\n      title\n      slug\n      latestVersion\n      responseCount\n      responsesByDay\n      updatedAt\n    }\n  }\n"): typeof import('./graphql').FormsListDocument;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -42,7 +42,7 @@ export function graphql(source: "\n  mutation CreateForm($title: String!) {\n   
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query BuilderForm($id: ID!) {\n    form(id: $id) {\n      id\n      title\n      slug\n      draftSchema\n      latestVersion\n      responseCount\n    }\n  }\n"): typeof import('./graphql').BuilderFormDocument;
+export function graphql(source: "\n  query BuilderForm($id: ID!) {\n    form(id: $id) {\n      id\n      title\n      slug\n      draftSchema\n      latestVersion\n      responseCount\n      versions {\n        version\n        publishedAt\n      }\n    }\n  }\n"): typeof import('./graphql').BuilderFormDocument;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

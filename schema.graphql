@@ -7,6 +7,9 @@ type Form {
   latestVersion: Int
   responseCount: Int!
   responses(page: Int = 1, versionId: ID): ResponsePage!
+
+  """Responses per UTC day for the last 14 days, oldest first."""
+  responsesByDay: [Int!]!
   slug: String!
   title: String!
   updatedAt: DateTime!

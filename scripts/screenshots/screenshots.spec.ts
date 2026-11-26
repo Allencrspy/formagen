@@ -4,6 +4,7 @@
  * Needs the same local Postgres as the E2E suite (E2E_DATABASE_URL).
  */
 import { expect, test, type Page } from "@playwright/test";
+import { Client } from "pg";
 import { addField, newForm, publish, signIn, waitForSaved } from "../../e2e/helpers";
 
 const OUT = "docs/screenshots";
@@ -51,6 +52,12 @@ test("README screenshots", async ({ page, context }) => {
   await expect(pub.getByRole("button", { name: "Submit" })).toBeEnabled();
   await pub.screenshot({ path: `${OUT}/public-form-errors.png` });
 
+  // Publish a v2 so the version strip and the responses filter have more than one entry.
+  await page.goto(`/app/forms/${id}`);
+  await addField(page, "Short text", "How did you hear about us?");
+  await waitForSaved(page);
+  await publish(page, 2);
+
   // Builder with the conditional field selected, so the rule shows in the panel.
   await page.goto(`/app/forms/${id}`);
   await page.getByText("Company", { exact: true }).first().click();
@@ -62,7 +69,29 @@ test("README screenshots", async ({ page, context }) => {
   await expect(page.locator("tbody tr")).toHaveCount(3);
   await page.screenshot({ path: `${OUT}/responses.png` });
 
+  // Spread synthetic sample responses over the last two weeks so the list's sparkline
+  // shows a realistic shape. Screenshot data only, never production.
+  const db = new Client({ connectionString: process.env.E2E_DATABASE_URL ?? "postgresql://postgres:postgres@localhost:5432/formagen_e2e" });
+  await db.connect();
+  await db.query(
+    `insert into responses (form_id, version_id, answers, submitted_at)
+     select r.form_id, r.version_id, r.answers, now() - (d || ' days')::interval
+     from (select * from responses where form_id = $1 limit 1) r,
+          unnest(array[1,1,2,3,3,3,5,6,6,8,9,9,9,9,11,12,13]) d`,
+    [id],
+  );
+  await db.end();
+
   await page.goto("/app");
-  await expect(page.getByRole("link", { name: "Beta sign-up" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Beta sign-up" }).first()).toBeVisible();
   await page.screenshot({ path: `${OUT}/forms-list.png` });
+
+  // Landing, desktop and phone.
+  await page.goto("/");
+  await page.screenshot({ path: `${OUT}/landing.png`, fullPage: true });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.screenshot({ path: `${OUT}/landing-mobile.png`, fullPage: true });
+  await pub.setViewportSize({ width: 390, height: 844 });
+  await pub.goto(path);
+  await pub.screenshot({ path: `${OUT}/public-form-mobile.png`, fullPage: true });
 });

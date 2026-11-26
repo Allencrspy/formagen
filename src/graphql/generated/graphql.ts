@@ -7,7 +7,7 @@ import type { DocumentTypeDecoration } from '@graphql-typed-document-node/core';
 export type FormsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type FormsListQuery = { forms: Array<{ id: string, title: string, slug: string, latestVersion: number | null, responseCount: number, updatedAt: string }> };
+export type FormsListQuery = { forms: Array<{ id: string, title: string, slug: string, latestVersion: number | null, responseCount: number, responsesByDay: Array<number>, updatedAt: string }> };
 
 export type CreateFormMutationVariables = Exact<{
   title: string;
@@ -21,7 +21,7 @@ export type BuilderFormQueryVariables = Exact<{
 }>;
 
 
-export type BuilderFormQuery = { form: { id: string, title: string, slug: string, draftSchema: unknown, latestVersion: number | null, responseCount: number } };
+export type BuilderFormQuery = { form: { id: string, title: string, slug: string, draftSchema: unknown, latestVersion: number | null, responseCount: number, versions: Array<{ version: number, publishedAt: string }> } };
 
 export type UpdateDraftMutationVariables = Exact<{
   id: string | number;
@@ -74,6 +74,7 @@ export const FormsListDocument = new TypedDocumentString(`
     slug
     latestVersion
     responseCount
+    responsesByDay
     updatedAt
   }
 }
@@ -94,6 +95,10 @@ export const BuilderFormDocument = new TypedDocumentString(`
     draftSchema
     latestVersion
     responseCount
+    versions {
+      version
+      publishedAt
+    }
   }
 }
     `) as unknown as TypedDocumentString<BuilderFormQuery, BuilderFormQueryVariables>;

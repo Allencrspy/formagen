@@ -23,5 +23,5 @@
 
 .list a {
   color: var(--color-danger);
-  font-weight: 500;
+  font-weight: var(--weight-medium);
 }

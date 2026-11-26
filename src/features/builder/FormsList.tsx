@@ -5,6 +5,7 @@ import { Plus } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
+import { Sparkline } from "@/components/ui/Sparkline";
 import { gql } from "@/graphql/client";
 import { CreateFormMutation, FormsListQuery } from "./queries";
 import styles from "./page.module.css";
@@ -30,7 +31,10 @@ export function FormsList() {
   return (
     <div className="page" style={{ maxWidth: "60rem" }}>
       <div className={styles.listHeader}>
-        <h1>Your forms</h1>
+        <h1>
+          Your forms
+          {forms.data && forms.data.forms.length > 0 ? <span className={styles.headCount}>{forms.data.forms.length}</span> : null}
+        </h1>
         {forms.data && forms.data.forms.length > 0 ? newButton : null}
       </div>
 
@@ -55,37 +59,61 @@ export function FormsList() {
         <table className={styles.formsTable}>
           <thead>
             <tr>
-              <th scope="col">Form</th>
-              <th scope="col">Status</th>
-              <th scope="col">Responses</th>
-              <th scope="col" className={styles.hideNarrow}>
+              <th scope="col" className="label-caps">
+                Form
+              </th>
+              <th scope="col" className={`label-caps ${styles.hideNarrow}`}>
+                Last 14 days
+              </th>
+              <th scope="col" className={`label-caps ${styles.num}`}>
+                Responses
+              </th>
+              <th scope="col" className={`label-caps ${styles.num} ${styles.hideNarrow}`}>
                 Updated
               </th>
             </tr>
           </thead>
           <tbody>
-            {forms.data.forms.map((f) => (
-              <tr key={f.id}>
-                <td>
-                  <Link href={`/app/forms/${f.id}`} className={styles.formLink}>
-                    {f.title}
-                  </Link>
-                </td>
-                <td className={styles.muted}>{f.latestVersion ? `v${f.latestVersion} live` : "Draft"}</td>
-                <td>
-                  {f.latestVersion ? (
-                    <Link href={`/app/forms/${f.id}/responses`} className={styles.formLink}>
-                      {f.responseCount}
+            {forms.data.forms.map((f) => {
+              const recent = f.responsesByDay.reduce((a, b) => a + b, 0);
+              return (
+                <tr key={f.id}>
+                  <td>
+                    <Link href={`/app/forms/${f.id}`} className={styles.formLink}>
+                      {f.title}
                     </Link>
-                  ) : (
-                    <span className={styles.muted}>—</span>
-                  )}
-                </td>
-                <td className={`${styles.muted} ${styles.hideNarrow}`}>
-                  <time dateTime={f.updatedAt}>{dateFmt.format(new Date(f.updatedAt))}</time>
-                </td>
-              </tr>
-            ))}
+                    <span className={styles.formMeta}>
+                      {f.latestVersion ? (
+                        <>
+                          <span className={styles.liveDot} aria-hidden="true" />
+                          Live · v{f.latestVersion} · /f/{f.slug}
+                        </>
+                      ) : (
+                        "Draft, not published"
+                      )}
+                    </span>
+                  </td>
+                  <td className={styles.hideNarrow}>
+                    <Sparkline
+                      values={f.responsesByDay}
+                      label={recent === 0 ? "No responses in the last 14 days" : `${recent} ${recent === 1 ? "response" : "responses"} in the last 14 days`}
+                    />
+                  </td>
+                  <td className={styles.num}>
+                    {f.latestVersion ? (
+                      <Link href={`/app/forms/${f.id}/responses`} className={styles.countLink}>
+                        {f.responseCount}
+                      </Link>
+                    ) : (
+                      <span className={styles.muted}>—</span>
+                    )}
+                  </td>
+                  <td className={`${styles.num} ${styles.muted} ${styles.hideNarrow}`}>
+                    <time dateTime={f.updatedAt}>{dateFmt.format(new Date(f.updatedAt))}</time>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       ) : null}

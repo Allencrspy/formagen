@@ -41,28 +41,32 @@ export function BuilderPage({ id }: { id: string }) {
       id={form.id}
       slug={form.slug}
       draft={draft}
-      latestVersion={form.latestVersion ?? null}
+      versions={[...form.versions].sort((a, b) => a.version - b.version)}
       responseCount={form.responseCount}
     />
   );
 }
 
+type PublishedVersion = { version: number; publishedAt: string };
+
 function Builder({
   id,
   slug,
   draft,
-  latestVersion,
+  versions: initialVersions,
   responseCount,
 }: {
   id: string;
   slug: string;
   draft: FormSchema;
-  latestVersion: number | null;
+  versions: PublishedVersion[];
   responseCount: number;
 }) {
   const queryClient = useQueryClient();
   const [store] = useState(() => createBuilderStore(draft));
-  const [published, setPublished] = useState<number | null>(latestVersion);
+  // Oldest first. The last one is live.
+  const [versions, setVersions] = useState<PublishedVersion[]>(initialVersions);
+  const published = versions.at(-1)?.version ?? null;
   // The first publish can change the slug (from "untitled-form-…" to the title), so the share
   // link follows the publish result rather than waiting for a refetch and showing a dead link.
   const [liveSlug, setLiveSlug] = useState(slug);
@@ -84,7 +88,7 @@ function Builder({
       return gql(PublishFormMutation, { id });
     },
     onSuccess: ({ publishForm }) => {
-      setPublished(publishForm.version.version);
+      setVersions((current) => [...current, publishForm.version]);
       setLiveSlug(publishForm.slug);
       void queryClient.invalidateQueries({ queryKey: ["forms"] });
       // Keep the cached form fresh for the next visit to this builder.
@@ -102,12 +106,12 @@ function Builder({
         responseCount={responseCount}
         store={store}
         status={status}
-        slug={liveSlug}
         published={published}
         publishing={publish.isPending}
         publishError={publishError}
         onPublish={() => publish.mutate()}
       />
+      {versions.length > 0 ? <LiveBar slug={liveSlug} versions={versions} /> : null}
       <Workspace store={store} />
     </>
   );
@@ -126,7 +130,6 @@ function TopBar({
   responseCount,
   store,
   status,
-  slug,
   published,
   publishing,
   publishError,
@@ -136,7 +139,6 @@ function TopBar({
   responseCount: number;
   store: BuilderStore;
   status: SaveStatus;
-  slug: string;
   published: number | null;
   publishing: boolean;
   publishError: string | null;
@@ -169,7 +171,6 @@ function TopBar({
             {responseCount} {responseCount === 1 ? "response" : "responses"}
           </Link>
         ) : null}
-        {published !== null ? <ShareLink slug={slug} version={published} /> : null}
         <Button onClick={onPublish} disabled={publishing}>
           {publishing ? "Publishing…" : published === null ? "Publish" : "Publish new version"}
         </Button>
@@ -183,10 +184,16 @@ function TopBar({
   );
 }
 
-/** The live link with one-click copy. Shown as soon as a version exists. */
-function ShareLink({ slug, version }: { slug: string; version: number }) {
+const versionDate = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" });
+
+/**
+ * The plum live bar: what respondents get right now (version, link, one-click copy) and
+ * every published version on a dated strip, newest on the right.
+ */
+function LiveBar({ slug, versions }: { slug: string; versions: PublishedVersion[] }) {
   const [copied, setCopied] = useState(false);
   const path = `/f/${slug}`;
+  const live = versions.at(-1)!;
 
   async function copy() {
     await navigator.clipboard.writeText(`${window.location.origin}${path}`);
@@ -195,17 +202,30 @@ function ShareLink({ slug, version }: { slug: string; version: number }) {
   }
 
   return (
-    <div className={styles.share}>
-      <span className={styles.liveBadge}>v{version} live</span>
-      <a href={path} target="_blank" rel="noreferrer" className={styles.shareLink}>
-        {path}
-        <ExternalLink size={14} strokeWidth={1.75} aria-hidden="true" />
-        <span className="visually-hidden">(opens in a new tab)</span>
-      </a>
-      <button type="button" className={styles.copy} onClick={copy} aria-label={copied ? "Link copied" : "Copy link"}>
-        {copied ? <Check size={16} strokeWidth={1.75} aria-hidden="true" /> : <Copy size={16} strokeWidth={1.75} aria-hidden="true" />}
-      </button>
-    </div>
+    <section className={styles.liveBar} aria-label="Live form">
+      <div className={styles.share}>
+        <span className={styles.liveBadge}>
+          <span className={styles.livePulse} aria-hidden="true" />v{live.version} live
+        </span>
+        <a href={path} target="_blank" rel="noreferrer" className={styles.shareLink}>
+          {path}
+          <ExternalLink size={14} strokeWidth={1.75} aria-hidden="true" />
+          <span className="visually-hidden">(opens in a new tab)</span>
+        </a>
+        <button type="button" className={styles.copy} onClick={copy} aria-label={copied ? "Link copied" : "Copy link"}>
+          {copied ? <Check size={16} strokeWidth={1.75} aria-hidden="true" /> : <Copy size={16} strokeWidth={1.75} aria-hidden="true" />}
+        </button>
+      </div>
+      <ol className={styles.strip} aria-label="Published versions">
+        {versions.length > 6 ? <li className={styles.stripMore}>{versions.length - 6} earlier</li> : null}
+        {versions.slice(-6).map((v) => (
+          <li key={v.version} className={v === live ? styles.stripLive : undefined}>
+            <span className={styles.stripKey}>v{v.version}</span>
+            <time dateTime={v.publishedAt}>{versionDate.format(new Date(v.publishedAt))}</time>
+          </li>
+        ))}
+      </ol>
+    </section>
   );
 }
 

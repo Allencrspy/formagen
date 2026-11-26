@@ -1,488 +1,338 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-12T00:00:00Z",
+  "generatedAt": "2026-11-26T10:47:56+00:00",
   "title": "Design System: Formagen",
   "extensions": {
     "colorMeta": {
-      "primary": {
+      "brand": {
         "role": "primary",
-        "displayName": "Signal Indigo",
-        "canonical": "#5e5ce6",
+        "displayName": "Deep Plum",
+        "canonical": "#5a1f4b",
         "tonalRamp": [
-          "#0b0a42",
-          "#12116f",
-          "#1b19a4",
-          "#2522dd",
-          "#5957e5",
-          "#8d8ced",
-          "#c2c1f6",
-          "#e9e9fc"
+          "#39142f",
+          "#5f214f",
+          "#852e6f",
+          "#b63f98",
+          "#cb67b1",
+          "#da95c9",
+          "#eac2e0",
+          "#f8ecf5"
         ]
       },
-      "primary-dark": {
+      "primary": {
         "role": "primary",
-        "displayName": "Signal Indigo (dark)",
-        "canonical": "#8c8bf7",
+        "displayName": "Deep Plum (action)",
+        "canonical": "#5a1f4b",
         "tonalRamp": [
-          "#060548",
-          "#090877",
-          "#0e0cb1",
-          "#1310ef",
-          "#4b4af2",
-          "#8483f6",
-          "#bdbcfa",
-          "#e7e7fd"
+          "#39142f",
+          "#5f214f",
+          "#852e6f",
+          "#b63f98",
+          "#cb67b1",
+          "#da95c9",
+          "#eac2e0",
+          "#f8ecf5"
         ]
       },
       "primary-hover": {
         "role": "primary",
-        "displayName": "Indigo Pressed",
-        "canonical": "#4f4dd6",
+        "displayName": "Plum Pressed",
+        "canonical": "#451638",
         "tonalRamp": [
-          "#0f0e3e",
-          "#191868",
-          "#252399",
-          "#3230cf",
-          "#6361db",
-          "#9493e6",
-          "#c6c5f2",
-          "#ebeafa"
-        ]
-      },
-      "primary-hover-dark": {
-        "role": "primary",
-        "displayName": "Indigo Pressed (dark)",
-        "canonical": "#a09ff9",
-        "tonalRamp": [
-          "#050448",
-          "#090878",
-          "#0d0bb2",
-          "#110ff0",
-          "#4a49f4",
-          "#8382f7",
-          "#bcbcfb",
-          "#e7e7fe"
+          "#3a122f",
+          "#611f4e",
+          "#872b6e",
+          "#ba3b97",
+          "#ce64b1",
+          "#dc93c8",
+          "#ebc1e0",
+          "#f9ecf5"
         ]
       },
       "primary-text": {
         "role": "primary",
-        "displayName": "Indigo Ink",
-        "canonical": "#5250d4",
+        "displayName": "Plum Ink",
+        "canonical": "#7a2c67",
         "tonalRamp": [
-          "#100f3d",
-          "#1a1966",
-          "#272597",
-          "#3532cd",
-          "#6563d9",
-          "#9695e5",
-          "#c6c6f1",
-          "#ebebfa"
-        ]
-      },
-      "primary-text-dark": {
-        "role": "primary",
-        "displayName": "Indigo Ink (dark)",
-        "canonical": "#a3a2ff",
-        "tonalRamp": [
-          "#01004c",
-          "#010080",
-          "#0200bd",
-          "#0300ff",
-          "#3f3dff",
-          "#7c7aff",
-          "#b8b8ff",
-          "#e6e5ff"
+          "#38142f",
+          "#5e224f",
+          "#832f6f",
+          "#b44198",
+          "#c969b2",
+          "#d996c9",
+          "#e9c3e0",
+          "#f8ecf5"
         ]
       },
       "primary-soft": {
         "role": "primary",
-        "displayName": "Indigo Wash",
-        "canonical": "#eeeefd",
+        "displayName": "Plum Wash",
+        "canonical": "#f6ecf3",
         "tonalRamp": [
-          "#080844",
-          "#0d0d72",
-          "#1414a9",
-          "#1b1be4",
-          "#5252eb",
-          "#8888f1",
-          "#bfbff7",
-          "#e8e8fc"
+          "#34192c",
+          "#572949",
+          "#793966",
+          "#a64f8c",
+          "#bd75a8",
+          "#d19ec2",
+          "#e5c8dc",
+          "#f7eef4"
         ]
       },
-      "primary-soft-dark": {
+      "on-brand-muted": {
         "role": "primary",
-        "displayName": "Indigo Wash (dark)",
-        "canonical": "#23233f",
+        "displayName": "Tinted Plum",
+        "canonical": "#e5cbdd",
         "tonalRamp": [
-          "#1b1b31",
-          "#2e2e52",
-          "#434379",
-          "#5b5ba4",
-          "#8282ba",
-          "#aaaad0",
-          "#d1d1e6",
-          "#efeff6"
+          "#33192b",
+          "#552a48",
+          "#773b65",
+          "#a3528a",
+          "#bb77a6",
+          "#cfa0c1",
+          "#e4c9db",
+          "#f6eef4"
         ]
       },
-      "on-primary": {
-        "role": "primary",
-        "displayName": "On Indigo",
+      "on-brand": {
+        "role": "neutral",
+        "displayName": "White on Plum",
         "canonical": "#ffffff",
         "tonalRamp": [
           "#262626",
           "#404040",
-          "#5e5e5e",
-          "#808080",
-          "#9e9e9e",
-          "#bdbdbd",
-          "#dbdbdb",
+          "#595959",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
           "#f2f2f2"
-        ]
-      },
-      "on-primary-dark": {
-        "role": "primary",
-        "displayName": "On Indigo (dark)",
-        "canonical": "#0e0f11",
-        "tonalRamp": [
-          "#23252a",
-          "#3a3e46",
-          "#555b67",
-          "#737b8c",
-          "#959ba7",
-          "#b6bbc3",
-          "#d8dadf",
-          "#f1f2f3"
         ]
       },
       "bg": {
         "role": "neutral",
-        "displayName": "Cool Paper",
-        "canonical": "#f7f8f9",
-        "tonalRamp": [
-          "#21262c",
-          "#374049",
-          "#515e6c",
-          "#6d7f92",
-          "#909eac",
-          "#b3bdc6",
-          "#d6dbe0",
-          "#f0f2f4"
-        ]
-      },
-      "bg-dark": {
-        "role": "neutral",
-        "displayName": "Cool Paper (dark)",
-        "canonical": "#0e0f11",
-        "tonalRamp": [
-          "#23252a",
-          "#3a3e46",
-          "#555b67",
-          "#737b8c",
-          "#959ba7",
-          "#b6bbc3",
-          "#d8dadf",
-          "#f1f2f3"
-        ]
-      },
-      "surface": {
-        "role": "neutral",
-        "displayName": "White Surface",
+        "displayName": "White",
         "canonical": "#ffffff",
         "tonalRamp": [
           "#262626",
           "#404040",
-          "#5e5e5e",
-          "#808080",
-          "#9e9e9e",
-          "#bdbdbd",
-          "#dbdbdb",
+          "#595959",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
           "#f2f2f2"
-        ]
-      },
-      "surface-dark": {
-        "role": "neutral",
-        "displayName": "White Surface (dark)",
-        "canonical": "#17181b",
-        "tonalRamp": [
-          "#232529",
-          "#3b3d45",
-          "#575b66",
-          "#757a8a",
-          "#969aa6",
-          "#b7bac2",
-          "#d8dade",
-          "#f1f2f3"
         ]
       },
       "surface-raised": {
         "role": "neutral",
-        "displayName": "Raised Grey",
-        "canonical": "#f1f2f4",
+        "displayName": "Pale Mauve Grey",
+        "canonical": "#f6f3f5",
         "tonalRamp": [
-          "#22252b",
-          "#383d47",
-          "#535b6a",
-          "#707a8f",
-          "#929aaa",
-          "#b5bac5",
-          "#d7dae0",
-          "#f1f2f4"
-        ]
-      },
-      "surface-raised-dark": {
-        "role": "neutral",
-        "displayName": "Raised Grey (dark)",
-        "canonical": "#1e1f23",
-        "tonalRamp": [
-          "#232429",
-          "#3b3d45",
-          "#575a66",
-          "#767a89",
-          "#979aa6",
-          "#b8bac2",
-          "#d9dade",
-          "#f1f2f3"
+          "#2c2128",
+          "#493743",
+          "#664c5e",
+          "#8c6980",
+          "#a88a9e",
+          "#c2adbb",
+          "#dcd0d8",
+          "#f4f0f3"
         ]
       },
       "text": {
         "role": "neutral",
-        "displayName": "Ink",
-        "canonical": "#16171a",
+        "displayName": "Warm Graphite",
+        "canonical": "#2b282c",
         "tonalRamp": [
-          "#232529",
-          "#3a3d45",
-          "#565a66",
-          "#757a8a",
-          "#969aa6",
-          "#b7bac2",
-          "#d8dade",
-          "#f1f2f3"
-        ]
-      },
-      "text-dark": {
-        "role": "neutral",
-        "displayName": "Ink (dark)",
-        "canonical": "#ededef",
-        "tonalRamp": [
-          "#242428",
-          "#3c3c43",
-          "#595964",
-          "#787887",
-          "#9898a4",
-          "#b9b9c1",
-          "#d9d9dd",
-          "#f2f2f3"
+          "#272428",
+          "#413d43",
+          "#5b555e",
+          "#7d7580",
+          "#9b949e",
+          "#b9b4bb",
+          "#d7d4d8",
+          "#f3f2f3"
         ]
       },
       "text-muted": {
         "role": "neutral",
-        "displayName": "Slate Muted",
-        "canonical": "#62666d",
+        "displayName": "Muted Graphite",
+        "canonical": "#67626a",
         "tonalRamp": [
-          "#242628",
-          "#3c3f43",
-          "#595d63",
-          "#797e86",
-          "#999da3",
-          "#b9bcc0",
-          "#d9dbdd",
-          "#f2f2f3"
-        ]
-      },
-      "text-muted-dark": {
-        "role": "neutral",
-        "displayName": "Slate Muted (dark)",
-        "canonical": "#9a9da5",
-        "tonalRamp": [
-          "#242528",
-          "#3c3e43",
-          "#595c64",
-          "#787c87",
-          "#999ca4",
-          "#b9bbc1",
-          "#d9dadd",
+          "#272528",
+          "#403d42",
+          "#5a565d",
+          "#7c767f",
+          "#9a959d",
+          "#b8b5ba",
+          "#d7d5d8",
           "#f2f2f3"
         ]
       },
       "border": {
         "role": "neutral",
         "displayName": "Hairline",
-        "canonical": "#e4e5e9",
+        "canonical": "#ebe7ea",
         "tonalRamp": [
-          "#22242a",
-          "#393c46",
-          "#555968",
-          "#72788d",
-          "#9498a8",
-          "#b6b9c3",
-          "#d8d9df",
-          "#f1f1f4"
-        ]
-      },
-      "border-dark": {
-        "role": "neutral",
-        "displayName": "Hairline (dark)",
-        "canonical": "#2a2b30",
-        "tonalRamp": [
-          "#242529",
-          "#3c3d44",
-          "#585a65",
-          "#777a88",
-          "#989aa5",
-          "#b8bac1",
-          "#d9dade",
-          "#f1f2f3"
+          "#2a2328",
+          "#463a43",
+          "#61515d",
+          "#866f80",
+          "#a2909e",
+          "#beb1bb",
+          "#dad2d8",
+          "#f3f1f3"
         ]
       },
       "border-strong": {
         "role": "neutral",
         "displayName": "Control Edge",
-        "canonical": "#8b9098",
+        "canonical": "#8e8890",
         "tonalRamp": [
-          "#242629",
-          "#3c3f44",
-          "#595d64",
-          "#787e87",
-          "#989da4",
-          "#b9bcc1",
-          "#d9dbdd",
-          "#f1f2f3"
-        ]
-      },
-      "border-strong-dark": {
-        "role": "neutral",
-        "displayName": "Control Edge (dark)",
-        "canonical": "#6c7079",
-        "tonalRamp": [
-          "#242528",
-          "#3c3e43",
-          "#595c64",
-          "#787d87",
-          "#999ca4",
-          "#b9bbc0",
-          "#d9dbdd",
+          "#272528",
+          "#413e42",
+          "#5b565c",
+          "#7d767f",
+          "#9b959d",
+          "#b9b5ba",
+          "#d7d5d8",
           "#f2f2f3"
         ]
       },
       "danger": {
-        "role": "semantic",
-        "displayName": "Danger",
-        "canonical": "#c42b1c",
+        "role": "status",
+        "displayName": "Signal Red",
+        "canonical": "#b8261a",
         "tonalRamp": [
-          "#430f0a",
-          "#701810",
-          "#a52418",
-          "#df3120",
-          "#e76255",
-          "#ee948b",
-          "#f6c5c1",
+          "#430e09",
+          "#701710",
+          "#9c2016",
+          "#d62c1e",
+          "#e6584c",
+          "#ed8a82",
+          "#f5bcb8",
           "#fceae9"
         ]
       },
-      "danger-dark": {
-        "role": "semantic",
-        "displayName": "Danger (dark)",
-        "canonical": "#ff7b72",
-        "tonalRamp": [
-          "#4c0500",
-          "#800800",
-          "#bd0c00",
-          "#ff1000",
-          "#ff4a3d",
-          "#ff837a",
-          "#ffbcb8",
-          "#ffe7e5"
-        ]
-      },
       "success": {
-        "role": "semantic",
-        "displayName": "Success",
-        "canonical": "#1f7a4a",
+        "role": "status",
+        "displayName": "Ledger Green",
+        "canonical": "#17724a",
         "tonalRamp": [
-          "#0f3d25",
-          "#1a663e",
-          "#26965b",
-          "#34cb7b",
-          "#64d89b",
-          "#95e4bb",
-          "#c6f1da",
-          "#ebfaf2"
+          "#0d4029",
+          "#156a45",
+          "#1e9560",
+          "#29cc84",
+          "#55dda1",
+          "#88e7bd",
+          "#bbf1d9",
+          "#eafbf3"
         ]
       },
-      "success-dark": {
-        "role": "semantic",
-        "displayName": "Success (dark)",
-        "canonical": "#5fd393",
+      "live-signal": {
+        "role": "status",
+        "displayName": "Live Mint",
+        "canonical": "#7ee2b0",
         "tonalRamp": [
-          "#113c24",
-          "#1c643c",
-          "#299459",
-          "#37c878",
-          "#67d598",
-          "#97e2b9",
-          "#c7f0d9",
-          "#ebfaf2"
+          "#0e3e26",
+          "#176840",
+          "#219259",
+          "#2dc87a",
+          "#58da99",
+          "#8ae5b8",
+          "#bcf0d6",
+          "#eafaf2"
         ]
+      },
+      "primary-dark": {
+        "role": "primary",
+        "displayName": "Light Orchid (dark action)",
+        "canonical": "#e3a8d3",
+        "tonalRamp": [
+          "#3a132f",
+          "#601f4f",
+          "#872b6e",
+          "#b93c97",
+          "#cd65b1",
+          "#dc93c8",
+          "#ebc1e0",
+          "#f9ecf5"
+        ]
+      },
+      "brand-dark": {
+        "role": "primary",
+        "displayName": "Night Plum (dark bands)",
+        "canonical": "#4d1a40",
+        "tonalRamp": [
+          "#391330",
+          "#5f204f",
+          "#852d6f",
+          "#b73e98",
+          "#cc66b2",
+          "#db94c9",
+          "#eac2e0",
+          "#f9ecf5"
+        ]
+      },
+      "brand-line": {
+        "role": "primary",
+        "displayName": "Plum Hairline",
+        "canonical": "rgb(255 255 255 / 0.22)"
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Hero promise and closing call only."
+        "purpose": "Landing hero headline only, white on plum."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Marketing section titles."
+        "purpose": "Landing section titles and closing line."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Page h1 inside the app."
+        "purpose": "App page h1, preview band title."
       },
       "title-sm": {
         "displayName": "Title Small",
-        "purpose": "h2 and summary titles; lede size at 400."
+        "purpose": "h2, error summary title, builder form-name input."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Running text and input values."
+        "purpose": "Default text at weight 420."
+      },
+      "body-sm": {
+        "displayName": "Body Small",
+        "purpose": "Tables, fields, nav, bars."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Form labels, buttons, nav links, table cells."
+        "purpose": "Field labels, buttons, chips, form names."
+      },
+      "label-caps": {
+        "displayName": "Label Caps",
+        "purpose": "Pane titles and table column headers; never an eyebrow over a headline."
       },
       "caption": {
         "displayName": "Caption",
-        "purpose": "Badges, table headers, dates, counts."
+        "purpose": "Status, metadata, version dates, badges."
       }
     },
     "shadows": [
       {
-        "name": "shadow-sm",
-        "value": "0 1px 2px rgb(16 17 26 / 0.06)",
-        "dark": "0 1px 2px rgb(0 0 0 / 0.4)",
-        "purpose": "Rest lift for buttons, inputs, rows, selected segment."
+        "name": "shadow-sm / shadow-md / shadow-frame",
+        "value": "none",
+        "purpose": "Flat world: retained token names resolve to nothing so no surface floats."
       },
       {
-        "name": "shadow-md",
-        "value": "0 1px 2px rgb(16 17 26 / 0.05), 0 4px 12px -2px rgb(16 17 26 / 0.08)",
-        "dark": "0 1px 2px rgb(0 0 0 / 0.4), 0 4px 12px -2px rgb(0 0 0 / 0.5)",
-        "purpose": "Defined, not yet used; reserved for floating layers."
-      },
-      {
-        "name": "shadow-frame",
-        "value": "0 0 0 1px rgb(16 17 26 / 0.04), 0 2px 4px rgb(16 17 26 / 0.04), 0 24px 48px -16px rgb(16 17 26 / 0.18)",
-        "dark": "0 0 0 1px rgb(255 255 255 / 0.06), 0 24px 48px -16px rgb(0 0 0 / 0.7)",
-        "purpose": "The single large app frame on a page."
-      },
-      {
-        "name": "focus-ring",
-        "value": "2px solid var(--color-focus) / offset 2px",
-        "purpose": "Keyboard focus on buttons, links, segments."
-      },
-      {
-        "name": "input-focus",
+        "name": "focus-halo",
         "value": "0 0 0 3px var(--color-primary-soft), 0 0 0 1px var(--color-focus)",
-        "purpose": "Input focus halo with indigo border."
+        "purpose": "Input focus state only; not elevation."
+      },
+      {
+        "name": "live-pulse",
+        "value": "0 0 0 6px rgb(126 226 176 / 0)",
+        "purpose": "Keyframe end of the builder live dot pulse; disabled under reduced motion."
       }
     ],
     "motion": [
@@ -494,27 +344,41 @@
       {
         "name": "state",
         "value": "120ms",
-        "purpose": "Hover, border and background changes."
+        "purpose": "Button, input, link colour and border changes."
+      },
+      {
+        "name": "cta",
+        "value": "160ms",
+        "purpose": "Landing pill CTA background and press."
       },
       {
         "name": "arrive",
-        "value": "480ms, translateY(-4px) + fade",
-        "purpose": "A newly added field row."
+        "value": "480ms",
+        "purpose": "New field row entering the demo field list."
       },
       {
         "name": "highlight",
-        "value": "1600ms, primary-soft to transparent",
-        "purpose": "A newly inserted table row; removed under reduced motion."
+        "value": "1600ms",
+        "purpose": "New response row fading from plum wash."
+      },
+      {
+        "name": "pulse",
+        "value": "2.4s infinite",
+        "purpose": "Builder live dot."
       }
     ],
     "breakpoints": [
       {
         "name": "narrow",
-        "value": "56rem"
+        "value": "36rem"
       },
       {
-        "name": "small",
-        "value": "36rem"
+        "name": "compact",
+        "value": "40rem"
+      },
+      {
+        "name": "stacked",
+        "value": "56rem"
       }
     ]
   },
@@ -523,113 +387,133 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The one filled indigo action in a view.",
-      "html": "<button type=\"button\" class=\"ds-btn-primary\">Start building</button>",
-      "css": ".ds-btn-primary { display:inline-flex; align-items:center; min-height:38px; padding:0 16px; font-family: var(--font-sans, Inter, ui-sans-serif, system-ui, sans-serif); font-feature-settings: 'cv11','ss01'; font-variant-numeric: tabular-nums; font-size:0.875rem; font-weight:500; color:var(--color-on-primary,#fff); background:var(--color-primary,#5e5ce6); border:1px solid transparent; border-radius:8px; box-shadow:0 1px 2px rgb(16 17 26 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.12); cursor:pointer; transition:background 120ms cubic-bezier(0.16,1,0.3,1), transform 120ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background:var(--color-primary-hover,#4f4dd6); } .ds-btn-primary:focus-visible { outline:2px solid var(--color-focus,#5e5ce6); outline-offset:2px; } .ds-btn-primary:active { transform:translateY(1px); }"
+      "description": "The one action fill: plum, 8px corners, 40px tall.",
+      "html": "<button class=\"ds-btn-primary\">Publish</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;min-block-size:2.5rem;padding:0 1rem;font-family:var(--font-sans);font-size:0.875rem;font-weight:530;color:var(--color-on-primary,#fff);background:var(--color-primary,#5a1f4b);border:1px solid transparent;border-radius:8px;cursor:pointer;transition:background 120ms cubic-bezier(0.16,1,0.3,1),transform 120ms cubic-bezier(0.16,1,0.3,1)}.ds-btn-primary:hover{background:var(--color-primary-hover,#451638)}.ds-btn-primary:focus-visible{outline:2px solid var(--color-focus,#7a2c67);outline-offset:2px}.ds-btn-primary:active{transform:translateY(1px)}"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Every non-primary action: quiet bordered surface.",
-      "html": "<button type=\"button\" class=\"ds-btn-secondary\">View source</button>",
-      "css": ".ds-btn-secondary { display:inline-flex; align-items:center; min-height:38px; padding:0 16px; font-family: var(--font-sans, Inter, ui-sans-serif, system-ui, sans-serif); font-feature-settings: 'cv11','ss01'; font-variant-numeric: tabular-nums; font-size:0.875rem; font-weight:500; color:var(--color-text,#16171a); background:var(--color-surface,#fff); border:1px solid var(--color-border,#e4e5e9); border-radius:8px; box-shadow:0 1px 2px rgb(16 17 26 / 0.06); cursor:pointer; transition:background 120ms cubic-bezier(0.16,1,0.3,1), transform 120ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-secondary:hover { background:var(--color-surface-raised,#f1f2f4); } .ds-btn-secondary:focus-visible { outline:2px solid var(--color-focus,#5e5ce6); outline-offset:2px; } .ds-btn-secondary:active { transform:translateY(1px); }"
+      "description": "White with a 3:1 control edge; hover fills pale mauve.",
+      "html": "<button class=\"ds-btn-secondary\">Export CSV</button>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;min-block-size:2.5rem;padding:0 1rem;font-family:var(--font-sans);font-size:0.875rem;font-weight:530;color:var(--color-text,#2b282c);background:var(--color-surface,#fff);border:1px solid var(--color-border-strong,#8e8890);border-radius:8px;cursor:pointer}.ds-btn-secondary:hover{background:var(--color-surface-raised,#f6f3f5)}.ds-btn-secondary:focus-visible{outline:2px solid var(--color-focus,#7a2c67);outline-offset:2px}"
     },
     {
-      "name": "Text Field",
+      "name": "Landing Pill CTA on Plum",
+      "kind": "button",
+      "refersTo": "cta-pill-on-brand",
+      "description": "Landing only: the primary inverts to a white pill with plum ink inside the plum band.",
+      "html": "<div class=\"ds-band\"><a class=\"ds-cta-pill\" href=\"#\">Start building</a></div>",
+      "css": ".ds-band{padding:2rem;background:#5a1f4b}.ds-cta-pill{display:inline-flex;align-items:center;min-block-size:3rem;padding:0 2rem;border-radius:999px;background:#fff;color:#5a1f4b;font-family:var(--font-sans);font-weight:640;text-decoration:none;transition:background 160ms cubic-bezier(0.16,1,0.3,1)}.ds-cta-pill:hover{background:#f6ecf3}.ds-cta-pill:focus-visible{outline:2px solid #fff;outline-offset:2px}"
+    },
+    {
+      "name": "Text Input",
       "kind": "input",
       "refersTo": "input",
-      "description": "Label above, Control Edge border, indigo focus halo.",
-      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-name\">Your name <span class=\"ds-req\">(required)</span></label><input id=\"ds-name\" class=\"ds-input\" type=\"text\"></div>",
-      "css": ".ds-field { display:grid; gap:4px; font-family: var(--font-sans, Inter, ui-sans-serif, system-ui, sans-serif); font-feature-settings: 'cv11','ss01'; font-variant-numeric: tabular-nums; } .ds-label { font-size:0.875rem; font-weight:500; color:var(--color-text,#16171a); } .ds-req { font-weight:400; color:var(--color-text-muted,#62666d); } .ds-input { width:100%; max-width:32rem; min-height:38px; padding:8px 12px; font:inherit; font-size:0.9375rem; color:var(--color-text,#16171a); background:var(--color-surface,#fff); border:1px solid var(--color-border-strong,#8b9098); border-radius:8px; box-shadow:0 1px 2px rgb(16 17 26 / 0.06); transition:border-color 120ms cubic-bezier(0.16,1,0.3,1), box-shadow 120ms cubic-bezier(0.16,1,0.3,1); } .ds-input:hover { border-color:var(--color-text-muted,#62666d); } .ds-input:focus-visible { outline:none; border-color:var(--color-focus,#5e5ce6); box-shadow:0 0 0 3px var(--color-primary-soft,#eeeefd), 0 0 0 1px var(--color-focus,#5e5ce6); }"
+      "description": "44px, 8px corners, plum focus ring with a plum-wash halo.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-label\">Email</span><input class=\"ds-input\" placeholder=\"you@example.com\"></label>",
+      "css": ".ds-field{display:grid;gap:0.25rem;font-family:var(--font-sans)}.ds-label{font-size:0.875rem;font-weight:530;color:var(--color-text,#2b282c)}.ds-input{min-block-size:2.75rem;padding:0.5rem 0.75rem;font:inherit;font-size:0.9375rem;color:var(--color-text,#2b282c);background:var(--color-surface,#fff);border:1px solid var(--color-border-strong,#8e8890);border-radius:8px;transition:border-color 120ms,box-shadow 120ms}.ds-input:hover{border-color:var(--color-text-muted,#67626a)}.ds-input:focus-visible{outline:none;border-color:var(--color-focus,#7a2c67);box-shadow:0 0 0 3px var(--color-primary-soft,#f6ecf3),0 0 0 1px var(--color-focus,#7a2c67)}"
     },
     {
-      "name": "Segmented Control",
-      "kind": "custom",
-      "refersTo": "segmented-control",
-      "description": "Version switcher; selected segment lifts to surface with Indigo Ink label.",
-      "html": "<div class=\"ds-seg\" role=\"tablist\"><button class=\"ds-segment\" role=\"tab\" aria-selected=\"true\">v1</button><button class=\"ds-segment\" role=\"tab\" aria-selected=\"false\">v2</button></div>",
-      "css": ".ds-seg { display:inline-flex; padding:2px; border-radius:8px; background:var(--color-surface-raised,#f1f2f4); box-shadow:inset 0 0 0 1px var(--color-border,#e4e5e9); } .ds-segment { padding:0.3rem 0.7rem; border:none; border-radius:6px; background:transparent; color:var(--color-text-muted,#62666d); font-family: var(--font-sans, Inter, ui-sans-serif, system-ui, sans-serif); font-feature-settings: 'cv11','ss01'; font-variant-numeric: tabular-nums; font-size:0.875rem; font-weight:500; cursor:pointer; transition:background 120ms cubic-bezier(0.16,1,0.3,1), color 120ms cubic-bezier(0.16,1,0.3,1); } .ds-segment:hover { color:var(--color-text,#16171a); } .ds-segment[aria-selected=\"true\"] { background:var(--color-surface,#fff); color:var(--color-primary-text,#5250d4); box-shadow:0 1px 2px rgb(16 17 26 / 0.06), 0 0 0 1px var(--color-border,#e4e5e9); } .ds-segment:focus-visible { outline:2px solid var(--color-focus,#5e5ce6); outline-offset:2px; }"
-    },
-    {
-      "name": "Badges",
+      "name": "Version Filter Chips",
       "kind": "chip",
-      "refersTo": "badge-new",
-      "description": "Neutral status and version pills; only \"New\" carries the accent.",
-      "html": "<span class=\"ds-badge\">Live</span> <span class=\"ds-badge ds-badge-version\">v2</span> <span class=\"ds-badge ds-badge-new\">New in v2</span>",
-      "css": ".ds-badge { display:inline-flex; align-items:center; padding:0.1rem 0.5rem; border-radius:999px; font-family: var(--font-sans, Inter, ui-sans-serif, system-ui, sans-serif); font-feature-settings: 'cv11','ss01'; font-variant-numeric: tabular-nums; font-size:0.75rem; font-weight:500; white-space:nowrap; color:var(--color-text-muted,#62666d); box-shadow:inset 0 0 0 1px var(--color-border,#e4e5e9); } .ds-badge-version { background:var(--color-surface-raised,#f1f2f4); color:var(--color-text,#16171a); } .ds-badge-new { background:var(--color-primary-soft,#eeeefd); color:var(--color-primary-text,#5250d4); box-shadow:none; }"
+      "refersTo": "chip-filter",
+      "description": "Pill chips; the selected one fills plum.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"true\">All versions</button><button class=\"ds-chip\" aria-pressed=\"false\">v3</button><button class=\"ds-chip\" aria-pressed=\"false\">v2</button></div>",
+      "css": ".ds-chips{display:inline-flex;gap:0.5rem;font-family:var(--font-sans)}.ds-chip{padding:0.3rem 0.875rem;border:1px solid var(--color-border-strong,#8e8890);border-radius:999px;background:transparent;color:var(--color-text,#2b282c);font:inherit;font-size:0.875rem;font-weight:530;cursor:pointer}.ds-chip:hover{border-color:var(--color-primary,#5a1f4b);color:var(--color-primary-text,#7a2c67)}.ds-chip[aria-pressed=\"true\"]{border-color:var(--color-primary,#5a1f4b);background:var(--color-primary,#5a1f4b);color:var(--color-on-primary,#fff)}.ds-chip:focus-visible{outline:2px solid var(--color-focus,#7a2c67);outline-offset:2px}"
     },
     {
-      "name": "Field Row",
+      "name": "Live Bar",
+      "kind": "custom",
+      "refersTo": "live-bar",
+      "description": "Signature plum strip: live dot, share path, dated version strip.",
+      "html": "<div class=\"ds-live\"><span class=\"ds-live-badge\"><span class=\"ds-live-dot\"></span>Live v3</span><span class=\"ds-live-path\">/f/onboarding</span><ol class=\"ds-strip\"><li><b>v1</b> <time>2 Nov</time></li><li><b>v2</b> <time>14 Nov</time></li><li class=\"ds-strip-live\"><b>v3</b> <time>25 Nov</time></li></ol></div>",
+      "css": ".ds-live{display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 2rem;padding:0.5rem 1.5rem;background:#5a1f4b;color:#fff;font-family:var(--font-sans);font-size:0.875rem}.ds-live-badge{display:inline-flex;align-items:center;gap:0.5rem;font-weight:640}.ds-live-dot{inline-size:0.5rem;block-size:0.5rem;border-radius:50%;background:#7ee2b0;animation:ds-pulse 2.4s cubic-bezier(0.16,1,0.3,1) infinite}@keyframes ds-pulse{0%{box-shadow:0 0 0 0 rgb(126 226 176/0.6)}70%{box-shadow:0 0 0 6px rgb(126 226 176/0)}100%{box-shadow:0 0 0 0 rgb(126 226 176/0)}}@media (prefers-reduced-motion:reduce){.ds-live-dot{animation:none}}.ds-live-path{color:#e5cbdd}.ds-strip{display:flex;align-items:center;margin:0 0 0 auto;padding:0;list-style:none;font-size:0.75rem;color:#e5cbdd}.ds-strip li{display:inline-flex;align-items:baseline;gap:0.25rem}.ds-strip li+li::before{content:\"\";align-self:center;inline-size:1.25rem;block-size:1px;margin-inline:0.5rem;background:rgb(255 255 255/0.22)}.ds-strip b{font-weight:530;color:#fff}.ds-strip-live b{font-weight:640}.ds-strip-live time{color:#fff}"
+    },
+    {
+      "name": "Sparkline",
+      "kind": "custom",
+      "refersTo": "sparkline",
+      "description": "14 days of real daily response counts; empty draws only the dashed baseline.",
+      "html": "<svg class=\"ds-spark\" viewBox=\"0 0 112 28\" width=\"112\" height=\"28\" role=\"img\" aria-label=\"Responses, last 14 days\"><line class=\"ds-spark-base\" x1=\"2\" x2=\"110\" y1=\"26\" y2=\"26\"/><polygon class=\"ds-spark-area\" points=\"2,26 2,20 10.3,22 18.6,14 26.9,18 35.2,26 43.5,16 51.8,12 60.2,20 68.5,8 76.8,14 85.1,10 93.4,18 101.7,6 110,4 110,26\"/><polyline class=\"ds-spark-line\" points=\"2,20 10.3,22 18.6,14 26.9,18 35.2,26 43.5,16 51.8,12 60.2,20 68.5,8 76.8,14 85.1,10 93.4,18 101.7,6 110,4\"/><circle class=\"ds-spark-dot\" cx=\"110\" cy=\"4\" r=\"2.25\"/></svg>",
+      "css": ".ds-spark{display:block;overflow:visible}.ds-spark-base{stroke:var(--color-border-strong,#8e8890);stroke-width:1;stroke-dasharray:2 3;opacity:0.6}.ds-spark-area{fill:var(--color-primary-soft,#f6ecf3)}.ds-spark-line{fill:none;stroke:var(--color-primary,#5a1f4b);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}.ds-spark-dot{fill:var(--color-primary,#5a1f4b)}"
+    },
+    {
+      "name": "Forms Table",
       "kind": "card",
-      "refersTo": "field-row",
-      "description": "Builder list row: Lucide icon tile, label, type caption, optional badge.",
-      "html": "<div class=\"ds-row\"><span class=\"ds-row-icon\" aria-hidden=\"true\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"16\" x=\"2\" y=\"4\" rx=\"2\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/></svg></span><span class=\"ds-row-label\">Work email</span><span class=\"ds-row-type\">Email · Required</span></div>",
-      "css": ".ds-row { display:grid; grid-template-columns:1.75rem minmax(0,1fr); grid-template-areas:\"icon label\" \"icon type\"; column-gap:12px; align-items:center; padding:12px 16px; border-radius:8px; background:var(--color-surface,#fff); box-shadow:0 1px 2px rgb(16 17 26 / 0.06), 0 0 0 1px var(--color-border,#e4e5e9); font-family: var(--font-sans, Inter, ui-sans-serif, system-ui, sans-serif); font-feature-settings: 'cv11','ss01'; font-variant-numeric: tabular-nums; } .ds-row-icon { grid-area:icon; display:inline-grid; place-items:center; width:1.75rem; height:1.75rem; border-radius:6px; background:var(--color-surface-raised,#f1f2f4); color:var(--color-text-muted,#62666d); } .ds-row-label { grid-area:label; font-size:0.875rem; font-weight:500; color:var(--color-text,#16171a); } .ds-row-type { grid-area:type; font-size:0.75rem; color:var(--color-text-muted,#62666d); }"
-    },
-    {
-      "name": "App Header",
-      "kind": "nav",
-      "refersTo": "navigation",
-      "description": "Sticky translucent blur bar with wordmark, muted links and one bordered CTA.",
-      "html": "<header class=\"ds-nav\"><a class=\"ds-wordmark\" href=\"#\">Formagen</a><nav class=\"ds-links\"><a href=\"#\">How it works</a><a href=\"#\">Sign in</a></nav><a class=\"ds-nav-cta\" href=\"#\">Start building</a></header>",
-      "css": ".ds-nav { display:flex; align-items:center; gap:32px; height:3.5rem; padding:0 24px; font-family: var(--font-sans, Inter, ui-sans-serif, system-ui, sans-serif); font-feature-settings: 'cv11','ss01'; font-variant-numeric: tabular-nums; background:color-mix(in srgb, var(--color-bg,#f7f8f9) 82%, transparent); backdrop-filter:saturate(1.4) blur(12px); border-bottom:1px solid var(--color-border,#e4e5e9); } .ds-wordmark { font-weight:600; letter-spacing:-0.02em; color:var(--color-text,#16171a); text-decoration:none; } .ds-links { display:flex; gap:24px; margin-left:auto; } .ds-links a { font-size:0.875rem; color:var(--color-text-muted,#62666d); text-decoration:none; transition:color 120ms cubic-bezier(0.16,1,0.3,1); } .ds-links a:hover { color:var(--color-text,#16171a); } .ds-nav-cta { display:inline-flex; align-items:center; height:2rem; padding:0 12px; border-radius:8px; background:var(--color-surface,#fff); color:var(--color-text,#16171a); box-shadow:0 1px 2px rgb(16 17 26 / 0.06), 0 0 0 1px var(--color-border,#e4e5e9); font-size:0.875rem; font-weight:500; text-decoration:none; } .ds-nav-cta:hover { background:var(--color-surface-raised,#f1f2f4); } .ds-nav a:focus-visible { outline:2px solid var(--color-focus,#5e5ce6); outline-offset:2px; border-radius:4px; }"
+      "description": "Label Caps headers over a solid hairline, dashed row rules, no card chrome.",
+      "html": "<table class=\"ds-table\"><thead><tr><th>Form</th><th class=\"ds-num\">Responses</th></tr></thead><tbody><tr><td><a href=\"#\">Onboarding survey</a><div class=\"ds-meta\"><span class=\"ds-dot\"></span>Live v3</div></td><td class=\"ds-num\">128</td></tr><tr><td><a href=\"#\">Event RSVP</a><div class=\"ds-meta\">Draft</div></td><td class=\"ds-num\">0</td></tr></tbody></table>",
+      "css": ".ds-table{inline-size:100%;border-collapse:collapse;font-family:var(--font-sans);font-size:0.875rem;color:var(--color-text,#2b282c);font-variant-numeric:lining-nums proportional-nums}.ds-table th{padding:0.5rem 0.75rem 0.5rem 0;text-align:start;font-size:0.6875rem;font-weight:530;letter-spacing:0.07em;text-transform:uppercase;color:var(--color-text-muted,#67626a);border-block-end:1px solid var(--color-border,#ebe7ea)}.ds-table td{padding:1rem 0.75rem 1rem 0;border-block-end:1px dashed var(--color-border,#ebe7ea)}.ds-table tbody tr:hover td{background:color-mix(in srgb,var(--color-surface-raised,#f6f3f5) 60%,transparent)}.ds-table a{font-size:0.9375rem;font-weight:530;color:inherit;text-decoration:none}.ds-table a:hover{color:var(--color-primary-text,#7a2c67)}.ds-num{text-align:end!important}.ds-meta{display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--color-text-muted,#67626a)}.ds-dot{inline-size:0.4375rem;block-size:0.4375rem;border-radius:50%;background:var(--color-success,#17724a)}"
     }
   ],
   "narrative": {
-    "northStar": "The Quiet Instrument",
-    "overview": "Formagen is the category standard executed impeccably, with Linear as the craft bar. It is a product UI that looks like a product UI: one typeface used with discipline, cool near-white ground, white surfaces drawn with hairline borders, soft layered depth, and a single indigo accent that means \"act here\" or \"this one is selected\". Nothing is themed. The interface earns its premium feel through precise spacing, tight display tracking, tabular numerals and restraint, not through ornament.\n\nDensity is calm-productive: compact controls (38px), small labels at weight 500, generous section rhythm on marketing surfaces (64–96px) and tighter rhythm inside the app (12–24px). Light and dark themes are both first-class and follow `prefers-color-scheme`; every token has a dark counterpart.\n\nThe interaction principle comes from the product: fewest clicks, obvious use. Controls are shown where the work happens (direct manipulation, inline switching, real buttons for real actions), and the next step is always visible. Confirmed rejection: the themed \"Card Catalogue\" world (multiple faces, typewriter mono, stamps, steel, ruled cards, cut tabs) was rejected as cheap and incohesive. No themed costume replaces it.",
+    "northStar": "The Plum Ledger",
+    "overview": "Formagen is a flat white ledger with one owned colour. Plum does not sprinkle; it fills whole regions: the landing nav and hero band, the public form's header band, the builder's live bar, the builder preview's header band and the demo's live bar. Everywhere else the page is plain white, held together by 1px solid rules and 1px dashed row dividers, with warm graphite text. Nothing floats: there are no shadows anywhere, and the old shadow tokens resolve to `none`.\n\nThe decoration is the data. A forms list carries a 14-day sparkline of real daily response counts per form; the live bar carries a green live dot and a dated strip of every published version. One typeface, Mona Sans, at in-between variable weights (420, 530, 640) keeps the UI soft rather than stark. The owner's craft bar is Groww's web app: flat, confident, one brand colour owning regions. It is a bar to meet, not a look to copy: no Groww green, no Groww type.\n\nThe confirmed rejection is the generic AI SaaS template this world replaced: Inter, an indigo accent, a cool grey-50 ground, soft-shadow cards.",
     "keyCharacteristics": [
-      "Inter only, weights 400/500/600, tabular numerals, `cv11` and `ss01` on everywhere.",
-      "Cool neutral ground (bg) with white surfaces; depth from hairlines plus soft shadows.",
-      "One indigo accent family, reserved for primary action, focus, selection and \"new\" markers.",
-      "One filled primary button per view; everything else is a quiet bordered surface button.",
-      "Lucide icons only, 16px, stroke 1.75.",
-      "Text ≥ 5:1 in both themes; control borders and focus ≥ 3:1."
+      "One brand colour, plum, filling regions edge to edge rather than tinting small accents.",
+      "Flat white everywhere else; depth by 1px lines, never by shadow.",
+      "Mona Sans only, at 420 / 530 / 640.",
+      "Small uppercase labels for pane titles and table headers.",
+      "8px-cornered controls; pills reserved for landing CTAs and filter chips.",
+      "Real data (sparklines, dated versions, live state) as the ornament."
     ],
     "rules": [
       {
-        "name": "The One Accent Rule",
-        "body": "Indigo appears only on primary actions, focus, selected state and \"new\" markers. Status, counts and version tags stay neutral.",
+        "name": "The Region Rule",
+        "body": "Plum fills a whole region edge to edge (a band, a bar, a header) or a single control (primary button, selected chip). It is never a border accent, a gradient, or a tinted card.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Ground Rule",
+        "body": "Background and surface are both white. Never introduce a grey page ground to make cards read; use a 1px rule instead.",
         "section": "colors"
       },
       {
         "name": "The Contrast Floor Rule",
-        "body": "Text pairs hold ≥ 5:1 in both themes; control borders (3.21:1 / 3.58:1) and focus (4.76:1 on bg light / 6.53:1 on bg dark) hold ≥ 3:1. A new color earns its place by meeting these, never by adjustment to pass a check.",
+        "body": "Text pairs stay at or above 5:1 and control edges and focus at or above 3:1, in both schemes.",
         "section": "colors"
       },
       {
-        "name": "The One Typeface Rule",
-        "body": "Inter only, at 400/500/600. No decorative monospace, no second family, no 700+.",
+        "name": "The Three Weights Rule",
+        "body": "Only 420, 530 and 640. Never 400/500/600/700; the in-between weights are the identity.",
         "section": "typography"
       },
       {
-        "name": "The Tight Display Rule",
-        "body": "Tracking tightens as size grows: -0.035em display, -0.03em headline, -0.02em titles and wordmark, normal at body and below. Headings use `text-wrap: balance`, paragraphs `pretty`.",
+        "name": "The Proportional Figures Rule",
+        "body": "Numbers render `lining-nums proportional-nums`. Do not turn on tabular figures: Mona Sans's `tnum` draws a slashed zero.",
         "section": "typography"
       },
       {
-        "name": "The Hairline-First Rule",
-        "body": "An edge is a 1px border or inset ring first; shadow only adds lift. Primary buttons add a 1px inner top highlight (`inset 0 1px 0 rgb(255 255 255 / 0.12–0.14)`), nothing more.",
+        "name": "The Caps Are Furniture Rule",
+        "body": "Uppercase Label Caps names a pane or a column. It never sits above a headline as a kicker.",
+        "section": "typography"
+      },
+      {
+        "name": "The Line, Not Lift Rule",
+        "body": "Separate with a 1px rule; never with a shadow or a tonal card. Solid for structure, dashed for repeated rows.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "**Do** use Inter alone at 400, 500 and 600 with tabular numerals and `cv11`/`ss01`.",
-      "**Do** give each view exactly one filled indigo primary; make every other action a bordered White Surface secondary.",
-      "**Do** keep indigo to primary actions, focus, selected state and \"new\" markers.",
-      "**Do** use Lucide icons only, 16px in UI rows, stroke 1.75, in muted color.",
-      "**Do** hold text ≥ 5:1 and control borders and focus ≥ 3:1 in both themes, and ship every new token with its dark counterpart.",
-      "**Do** show controls where the work is: inline switching, direct manipulation, real buttons; fewest clicks, obvious use.",
-      "**Do** honor `prefers-reduced-motion` for every arrival and highlight animation."
+      "Do fill whole regions with plum (bands, bars, headers) and keep everything else white.",
+      "Do separate with 1px rules: solid for structure, dashed for repeated rows.",
+      "Do use Mona Sans at 420, 530 or 640 only.",
+      "Do use Label Caps (0.6875rem, 0.07em, uppercase, muted) for pane titles and table headers.",
+      "Do keep controls at 8px corners, inputs 44px and buttons 40px tall.",
+      "Do let real data decorate: sparklines from actual counts, dated versions, live state.",
+      "Do switch focus outlines to white inside plum regions."
     ],
     "donts": [
-      "**Don't** introduce a second typeface, decorative monospace, or weights above 600.",
-      "**Don't** put on a themed costume: no typewriter faces, stamps, ruled index cards, steel, or cut tabs.",
-      "**Don't** use the accent for status, counts or decoration; status badges stay neutral.",
-      "**Don't** place two filled primaries in one view.",
-      "**Don't** let a hairline (`border`) be the only edge of an interactive control; inputs use Control Edge.",
-      "**Don't** wrap table cells other than the free-text column."
+      "Don't add shadows to any surface; the shadow tokens are `none` on purpose.",
+      "Don't use a grey page ground, tinted cards or gradients.",
+      "Don't introduce a second accent hue; green appears only as the small live dot.",
+      "Don't use tabular figures (`tnum`); Mona Sans draws a slashed zero.",
+      "Don't put an uppercase kicker or eyebrow above a headline.",
+      "Don't use pills for app buttons; pills belong to landing CTAs, filter chips and the \"new\" badge.",
+      "Don't draw a sparkline from placeholder data; empty is a dashed baseline.",
+      "Don't return to Inter, indigo, cool grey-50 grounds or soft-shadow cards.",
+      "Don't copy Groww's green or typeface; Groww is a craft bar, not a palette."
     ]
   }
 }

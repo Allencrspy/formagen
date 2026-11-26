@@ -5,6 +5,7 @@ import { Button } from "./Button";
 import { Checkbox } from "./Checkbox";
 import { ErrorSummary } from "./ErrorSummary";
 import { Select } from "./Select";
+import { Sparkline } from "./Sparkline";
 import { TextArea } from "./TextArea";
 import { TextField } from "./TextField";
 
@@ -130,5 +131,19 @@ describe("Button", () => {
     await userEvent.click(screen.getByRole("button", { name: "Send" }));
     expect(onClick).toHaveBeenCalledOnce();
     expect(screen.getByRole("button")).toHaveAttribute("type", "submit");
+  });
+});
+
+describe("Sparkline", () => {
+  it("draws a line through the counts, scaled to the busiest day, and labels it", () => {
+    const { container } = render(<Sparkline values={[0, 2, 4]} label="6 responses in the last 3 days" />);
+    expect(screen.getByRole("img", { name: "6 responses in the last 3 days" })).toBeInTheDocument();
+    expect(container.querySelector("polyline")).toHaveAttribute("points", "2.0,26.0 56.0,14.0 110.0,2.0");
+  });
+
+  it("draws only a baseline when there are no responses", () => {
+    const { container } = render(<Sparkline values={[0, 0, 0]} label="No responses" />);
+    expect(container.querySelector("polyline")).toBeNull();
+    expect(container.querySelector("line")).not.toBeNull();
   });
 });

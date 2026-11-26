@@ -8,14 +8,18 @@ import styles from "./public.module.css";
 export function FormView({ slug, form, flash }: { slug: string; form: PublishedForm; flash: Flash | null }) {
   return (
     <main className={styles.page}>
-      <article className={styles.card} aria-labelledby="form-title">
-        <h1 id="form-title" className={styles.title}>
-          {form.title}
-        </h1>
-        <p className={styles.note}>Fields marked (required) must be filled in.</p>
+      <header className={styles.band}>
+        <div className={styles.column}>
+          <h1 id="form-title" className={styles.title}>
+            {form.title}
+          </h1>
+          <p className={styles.note}>Fields marked (required) must be filled in.</p>
+        </div>
+      </header>
+      <article className={`${styles.column} ${styles.body}`} aria-labelledby="form-title">
         <PublicForm slug={slug} schema={form.schema} flash={flash} />
       </article>
-      <p className={styles.footer}>
+      <p className={`${styles.column} ${styles.footer}`}>
         {/* Respondents rarely leave for the landing page: don't spend their data prefetching it. */}
         Made with{" "}
         <Link href="/" prefetch={false}>

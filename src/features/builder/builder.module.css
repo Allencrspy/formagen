@@ -23,19 +23,19 @@
 }
 
 .paneTitle,
-.panelTitle {
-  margin: 0 0 var(--space-4);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  letter-spacing: 0;
+.panelTitle,
+.paneSubtitle {
+  margin: 0 0 var(--space-3);
+  font-size: 0.6875rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
 .paneSubtitle {
-  margin: var(--space-6) 0 var(--space-3);
-  font-size: var(--text-xs);
-  font-weight: 500;
-  color: var(--color-text-muted);
-  letter-spacing: 0;
+  margin-block-start: var(--space-6);
 }
 
 .empty {
@@ -47,7 +47,6 @@
 /* Field list */
 .fieldList {
   display: grid;
-  gap: var(--space-2);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -59,24 +58,49 @@
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: var(--space-1);
-  padding: var(--space-1);
-  border-radius: var(--radius-md);
+  padding: var(--space-1) 0;
+  border-block-end: var(--rule-dashed);
   background: var(--color-surface);
-  box-shadow: var(--shadow-sm), 0 0 0 1px var(--color-border);
+}
+
+.fieldRow:first-child {
+  border-block-start: var(--rule-dashed);
+}
+
+/* Hover and selection share one inset band, so nothing shifts between them. */
+.fieldRow:hover,
+.fieldRowSelected {
+  margin-inline: calc(var(--space-2) * -1);
+  padding-inline: var(--space-2);
+  border-radius: var(--radius-md);
+  border-block-color: transparent;
+}
+
+.fieldRow:hover:not(.fieldRowSelected) {
+  background: var(--color-surface-raised);
 }
 
 .fieldRowSelected {
-  box-shadow: var(--shadow-sm), 0 0 0 1px var(--color-primary);
-  background: color-mix(in srgb, var(--color-primary-soft) 45%, var(--color-surface));
+  margin-inline: calc(var(--space-2) * -1);
+  padding-inline: var(--space-2);
+  border-radius: var(--radius-md);
+  border-block-color: transparent;
+  background: var(--color-primary-soft);
 }
 
-.fieldRowIssue {
-  box-shadow: var(--shadow-sm), 0 0 0 1px var(--color-danger);
+.fieldRowSelected .fieldLabel {
+  color: var(--color-primary-text);
+}
+
+.fieldRowIssue .fieldLabel,
+.fieldRowIssue .fieldIcon {
+  color: var(--color-danger);
 }
 
 .fieldRowDragging {
   z-index: 2;
-  box-shadow: var(--shadow-md), 0 0 0 1px var(--color-primary);
+  outline: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
 }
 
 .handle,
@@ -129,8 +153,6 @@
   place-items: center;
   inline-size: 1.75rem;
   block-size: 1.75rem;
-  border-radius: var(--radius-sm);
-  background: var(--color-surface-raised);
   color: var(--color-text-muted);
 }
 
@@ -142,7 +164,7 @@
 .fieldLabel {
   overflow: hidden;
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: var(--weight-medium);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -170,7 +192,7 @@
   padding: 0 var(--space-3) var(--space-2) 2.75rem;
   list-style: none;
   font-size: var(--text-xs);
-  font-weight: 500;
+  font-weight: var(--weight-medium);
   color: var(--color-danger);
 }
 
@@ -186,10 +208,9 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-3);
-  border: none;
+  border: 1px dashed var(--color-border-strong);
   border-radius: var(--radius-md);
   background: var(--color-surface);
-  box-shadow: 0 0 0 1px var(--color-border);
   color: var(--color-text);
   font: inherit;
   font-size: var(--text-sm);
@@ -202,28 +223,45 @@
 }
 
 .addButton:hover {
-  background: var(--color-surface-raised);
+  border-style: solid;
+  border-color: var(--color-primary);
+  color: var(--color-primary-text);
+}
+
+.addButton:hover svg {
+  color: var(--color-primary-text);
 }
 
 /* Preview */
 .previewPane {
   padding: var(--space-6) var(--space-5);
-  background: var(--color-bg);
+  background: var(--color-surface);
   overflow-y: auto;
 }
 
+/* The preview is the public page in miniature: the same plum band, the same flat form. */
 .previewCard {
   max-inline-size: 36rem;
   margin-inline: auto;
-  padding: var(--space-6);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-surface);
-  box-shadow: var(--shadow-frame);
+}
+
+.previewBand {
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  background: var(--color-brand);
 }
 
 .previewTitle {
-  margin: 0 0 var(--space-5);
+  margin: 0;
   font-size: var(--text-xl);
+  color: var(--color-on-brand);
+}
+
+.previewBody {
+  padding: var(--space-6);
 }
 
 /* Settings panel */
@@ -242,7 +280,7 @@
 .legend {
   margin-bottom: var(--space-2);
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: var(--weight-medium);
 }
 
 .options {
@@ -288,7 +326,7 @@
   color: var(--color-primary-text);
   font: inherit;
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: var(--weight-medium);
   cursor: pointer;
 }
 
@@ -299,7 +337,7 @@
 .inlineError {
   margin: 0 0 var(--space-2);
   font-size: var(--text-xs);
-  font-weight: 500;
+  font-weight: var(--weight-medium);
   color: var(--color-danger);
 }
 

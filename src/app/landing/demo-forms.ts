@@ -57,3 +57,6 @@ export const SAMPLE_RESPONSES: DemoResponse[] = [
     sample: true,
   },
 ];
+
+/** Sample daily response counts for the demo's 14-day sparkline, oldest first. Not real data. */
+export const SAMPLE_ACTIVITY = [0, 1, 0, 2, 1, 1, 3, 0, 2, 4, 2, 3, 5, 3];

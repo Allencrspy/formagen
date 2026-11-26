@@ -21,14 +21,18 @@ export function Preview({ store }: { store: BuilderStore }) {
   return (
     <section aria-label="Preview" className={styles.previewPane}>
       <div className={styles.previewCard} onFocusCapture={onFocus}>
-        <h2 className={styles.previewTitle}>{schema.title || "Untitled form"}</h2>
-        {schema.fields.length === 0 ? (
-          <p className={styles.empty}>Your form will appear here as you add fields.</p>
-        ) : (
-          <form noValidate onSubmit={(e) => e.preventDefault()}>
-            <FormRenderer schema={schema} interactive />
-          </form>
-        )}
+        <div className={styles.previewBand}>
+          <h2 className={styles.previewTitle}>{schema.title || "Untitled form"}</h2>
+        </div>
+        <div className={styles.previewBody}>
+          {schema.fields.length === 0 ? (
+            <p className={styles.empty}>Your form will appear here as you add fields.</p>
+          ) : (
+            <form noValidate onSubmit={(e) => e.preventDefault()}>
+              <FormRenderer schema={schema} interactive />
+            </form>
+          )}
+        </div>
       </div>
     </section>
   );

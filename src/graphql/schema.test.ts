@@ -122,8 +122,11 @@ describe("GraphQL admin API", () => {
   it("lists only the caller's forms with counts", async () => {
     await createPublished("u1");
     await ok(CREATE, "u2", { title: "Other" });
-    const data = await ok<{ forms: { title: string; responseCount: number }[] }>(`{ forms { title responseCount } }`, "u1");
-    expect(data.forms).toEqual([{ title: "Contact", responseCount: 0 }]);
+    const data = await ok<{ forms: { title: string; responseCount: number; responsesByDay: number[] }[] }>(
+      `{ forms { title responseCount responsesByDay } }`,
+      "u1",
+    );
+    expect(data.forms).toEqual([{ title: "Contact", responseCount: 0, responsesByDay: Array(14).fill(0) }]);
   });
 
   it("gives FORBIDDEN for another user's form and NOT_FOUND for a missing one", async () => {

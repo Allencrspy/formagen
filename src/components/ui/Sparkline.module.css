@@ -1,0 +1,27 @@
+.spark {
+  display: block;
+  overflow: visible;
+}
+
+.base {
+  stroke: var(--color-border-strong);
+  stroke-width: 1;
+  stroke-dasharray: 2 3;
+  opacity: 0.6;
+}
+
+.area {
+  fill: var(--color-primary-soft);
+}
+
+.line {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.dot {
+  fill: var(--color-primary);
+}

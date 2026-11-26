@@ -1,4 +1,4 @@
-import { and, count, desc, eq, sql } from "drizzle-orm";
+import { and, count, desc, eq, gte, sql } from "drizzle-orm";
 import type { Db } from "@/lib/db/client";
 import { formVersions, forms, responses, users } from "@/lib/db/schema";
 import { parseFormSchema } from "@/lib/schema/parse";
@@ -12,6 +12,8 @@ export type VersionRow = typeof formVersions.$inferSelect;
 export type FormSummary = Pick<FormRow, "id" | "title" | "slug" | "updatedAt"> & {
   latestVersion: number | null;
   responseCount: number;
+  /** Responses per UTC day for the last ACTIVITY_DAYS days, oldest first, today last. */
+  responsesByDay: number[];
 };
 export type ResponseRow = {
   id: string;
@@ -22,6 +24,8 @@ export type ResponseRow = {
 };
 
 export const PAGE_SIZE = 25;
+export const ACTIVITY_DAYS = 14;
+const DAY_MS = 86_400_000;
 export const EXPORT_LIMIT = 10_000;
 const SLUG_ATTEMPTS = 3;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -80,8 +84,8 @@ export function createFormsService(db: Db, options: { makeSlug?: (title: string)
       }
     },
 
-    async listForms(ownerId: string): Promise<FormSummary[]> {
-      return db
+    async listForms(ownerId: string, { now = new Date() }: { now?: Date } = {}): Promise<FormSummary[]> {
+      const rows = await db
         .select({
           id: forms.id,
           title: forms.title,
@@ -95,6 +99,30 @@ export function createFormsService(db: Db, options: { makeSlug?: (title: string)
         .from(forms)
         .where(eq(forms.ownerId, ownerId))
         .orderBy(desc(forms.updatedAt));
+
+      // One grouped query for every form's activity, bucketed by UTC day.
+      const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+      const since = new Date(today - (ACTIVITY_DAYS - 1) * DAY_MS);
+      const counts = await db
+        .select({
+          formId: responses.formId,
+          day: sql<string>`to_char(${responses.submittedAt} at time zone 'UTC', 'YYYY-MM-DD')`,
+          n: count(),
+        })
+        .from(responses)
+        .innerJoin(forms, eq(forms.id, responses.formId))
+        .where(and(eq(forms.ownerId, ownerId), gte(responses.submittedAt, since)))
+        .groupBy(responses.formId, sql`2`);
+
+      const byForm = new Map<string, number[]>();
+      for (const { formId, day, n } of counts) {
+        const index = Math.round((Date.parse(`${day}T00:00:00Z`) - since.getTime()) / DAY_MS);
+        if (index < 0 || index >= ACTIVITY_DAYS) continue;
+        const days = byForm.get(formId) ?? Array<number>(ACTIVITY_DAYS).fill(0);
+        days[index] = Number(n);
+        byForm.set(formId, days);
+      }
+      return rows.map((r) => ({ ...r, responsesByDay: byForm.get(r.id) ?? Array<number>(ACTIVITY_DAYS).fill(0) }));
     },
 
     getForm: getOwned,

@@ -8,6 +8,7 @@ export const FormsListQuery = graphql(`
       slug
       latestVersion
       responseCount
+      responsesByDay
       updatedAt
     }
   }
@@ -30,6 +31,10 @@ export const BuilderFormQuery = graphql(`
       draftSchema
       latestVersion
       responseCount
+      versions {
+        version
+        publishedAt
+      }
     }
   }
 `);

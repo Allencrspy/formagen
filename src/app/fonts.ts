@@ -1,11 +1,11 @@
-import { Inter } from "next/font/google";
+import { Mona_Sans } from "next/font/google";
 
 /**
  * The one typeface, self-hosted by next/font at build time (no runtime request to Google).
- * Variable weight; the UI uses 400, 500 and 600 only.
+ * Mona Sans is variable; the UI uses in-between weights (420 / 530 / 640, see tokens.css).
  */
-export const inter = Inter({
+export const mona = Mona_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-mona",
   display: "swap",
 });

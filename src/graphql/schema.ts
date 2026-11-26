@@ -112,6 +112,13 @@ const Form = builder.objectRef<FormParent>("Form").implement({
           ? f.responseCount
           : guard(async () => (await ctx.forms.listResponses(signedIn(ctx), f.id, { page: 1 })).total),
     }),
+    responsesByDay: t.intList({
+      description: "Responses per UTC day for the last 14 days, oldest first.",
+      resolve: (f, _args, ctx) =>
+        "responsesByDay" in f
+          ? f.responsesByDay
+          : guard(async () => (await ctx.forms.listForms(signedIn(ctx))).find((x) => x.id === f.id)?.responsesByDay ?? []),
+    }),
     versions: t.field({
       type: [FormVersion],
       resolve: (f, _args, ctx) => guard(() => ctx.forms.listVersions(signedIn(ctx), f.id)),

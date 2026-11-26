@@ -1,27 +1,9 @@
 import Link from "next/link";
+import { Mark } from "@/components/brand/Mark";
 import styles from "./landing/landing.module.css";
 import { ProductDemo } from "./landing/ProductDemo";
 
 const GITHUB = "https://github.com/Allencrspy/formagen";
-
-const STEPS = [
-  {
-    term: "Build",
-    text: "Add fields, mark what's required, and show a field only when an earlier answer calls for it. The preview is the real form.",
-  },
-  {
-    term: "Publish",
-    text: "Publishing saves the form as the next version. Nothing already submitted changes.",
-  },
-  {
-    term: "Share",
-    text: "One link that works on any phone, with a screen reader, and with JavaScript turned off.",
-  },
-  {
-    term: "Read",
-    text: "Every response shows the version it answered. Filter by version, page through, export to CSV.",
-  },
-];
 
 const STACK = [
   ["Framework", "Next.js 16, App Router, Cache Components"],
@@ -38,6 +20,7 @@ export default function Home() {
       <header className={styles.nav}>
         <div className={styles.navInner}>
           <Link href="/" className={styles.wordmark}>
+            <Mark size={22} inverse />
             Formagen
           </Link>
           <nav aria-label="Main" className={styles.navLinks}>
@@ -52,44 +35,30 @@ export default function Home() {
       </header>
 
       <main>
-        <section aria-labelledby="hero-title" className={styles.hero}>
-          <h1 id="hero-title" className={styles.headline}>
-            Change your form any time. Every response keeps its version.
-          </h1>
-          <p className={styles.lede}>
-            Formagen turns one form definition into the editor preview, the public page and the server&apos;s checks, and
-            saves each publish as a version.
-          </p>
-          <div className={styles.actions}>
-            <Link href="/app" className={styles.primaryCta}>
-              Start building
-            </Link>
-            <a href={GITHUB} className={styles.secondaryCta}>
-              View source
-            </a>
-            <span className={styles.actionNote}>Sign in with GitHub. No setup.</span>
-          </div>
-        </section>
+        <div className={styles.heroBand}>
+          <section aria-labelledby="hero-title" className={styles.hero}>
+            <h1 id="hero-title" className={styles.headline}>
+              Change your form any time. Every response keeps its version.
+            </h1>
+            <p className={styles.lede}>One schema drives the editor preview, the public page and the server&apos;s checks.</p>
+            <div className={styles.actions}>
+              <Link href="/app" className={styles.primaryCta}>
+                Start building
+              </Link>
+              <a href={GITHUB} className={styles.secondaryCta}>
+                View source
+              </a>
+              <span className={styles.actionNote}>Sign in with GitHub. No setup.</span>
+            </div>
+          </section>
+        </div>
 
-        <section aria-label="Live demo" className={styles.demoSection}>
+        {/* The demo is the explanation: build, publish, share and read all happen in it. */}
+        <section id="how" aria-label="Live demo" className={styles.demoSection}>
           <ProductDemo />
           <p className={styles.demoCaption}>
             Live demo with sample data. Switch versions, submit the form, watch the table. Nothing leaves your browser.
           </p>
-        </section>
-
-        <section id="how" aria-labelledby="how-title" className={styles.section}>
-          <h2 id="how-title" className={styles.sectionTitle}>
-            How it works
-          </h2>
-          <dl className={styles.steps}>
-            {STEPS.map((s) => (
-              <div key={s.term} className={styles.step}>
-                <dt className={styles.stepTerm}>{s.term}</dt>
-                <dd className={styles.stepText}>{s.text}</dd>
-              </div>
-            ))}
-          </dl>
         </section>
 
         <section aria-labelledby="people-title" className={`${styles.section} ${styles.twoCol}`}>
@@ -128,12 +97,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section aria-labelledby="close-title" className={styles.close}>
+        <section aria-labelledby="close-title" className={`${styles.section} ${styles.close}`}>
           <h2 id="close-title" className={styles.closeTitle}>
-            Publish your first form in minutes.
+            Build a form, publish v1, share the link.
           </h2>
-          <Link href="/app" className={styles.primaryCta}>
-            Start building
+          <Link href="/app" className={styles.closeLink}>
+            Start building with GitHub sign-in
           </Link>
         </section>
       </main>

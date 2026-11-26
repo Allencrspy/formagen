@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Suspense, type ReactNode } from "react";
+import { Mark } from "@/components/brand/Mark";
 import { Button } from "@/components/ui/Button";
 import { requireUser } from "@/lib/current-user";
 import { signOutAction } from "./actions";
@@ -16,6 +17,7 @@ export default function AdminLayout({ children }: LayoutProps<"/app">) {
     <>
       <header className={styles.header}>
         <Link href="/app" className={styles.brand}>
+          <Mark />
           Formagen
         </Link>
         <Suspense fallback={null}>

@@ -18,16 +18,16 @@ body {
   line-height: 1.55;
   color: var(--color-text);
   background: var(--color-bg);
+  font-weight: var(--weight-regular);
   caret-color: var(--color-primary);
-  font-feature-settings: "cv11", "ss01";
   -webkit-font-smoothing: antialiased;
 }
 
-/* Tabular figures only where numbers line up (Inter's tnum also widens hyphens). */
+/* Mona Sans's tabular figures use a slashed zero; its default figures read better. */
 table,
 time,
 .tabular {
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums proportional-nums;
 }
 
 ::selection {
@@ -38,9 +38,9 @@ time,
 h1,
 h2,
 h3 {
-  font-weight: 600;
+  font-weight: var(--weight-bold);
   text-wrap: balance;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
 }
 
 h1 {
