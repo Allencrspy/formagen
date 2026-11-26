@@ -17,3 +17,5 @@ Every number here was measured, with the commit it was measured on. Only numbers
 | 2026-11-16 | 38407fe | Lighthouse CI budgets | perf ≥ 95, a11y 100, CLS ≤ 0.01, JS ≤ 150 KB, total ≤ 215 KB; passing in CI | `lighthouserc.json`, GitHub Actions e2e job |
 | 2026-11-16 | 38407fe | End-to-end tests (Playwright) | 7 passing in CI | adds publish-freshness and retry-page checks |
 | 2026-11-16 | 38407fe | Unit and integration tests (Vitest) | 174 passing | `npm test` |
+| 2026-11-26 | d6acf9c | Unit and integration tests (Vitest) | 177 passing | `npm test` (adds responses-per-day and Sparkline tests) |
+| 2026-11-26 | d6acf9c | End-to-end tests (Playwright) | 7 passing, axe 0 violations | `npm run e2e` after the plum redesign |
